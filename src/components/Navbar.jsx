@@ -2,10 +2,21 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import logo from '../assets/logos/demo-logo.png'
 import { Link, NavLink } from 'react-router';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
 
     const { user, signOutUser } = useContext(AuthContext)
+
+    const handleSignOut = () => {
+        signOutUser()
+            .then(() => {
+                toast.error("Logout Successfully")
+            })
+            .then((err) => {
+                toast.error(err.message)
+            })
+    }
 
     return (
         <div className="px-4 py-0 lg:px-10 navbar bg-base-100 border-b border-base-300 shadow-sm sticky top-0 z-50">
@@ -67,7 +78,7 @@ const Navbar = () => {
                                 SignIn
                             </NavLink>
                         ) : (
-                            <a onClick={signOutUser} className="cursor-pointer hover:text-primary">
+                            <a onClick={handleSignOut} className="cursor-pointer hover:text-primary">
                                 SignOut
                             </a>
                         )}
