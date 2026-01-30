@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
-import logo from '../assets/logos/demo-logo.png'
+import { AuthContext } from '../../contexts/AuthContext';
+import logo from '../../assets/logos/demo-logo.png'
 import { Link, NavLink } from 'react-router';
 import toast from 'react-hot-toast';
 
