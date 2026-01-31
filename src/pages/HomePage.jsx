@@ -3,6 +3,7 @@ import MaxWidth from '../components/MaxWidth';
 import Hero from '../components/Home/Hero';
 import RecentListing from '../components/Home/RecentListing';
 import SpecialOffers from '../components/Home/SpecialOffers';
+import OurAchievements from '../components/Home/OurAchievements';
 
 const HomePage = () => {
     return (
@@ -11,6 +12,7 @@ const HomePage = () => {
             <MaxWidth>
                 <RecentListing></RecentListing>
                 <SpecialOffers></SpecialOffers>
+                <OurAchievements></OurAchievements>
             </MaxWidth>
         </div>
     );
