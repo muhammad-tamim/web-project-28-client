@@ -16,13 +16,13 @@ const FBody = () => {
                         and trust. Whether for business or leisure, we help you move freely with style
                         and peace of mind.</p>
                     <div className="flex gap-5 items-center">
-                        <button className="btn btn-lg btn-circle btn-outline btn-primary">
+                        <button className="btn btn-lg btn-circle btn-primary">
                             <FaWhatsapp />
                         </button>
-                        <button className="btn btn-lg btn-circle btn-outline btn-primary">
+                        <button className="btn btn-lg btn-circle btn-primary">
                             <FaFacebookF />
                         </button>
-                        <button className="btn btn-lg btn-circle btn-outline btn-primary">
+                        <button className="btn btn-lg btn-circle btn-primary">
                             <FaYoutube />
                         </button>
                     </div>

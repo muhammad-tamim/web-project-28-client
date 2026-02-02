@@ -3,11 +3,13 @@ import MaxWidth from '../../MaxWidth';
 import FContact from './FContact';
 import FBody from './FBody';
 import FBrandsSlider from './FBrandsSlider';
+import FCTA from './FCTA';
 
 const Footer = () => {
     const year = new Date().getFullYear();
     return (
         <div>
+            <FCTA></FCTA>
             <MaxWidth>
                 <FBrandsSlider></FBrandsSlider>
             </MaxWidth>

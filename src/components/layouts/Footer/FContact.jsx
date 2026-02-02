@@ -8,7 +8,7 @@ const FContact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 rounded-md bg-base-200 py-5 px-5 lg:px-10 shadow-lg">
 
             <div className="flex gap-3 items-center">
-                <button className="btn btn-xl bg-[#f5b754] btn-circle">
+                <button className="btn btn-xl btn-primary btn-circle">
                     <LuPhoneCall />
                 </button>
                 <div>
@@ -18,7 +18,7 @@ const FContact = () => {
             </div>
 
             <div className="flex gap-3 items-center">
-                <button className="btn btn-xl bg-[#f5b754] btn-circle">
+                <button className="btn btn-xl btn-primary btn-circle">
                     <IoMdMail />
                 </button>
                 <div>
@@ -28,7 +28,7 @@ const FContact = () => {
             </div>
 
             <div className="flex gap-3 items-center">
-                <button className="btn btn-xl bg-[#f5b754] btn-circle">
+                <button className="btn btn-xl btn-primary btn-circle">
                     <CiLocationOn />
                 </button>
                 <div>
