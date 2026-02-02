@@ -4,7 +4,8 @@ import { Link } from 'react-router';
 const Hero = () => {
     return (
         <div
-            className="hero min-h-[calc(100vh-80px)]"
+            // className="hero min-h-[calc(100vh-80px)]"
+            className='hero min-h-screen'
             style={{
                 backgroundImage:
                     "url(https://images.timesdrive.in/photo/msid-151005277,thumbsize-801913/151005277.jpg)",
@@ -28,7 +29,7 @@ const Hero = () => {
 
                     <div>
                         <Link to="/available-cars">
-                            <button className="btn btn-primary">
+                            <button className="btn btn-warning text-black">
                                 View Available Cars
                             </button>
                         </Link>
