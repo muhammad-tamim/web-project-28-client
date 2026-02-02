@@ -3,3 +3,17 @@
 @plugin "daisyui" {
     themes: light --default, dark --prefersdark;
 }
+
+@plugin "daisyui/theme" {
+    name: "light";
+    default: true;
+
+    --color-primary: #f5b754;
+}
+
+@plugin "daisyui/theme" {
+    name: "dark";
+    prefersdark: true;
+
+    --color-primary: #f5b754;
+}
