@@ -1,7 +1,7 @@
 import React, { use, useEffect, useState } from 'react';
 import MaxWidth from '../MaxWidth';
 import { AuthContext } from '../../contexts/AuthContext';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { MdWbSunny } from 'react-icons/md';
 import { FaMoon } from 'react-icons/fa';
 import { GiShoppingCart } from 'react-icons/gi';
@@ -40,7 +40,7 @@ const Navbar = () => {
                 <div className="justify-between items-center py-5 hidden lg:flex">
 
                     <div>
-                        <h3 className='text-3xl font-bold tracking-wider'><span className='text-[#f5b754]'>R</span>ENAX</h3>
+                        <Link to={'/'} className='text-3xl font-bold tracking-wider'><span className='text-[#f5b754]'>R</span>ENAX</Link>
                     </div>
 
                     <div>
