@@ -9,6 +9,7 @@ import Testimonial from '../components/Home/Testimonial/Testimonial';
 import Promo from '../components/Home/Promo';
 import RentalProcess from '../components/Home/RentalProcess';
 import CarTypes from '../components/Home/CarTypes/CarTypes';
+import CarBrands from '../components/Home/CarBrands/CarBrands';
 
 const HomePage = () => {
     return (
@@ -16,6 +17,7 @@ const HomePage = () => {
             <Hero></Hero>
             <MaxWidth>
                 <div className='space-y-20 my-20'>
+                    <CarBrands></CarBrands>
                     <CarTypes></CarTypes>
                     <RecentListing></RecentListing>
                     <SpecialOffers></SpecialOffers>
