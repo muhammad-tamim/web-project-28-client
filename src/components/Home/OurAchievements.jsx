@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurAchievements = () => {
     return (
-        <div className='relative my-20 min-h-[70vh] sm:min-h-[80vh] lg:min-h-[60vh] overflow-hidden'>
+        <div className='relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-[60vh] overflow-hidden'>
             <video autoPlay loop muted preload="auto" className='absolute inset-0 w-full h-full object-cover'>
                 <source src="https://www.toyota.com/content/dam/toyota/homepage/tdr-marquee/2025/video/CAM_MY25_LCH_WelcomeMat_TCOM_Desktop_ENG_10_16x9_SSTY8794000H.mp4" type="video/mp4" />
             </video>
