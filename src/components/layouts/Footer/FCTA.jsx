@@ -19,7 +19,7 @@ const FCTA = () => {
                     <div className='space-y-2'>
                         <p className='text-primary text-xs tracking-[4px]'>RENT YOUR CAR</p>
                         <h3 className='text-4xl font-bold'>Interested in Renting?</h3>
-                        <p className='text-sm'>Don't hesitate and send us a message.</p>
+                        <p className='text-sm text-secondary'>Don't hesitate and send us a message.</p>
                     </div>
                     <div className='flex flex-col md:flex-row justify-center items-center gap-4'>
                         <button className='btn btn-primary rounded-full btn-xl text-sm text-black/80 px-12 font-normal hover:-translate-y-1 duration-200 transition'><FaWhatsapp /> WhatsApp</button>

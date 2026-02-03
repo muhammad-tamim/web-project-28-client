@@ -26,7 +26,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -35,7 +35,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -56,7 +56,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -77,7 +77,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -98,7 +98,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -119,7 +119,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -140,7 +140,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -167,7 +167,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -179,7 +179,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -188,7 +188,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +200,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -209,7 +209,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -221,7 +221,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -230,7 +230,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -242,7 +242,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -251,7 +251,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -263,7 +263,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -272,7 +272,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -290,7 +290,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -299,7 +299,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -311,7 +311,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -320,7 +320,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -332,7 +332,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -341,7 +341,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -353,7 +353,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -362,7 +362,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -374,7 +374,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -383,7 +383,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>
@@ -395,7 +395,7 @@ const Testimonial = () => {
                                     <p className='text-primary text-5xl'><FaQuoteLeft /></p>
                                     <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
+                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
                                 <div className='flex items-center gap-3'>
                                     <div className="avatar">
                                         <div className="w-12 rounded-full">
@@ -404,7 +404,7 @@ const Testimonial = () => {
                                     </div>
                                     <div>
                                         <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500'>Customer</p>
+                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
                                     </div>
                                 </div>
                             </div>

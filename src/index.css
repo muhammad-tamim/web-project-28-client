@@ -9,6 +9,7 @@
     default: true;
 
     --color-primary: #f5b754;
+    --color-secondary: #6B7280
 }
 
 @plugin "daisyui/theme" {
@@ -16,4 +17,5 @@
     prefersdark: true;
 
     --color-primary: #f5b754;
+    --color-secondary: #6B7280
 }

@@ -13,7 +13,7 @@ const FContact = () => {
                 </button>
                 <div>
                     <p className="font-bold">Call us</p>
-                    <p className="text-sm">+971 52-333-4444</p>
+                    <p className="text-sm text-gray-500">+971 52-333-4444</p>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@ const FContact = () => {
                 </button>
                 <div>
                     <p className="font-bold">Write to us</p>
-                    <p className="text-sm">info@renax.com</p>
+                    <p className="text-sm text-gray-500">info@renax.com</p>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@ const FContact = () => {
                 </button>
                 <div>
                     <p className="font-bold">Address</p>
-                    <p className="text-sm">Dubai, Renax city, Office 123</p>
+                    <p className="text-sm text-gray-500">Dubai, Renax city, Office 123</p>
                 </div>
             </div>
 

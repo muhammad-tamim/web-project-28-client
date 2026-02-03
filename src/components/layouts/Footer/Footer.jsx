@@ -19,7 +19,7 @@ const Footer = () => {
                         <FContact></FContact>
                         <FBody></FBody>
                         <hr className='text-black/30' />
-                        <p className='text-center'>©{year} RENAX. All rights reserved.</p>
+                        <p className='text-center text-secondary'>©{year} RENAX. All rights reserved.</p>
                     </div>
                 </MaxWidth>
             </div>
