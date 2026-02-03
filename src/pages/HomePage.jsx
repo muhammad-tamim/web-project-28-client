@@ -8,6 +8,7 @@ import LatestNews from '../components/Home/LatestNews/LatestNews';
 import Testimonial from '../components/Home/Testimonial/Testimonial';
 import Promo from '../components/Home/Promo';
 import RentalProcess from '../components/Home/RentalProcess';
+import CarTypes from '../components/Home/CarTypes/CarTypes';
 
 const HomePage = () => {
     return (
@@ -15,9 +16,10 @@ const HomePage = () => {
             <Hero></Hero>
             <MaxWidth>
                 <div className='space-y-20 my-20'>
+                    <CarTypes></CarTypes>
                     <RecentListing></RecentListing>
                     <SpecialOffers></SpecialOffers>
-                    {/* <OurAchievements></OurAchievements> */}
+                    <OurAchievements></OurAchievements>
                     <RentalProcess></RentalProcess>
                 </div>
             </MaxWidth>
