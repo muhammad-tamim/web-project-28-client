@@ -4,7 +4,8 @@ import Hero from '../components/Home/Hero';
 import RecentListing from '../components/Home/RecentListing';
 import SpecialOffers from '../components/Home/SpecialOffers';
 import OurAchievements from '../components/Home/OurAchievements';
-import LatestNews from '../components/Home/LatestNews';
+import LatestNews from '../components/Home/LatestNews/LatestNews';
+import Testimonial from '../components/Home/Testimonial/Testimonial';
 
 const HomePage = () => {
     return (
@@ -15,6 +16,7 @@ const HomePage = () => {
                     <RecentListing></RecentListing>
                     <SpecialOffers></SpecialOffers>
                     <OurAchievements></OurAchievements>
+                    <Testimonial></Testimonial>
                     <LatestNews></LatestNews>
                 </div>
             </MaxWidth>

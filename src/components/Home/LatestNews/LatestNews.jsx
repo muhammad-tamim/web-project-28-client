@@ -1,9 +1,12 @@
 import React from 'react';
-import car1 from '../../assets/images/car2.jpg'
+import car1 from '../../../assets/images/car2.jpg'
 import { MdArrowOutward } from 'react-icons/md';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from 'swiper/modules';
-import "swiper/css";
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import './styles.css';
 
 
 const LatestNews = () => {
@@ -15,7 +18,7 @@ const LatestNews = () => {
             </div>
 
             <div className='hidden xl:block'>
-                <Swiper slidesPerView={3} spaceBetween={6} loop={true} modules={[Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }}>
+                <Swiper slidesPerView={3} spaceBetween={6} modules={[Pagination]} pagination={{ dynamicBullets: true }}>
                     <SwiperSlide>
                         <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
                             <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
