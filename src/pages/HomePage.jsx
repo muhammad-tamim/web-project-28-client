@@ -7,25 +7,31 @@ import OurAchievements from '../components/Home/OurAchievements';
 import LatestNews from '../components/Home/LatestNews/LatestNews';
 import Testimonial from '../components/Home/Testimonial/Testimonial';
 import Promo from '../components/Home/Promo';
+import RentalProcess from '../components/Home/RentalProcess';
 
 const HomePage = () => {
     return (
         <div>
             <Hero></Hero>
-            <div className='space-y-20 my-20'>
-                <MaxWidth>
+            <MaxWidth>
+                <div className='space-y-20 my-20'>
                     <RecentListing></RecentListing>
                     <SpecialOffers></SpecialOffers>
-                    <OurAchievements></OurAchievements>
-                </MaxWidth>
+                    {/* <OurAchievements></OurAchievements> */}
+                    <RentalProcess></RentalProcess>
+                </div>
+            </MaxWidth>
 
+            <div className='space-y-20 my-20'>
                 <Promo></Promo>
+            </div>
 
-                <MaxWidth>
+            <MaxWidth>
+                <div className='space-y-20 my-20'>
                     <Testimonial></Testimonial>
                     <LatestNews></LatestNews>
-                </MaxWidth>
-            </div>
+                </div>
+            </MaxWidth>
         </div>
     );
 };
