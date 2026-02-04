@@ -1,41 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
+import Navbar from '../components/layouts/Navbar';
+import PagesBanner from '../components/layouts/PagesBanner';
+import bg from '../assets/images/car1.jpg'
+import Footer from '../components/layouts/Footer/Footer';
+import { MdOutlineArrowOutward } from 'react-icons/md';
 
 const ErrorPage = () => {
+    const location = useLocation();
     return (
-        <div
-            className="hero min-h-screen"
-            style={{
-                backgroundImage:
-                    "url(https://img.freepik.com/free-photo/horror-scene-with-eerie-warehouse_23-2150975186.jpg?t=st=1754889774~exp=1754893374~hmac=dc15dfdf01fb4ed4ef9ea456cdb35146025a10f62df5dcf706ed69ab76a24232&w=1060)",
-            }}
-        >
-            {/* Dark overlay */}
-            <div className="hero-overlay bg-opacity-10"></div>
+        <div>
+            <Navbar></Navbar>
+            <PagesBanner title={'Page not found'} pageName={'404 page'} bg={bg}></PagesBanner>
 
-            {/* Hero content */}
-            <div className="hero-content text-neutral-content text-center">
-                <div className="max-w-xl">
-                    <h1 className="mb-5 text-5xl font-bold">404</h1>
+            {/* <div className='flex justify-center mt-10'>
+                <div className='border h-14 border-primary w-0'></div>
+            </div> */}
 
-                    <h1 className="mb-5 text-5xl font-bold">
-                        Page Not Found
-                    </h1>
-
-                    <p className="mb-5 text-lg">
-                        Sorry, the page you are looking for does not exist or has been moved.
-                        Please check the URL or return to the homepage.
-                    </p>
-
-                    <div className="flex gap-3 justify-center">
-                        <Link to="/">
-                            <button className="btn btn-primary">
-                                Go Home
-                            </button>
-                        </Link>
-                    </div>
-                </div>
+            <div className='my-10 max-w-3xl mx-auto px-5 md:px-10 xl:px-0 flex flex-col justify-center items-center gap-5 text-center'>
+                <h1 className='text-primary text-[100px]'>404</h1>
+                <p className='font-medium text-xl'>Sorry, We Can't Find the <span className='text-primary font-bold'>"{location.pathname}"</span> Page!</p>
+                <p className='text-secondary text-sm'>The page you are looking for was moved, removed, renamed or never existed.</p>
+                <Link to={'/'}><button className='btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1'>Home <span><MdOutlineArrowOutward /></span></button></Link>
             </div>
+
+            <Footer></Footer>
         </div>
     );
 };

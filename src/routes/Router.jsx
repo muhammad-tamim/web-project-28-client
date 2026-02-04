@@ -11,6 +11,7 @@ import AddCar from "../pages/AddCar";
 import CarDetailsPage from "../pages/CarDetailsPage";
 import PrivateRoute from "./PrivateRoute";
 import ErrorElement from "../components/ErrorElement";
+import AboutPage from "../pages/AboutPage";
 
 export const Router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ export const Router = createBrowserRouter([
             {
                 index: true,
                 Component: HomePage
+            },
+            {
+                path: '/about',
+                Component: AboutPage
             },
             {
                 path: '/available-cars',
