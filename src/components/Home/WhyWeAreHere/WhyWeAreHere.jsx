@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 import './styles.css';
 import achievementsVideo from '../../../assets/videos/achievements.mp4'
 
-const Achievements = () => {
+const WhyWeAreHere = () => {
     return (
         <div className='relative min-h-[calc(100vh-70px)]'>
 
@@ -378,4 +378,4 @@ const Achievements = () => {
     );
 };
 
-export default Achievements; 
+export default WhyWeAreHere; 

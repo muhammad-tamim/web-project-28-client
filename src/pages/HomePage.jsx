@@ -2,13 +2,14 @@ import React from 'react';
 import MaxWidth from '../components/MaxWidth';
 import Hero from '../components/Home/Hero';
 import RecentListing from '../components/Home/RecentListing';
-import Achievements from '../components/Home/Achievements/Achievements';
+import Achievements from '../components/Home/WhyWeAreHere/WhyWeAreHere';
 import LatestNews from '../components/Home/LatestNews/LatestNews';
 import Testimonial from '../components/Home/Testimonial/Testimonial';
 import Promo from '../components/Home/Promo';
 import RentalProcess from '../components/Home/RentalProcess';
 import CarTypes from '../components/Home/CarTypes/CarTypes';
 import CarBrands from '../components/Home/CarBrands/CarBrands';
+import WhoWeAre from '../components/Home/WhoWeAre';
 
 const HomePage = () => {
     return (
@@ -20,6 +21,7 @@ const HomePage = () => {
                     <CarBrands></CarBrands>
                     <CarTypes></CarTypes>
                     <RecentListing></RecentListing>
+                    <WhoWeAre></WhoWeAre>
                 </div>
             </MaxWidth>
             <div className='space-y-20 my-20'>
