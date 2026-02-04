@@ -2,7 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import MaxWidth from '../MaxWidth';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Link, NavLink } from 'react-router';
-import { MdWbSunny } from 'react-icons/md';
+import { MdKeyboardArrowDown, MdWbSunny } from 'react-icons/md';
 import { FaMoon } from 'react-icons/fa';
 import { GiShoppingCart } from 'react-icons/gi';
 import { CiMenuFries } from 'react-icons/ci';
@@ -45,21 +45,53 @@ const Navbar = () => {
 
                     <div>
                         <ul className="flex items-center gap-5">
-                            <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>Home</NavLink></li>
-                            <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>About</NavLink></li>
-                            <li><NavLink to="/available-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>Available Cars</NavLink></li>
+                            <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Home</NavLink></li>
+                            <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>About</NavLink></li>
+                            <li>
+                                <div className="dropdown dropdown-hover">
+                                    <div tabIndex={0} role="button" className="cursor-pointer text-secondary hover:text-primary flex items-center gap-0.5">Categories<MdKeyboardArrowDown /></div>
+                                    <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                                        <li>
+                                            <div className="dropdown dropdown-hover dropdown-right">
+                                                <div tabIndex={0} role="button" className="cursor-pointer text-secondary hover:text-primary">Brands</div>
+                                                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 ml-0 rounded-box z-1 w-52 p-2 shadow-sm">
+                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div className="dropdown dropdown-hover dropdown-right">
+                                                <div tabIndex={0} role="button" className="cursor-pointer text-secondary hover:text-primary">Types</div>
+                                                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 ml-0 rounded-box z-1 w-52 p-2 shadow-sm">
+                                                    <li><NavLink to="/suv" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
+                                                    <li><NavLink to="/suv" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
+                                                    <li><NavLink to="/suv" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
+                                                    <li><NavLink to="/suv" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
+                                                    <li><NavLink to="/suv" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><NavLink to="/available-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Available Cars</NavLink></li>
                             {user &&
                                 <>
-                                    <li><NavLink to="/add-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>Add Car</NavLink></li>
-                                    <li><NavLink to="/my-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>My Cars</NavLink></li>
+                                    <li><NavLink to="/add-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Add Car</NavLink></li>
+                                    <li><NavLink to="/my-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>My Cars</NavLink></li>
                                 </>
                             }
-                            <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>Blog</NavLink></li>
-                            <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>Contact</NavLink></li>
+                            <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Blog</NavLink></li>
+                            <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Contact</NavLink></li>
                             {user ?
-                                <li><a onClick={handleSignOut} className="cursor-pointer hover:text-[#f5b754]">SignOut</a></li>
+                                <li><a onClick={handleSignOut} className="cursor-pointer text-secondary hover:text-[#f5b754]">SignOut</a></li>
                                 :
-                                <li><NavLink to="/sign-in" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>
+                                <li><NavLink to="/sign-in" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>
                                     SignIn
                                 </NavLink></li>
                             }
@@ -72,7 +104,7 @@ const Navbar = () => {
                             </li>
                             <li>
                                 {user &&
-                                    <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center'}>
+                                    <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
                                         <span className="badge bg-transparent border-none badge-xs font-bold indicator-item">8</span>
                                     </NavLink>
@@ -109,7 +141,7 @@ const Navbar = () => {
                             </li>
                             <li>
                                 {user &&
-                                    <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center'}>
+                                    <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
                                         <span className="badge bg-transparent border-none badge-xs font-bold indicator-item">8</span>
                                     </NavLink>
@@ -135,22 +167,44 @@ const Navbar = () => {
                             </div>
                             <div className="drawer-side">
                                 <label htmlFor="my-drawer-1" aria-label="close sidebar" className="drawer-overlay"></label>
-                                <ul className="menu bg-base-200 min-h-full w-40 md:w-80 p-4">
-                                    <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>Home</NavLink></li>
-                                    <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>About</NavLink></li>
-                                    <li><NavLink to="/available-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>Available Cars</NavLink></li>
+                                <ul className="menu bg-base-200 min-h-full w-48 md:w-80 p-4">
+                                    <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Home</NavLink></li>
+                                    <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>About</NavLink></li>
+                                    <li className='text-secondary hover:text-primary'><a>Categories</a>
+                                        <ul>
+                                            <li>Brands</li>
+                                            <ul className="">
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                            </ul>
+                                            <li>Types</li>
+                                            <ul className="">
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                            </ul>
+                                        </ul>
+                                    </li>
+                                    <li><NavLink to="/available-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Available Cars</NavLink></li>
                                     {user &&
                                         <>
-                                            <li><NavLink to="/add-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>Add Car</NavLink></li>
-                                            <li><NavLink to="/my-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>My Cars</NavLink></li>
+                                            <li><NavLink to="/add-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Add Car</NavLink></li>
+                                            <li><NavLink to="/my-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>My Cars</NavLink></li>
                                         </>
                                     }
-                                    <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>Blog</NavLink></li>
-                                    <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>Contact</NavLink></li>
+                                    <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Blog</NavLink></li>
+                                    <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Contact</NavLink></li>
                                     {user ?
-                                        <li><a onClick={handleSignOut} className="cursor-pointer hover:text-[#f5b754]">SignOut</a></li>
+                                        <li><a onClick={handleSignOut} className="cursor-pointer text-secondary hover:text-primary">SignOut</a></li>
                                         :
-                                        <li><NavLink to="/sign-in" className={({ isActive }) => isActive ? "text-[#f5b754]" : ''}>
+                                        <li><NavLink to="/sign-in" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>
                                             SignIn
                                         </NavLink></li>
                                     }
