@@ -5,6 +5,10 @@ import { MdArrowOutward } from 'react-icons/md';
 const CarBrands = () => {
     return (
         <div>
+            <div className='flex justify-center mb-10'>
+                <div className='border h-14 border-primary w-0'></div>
+            </div>
+
             <div className='text-center space-y-3 mb-10'>
                 <p className='text-primary text-[11px] tracking-[5px]'>CATEGORIES</p>
                 <h1 className='font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl'>Rental <span className='text-primary'>Car Brands</span></h1>

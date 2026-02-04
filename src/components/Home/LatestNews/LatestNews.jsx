@@ -12,6 +12,11 @@ import './styles.css';
 const LatestNews = () => {
     return (
         <div className=''>
+
+            <div className='flex justify-center mb-10'>
+                <div className='border h-14 border-primary w-0'></div>
+            </div>
+
             <div className='text-center space-y-3 mb-10'>
                 <p className='text-primary text-[11px] tracking-[5px]'>OUR BLOG</p>
                 <h1 className='font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl'>Latest <span className='text-primary'>News</span></h1>

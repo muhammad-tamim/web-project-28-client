@@ -20,6 +20,9 @@ const RecentListing = () => {
 
     return (
         <div className=''>
+            <div className='flex justify-center mb-10'>
+                <div className='border h-14 border-primary w-0'></div>
+            </div>
 
             <div className='text-center space-y-3 mb-10'>
                 <p className='text-primary text-[11px] tracking-[5px]'>Select Your Car</p>
