@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { MdArrowOutward, MdOutlineArrowOutward } from 'react-icons/md';
 import { IoMdCheckmark } from 'react-icons/io';
 
-const WhoWeAre = () => {
+const WhoWeAre = ({ btnHide }) => {
     return (
         <div>
             <div className='flex justify-center mb-10'>
@@ -50,13 +50,13 @@ const WhoWeAre = () => {
                         </div>
                     </div>
 
-                    <Link to={'/about'}><button className='btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1'>Learn More <span><MdOutlineArrowOutward /></span></button></Link>
+                    <Link to={'/about'}><button className={`${btnHide} btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1`} > Learn More <span><MdOutlineArrowOutward /></span></button></Link>
                 </div>
                 <div>
                     <img src={whoWeAreImage} className='w-[500px] h-full rounded-3xl md:mx-auto ' alt="Who we are image" />
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
