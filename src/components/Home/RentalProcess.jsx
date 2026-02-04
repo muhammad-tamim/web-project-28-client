@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaInfoCircle } from 'react-icons/fa';
+import { MdArrowOutward } from 'react-icons/md';
 import { Link } from 'react-router';
 
 const RentalProcess = () => {
@@ -24,7 +25,7 @@ const RentalProcess = () => {
                         <h1 className='text-2xl font-medium'>Choose A Car</h1>
                     </div>
                     <p className='text-gray-500 text-sm'>Browse our wide selection of vehicles and compare features, prices, and availability to find the perfect car for your trip.</p>
-                    <Link to={'/available-cars'}><button className='btn btn-primary btn-outline rounded-full btn-xl hover:-translate-y-1 duration-200 transition'>Available Cars</button></Link>
+                    <Link to={'/available-cars'}><button className='btn btn-primary btn-outline rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1'>Available Cars <span><MdArrowOutward /></span></button></Link>
                 </div>
 
                 <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
@@ -33,7 +34,7 @@ const RentalProcess = () => {
                         <h1 className='text-2xl font-medium'>Book A Car</h1>
                     </div>
                     <p className='text-gray-500 text-sm'>Select your preferred dates, provide the required details, and confirm your booking in just a few simple steps.</p>
-                    <Link to={'add-car'}><button className='btn btn-primary btn-outline rounded-full btn-xl hover:-translate-y-1 duration-200 transition'>Available Cars</button></Link>
+                    <Link to={'/available-cars'}><button className='btn btn-primary btn-outline rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1'>Available Cars <span><MdArrowOutward /></span></button></Link>
                 </div>
 
                 <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
@@ -42,7 +43,7 @@ const RentalProcess = () => {
                         <h1 className='text-2xl font-medium'>Verify Bookings</h1>
                     </div>
                     <p className='text-gray-500 text-sm'>Review your booking status, check rental details, and stay updated on approvals or changes from the owner.</p>
-                    <Link to={'/my-bookings'}><button className='btn btn-primary btn-outline rounded-full btn-xl hover:-translate-y-1 duration-200 transition'>My Bookings</button></Link>
+                    <Link to={'/my-bookings'}><button className='btn btn-primary btn-outline rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1'>My Bookings <span><MdArrowOutward /></span></button></Link>
                 </div>
             </div>
 
