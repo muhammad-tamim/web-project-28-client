@@ -9,15 +9,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 import './styles.css';
+import achievementsVideo from '../../../assets/videos/achievements.mp4'
 
 const Achievements = () => {
     return (
         <div className='relative min-h-[calc(100vh-70px)]'>
 
             {/* Background Video */}
-            <video className="absolute inset-0 w-full h-full object-cover" src={'https://www.toyota.com/content/dam/toyota/homepage/tdr-marquee/2025/video/CAM_MY25_LCH_WelcomeMat_TCOM_Desktop_ENG_10_16x9_SSTY8794000H.mp4'} autoPlay loop muted playsInline />
+            <video className="absolute inset-0 w-full h-full object-cover" src={achievementsVideo} autoPlay loop muted playsInline />
 
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/70"></div>
