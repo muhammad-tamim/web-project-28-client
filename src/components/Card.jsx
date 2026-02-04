@@ -1,18 +1,25 @@
 import React from 'react';
+import { MdArrowOutward } from 'react-icons/md';
 import { Link } from 'react-router';
 
 const Card = ({ car }) => {
     const { _id, imageUrl, carModel, description } = car;
-    const shortDescription = description.length > 70 ? description.slice(0, 70) + '...' : description
+    const shortDescription = description.length > 70 ? description.slice(0, 100) + '...' : description
 
     return (
-        <div className="border border-white rounded-lg shadow-md p-4 max-w-xs mx-auto">
-            <img src={imageUrl} alt={carModel} className="w-full h-40 object-cover rounded-md mb-3" />
-            <h2 className="text-lg font-semibold mb-1 truncate">{carModel}</h2>
-            <p className=" text-sm mb-4 leading-relaxed line-clamp-3">{shortDescription}</p>
-            <Link to={`/carDetails/${car._id}`} className='btn btn-primary btn-sm' aria-label={`See more details about ${carModel}`}>
-                See More
-            </Link>
+        <div className="card bg-base-300 shadow-sm">
+            <figure>
+                <img
+                    src={imageUrl} className='w-full h-52 object-cover' alt="Shoes" />
+            </figure>
+            <div className="card-body space-y-3">
+                <h2 className="card-title font-bold text-2xl">Card Title 2025</h2>
+                <p className='text-sm text-secondary'>{shortDescription}</p>
+                <div className="card-actions justify-end">
+                    <p><span className='text-primary text-2xl font-bold'>$750</span><sub className='text-gray-500'> / day </sub></p>
+                    <button className="right-1 btn btn-lg btn-circle btn-primary"><MdArrowOutward /></button>
+                </div>
+            </div>
         </div>
     );
 };
