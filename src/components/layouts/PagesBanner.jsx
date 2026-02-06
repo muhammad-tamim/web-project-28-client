@@ -1,10 +1,12 @@
 import React from 'react';
+import heroVideo from '../../assets/videos/hero-video.mp4'
 
-
-const PagesBanner = ({ title, pageName = '', bg }) => {
+const PagesBanner = ({ title, pageName = '' }) => {
     return (
         <div className='relative min-h-[70vh] overflow-hidden' >
-            <img src={bg} className='absolute inset-0 w-full h-full object-cover' alt="" />
+
+            <video className="absolute inset-0 w-full h-full object-cover" src={heroVideo} autoPlay loop muted playsInline />
+
             <div className="absolute inset-0 bg-black/60"></div>
 
             <div className='absolute inset-0  flex flex-col justify-center items-center gap-3'>
