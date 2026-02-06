@@ -1,10 +1,10 @@
-import React, { use } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
+import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
+import useAuth from '../hooks/useAuth';
 
 const SignInPage = () => {
-    const { signInUser, signInUserWithGoogle } = use(AuthContext)
+    const { signInUser, signInUserWithGoogle } = useAuth()
     const navigate = useNavigate();
     const location = useLocation()
 

@@ -1,11 +1,11 @@
-import React, { use } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
+import React from 'react';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router';
+import useAuth from '../hooks/useAuth';
 
 const SignUpPage = () => {
     const navigate = useNavigate();
-    const { signUpUser, signInUserWithGoogle, setUser, updateUserInfo } = use(AuthContext)
+    const { signUpUser, signInUserWithGoogle, setUser, updateUserInfo } = useAuth()
 
     const handleSignUp = (e) => {
         e.preventDefault()

@@ -24,7 +24,7 @@ const Promo = () => {
                         <dialog id="my_modal_2" className="modal">
                             <div className="modal-box bg-base-300">
 
-                                <iframe className='${hidden} w-full h-60 object-cover' src="https://www.youtube.com/embed/NMThdHhrLoM?si=fVf4GiKTOBplitv1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <iframe className='${hidden} w-full h-60 object-cover' src="https://www.youtube.com/embed/NMThdHhrLoM?si=fVf4GiKTOBplitv1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 
                                 <p className="py-4 text-primary">Press ESC key or click outside to close</p>
                             </div>
