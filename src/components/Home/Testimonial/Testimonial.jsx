@@ -24,7 +24,7 @@ const Testimonial = () => {
             <div>
 
                 <div className='hidden xl:block'>
-                    <Swiper className="flex justify-center items-center" slidesPerView={3} spaceBetween={10} loop={true} modules={[Autoplay, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }} >
+                    <Swiper className="flex justify-center items-center" slidesPerView={3} spaceBetween={20} loop={true} modules={[Autoplay, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }} >
                         <SwiperSlide>
                             <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
                                 <div className='flex justify-between'>
@@ -156,7 +156,7 @@ const Testimonial = () => {
                 </div>
 
                 <div className='hidden md:block xl:hidden'>
-                    <Swiper className="flex justify-center items-center" slidesPerView={2} spaceBetween={6} loop={true} modules={[Autoplay, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}  >
+                    <Swiper className="flex justify-center items-center" slidesPerView={2} spaceBetween={20} loop={true} modules={[Autoplay, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}  >
                         <SwiperSlide>
                             <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
                                 <div className='flex justify-between'>
@@ -288,7 +288,7 @@ const Testimonial = () => {
                 </div>
 
                 <div className='md:hidden'>
-                    <Swiper slidesPerView={1} spaceBetween={6} loop={true} modules={[Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }}>
+                    <Swiper slidesPerView={1} loop={true} modules={[Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }}>
                         <SwiperSlide>
                             <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
                                 <div className='flex justify-between'>

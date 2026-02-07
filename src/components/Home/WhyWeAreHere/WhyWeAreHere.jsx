@@ -65,7 +65,7 @@ const WhyWeAreHere = () => {
 
                     <div>
                         <div className='hidden xl:block'>
-                            <Swiper slidesPerView={3} spaceBetween={6} loop={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}>
+                            <Swiper slidesPerView={3} spaceBetween={20} loop={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}>
                                 <SwiperSlide>
                                     <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
                                         <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
@@ -167,7 +167,7 @@ const WhyWeAreHere = () => {
                         </div>
 
                         <div className='hidden md:block xl:hidden'>
-                            <Swiper slidesPerView={2} spaceBetween={6} loop={true} modules={[Autoplay, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}>
+                            <Swiper slidesPerView={2} spaceBetween={20} loop={true} modules={[Autoplay, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}>
                                 <SwiperSlide>
                                     <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
                                         <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
@@ -269,7 +269,7 @@ const WhyWeAreHere = () => {
                         </div>
 
                         <div className='md:hidden'>
-                            <Swiper slidesPerView={1} spaceBetween={6} loop={true} modules={[Autoplay, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}>
+                            <Swiper slidesPerView={1} loop={true} modules={[Autoplay, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}>
                                 <SwiperSlide>
                                     <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
                                         <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />

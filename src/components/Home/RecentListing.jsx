@@ -29,7 +29,7 @@ const RecentListing = () => {
                 <h1 className='font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl'>Browse <span className='text-primary'>Recent Vehicles</span></h1>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
 
                 {cars.map((car) => <Card car={car} key={car._id}></Card>)}
 
