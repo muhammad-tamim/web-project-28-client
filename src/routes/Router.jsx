@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import ErrorElement from "../components/ErrorElement";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
+import Blog from "../pages/BlogPage";
 
 export const Router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ export const Router = createBrowserRouter([
             {
                 path: '/about',
                 Component: AboutPage
+            },
+            {
+                path: '/blog',
+                Component: Blog
             },
             {
                 path: '/contact',
