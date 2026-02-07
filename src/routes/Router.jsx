@@ -14,6 +14,10 @@ import ErrorElement from "../components/ErrorElement";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
 import Blog from "../pages/BlogPage";
+import BrandsPage from "../pages/BrandsPage";
+import BrandsDetailsPage from "../pages/BrandsDetailsPage";
+import TypesPage from "../pages/TypesPage";
+import TypesDetailsPage from "../pages/TypesDetailsPage";
 
 export const Router = createBrowserRouter([
     {
@@ -28,6 +32,22 @@ export const Router = createBrowserRouter([
             {
                 path: '/about',
                 Component: AboutPage
+            },
+            {
+                path: '/categories/brands',
+                Component: BrandsPage
+            },
+            {
+                path: '/categories/brands-details/:name',
+                Component: BrandsDetailsPage
+            },
+            {
+                path: '/categories/types',
+                Component: TypesPage
+            },
+            {
+                path: '/categories/types-details/:name',
+                Component: TypesDetailsPage
             },
             {
                 path: '/blog',

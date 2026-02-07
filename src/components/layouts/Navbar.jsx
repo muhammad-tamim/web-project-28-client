@@ -53,26 +53,26 @@ const Navbar = () => {
                                     <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                                         <li>
                                             <div className="dropdown dropdown-hover dropdown-right">
-                                                <div tabIndex={0} role="button" className="cursor-pointer text-secondary hover:text-primary">Brands</div>
+                                                <NavLink to="/categories/brands" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}><div tabIndex={0} role="button" className="cursor-pointer text-secondary hover:text-primary">Brands</div></NavLink>
                                                 <ul tabIndex="-1" className="dropdown-content menu bg-base-100 ml-0 rounded-box z-1 w-52 p-2 shadow-sm">
-                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                    <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
+                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li>
                                             <div className="dropdown dropdown-hover dropdown-right">
-                                                <div tabIndex={0} role="button" className="cursor-pointer text-secondary hover:text-primary">Types</div>
+                                                <NavLink to="/categories/types" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}><div tabIndex={0} role="button" className="cursor-pointer text-secondary hover:text-primary">Types</div></NavLink>
                                                 <ul tabIndex="-1" className="dropdown-content menu bg-base-100 ml-0 rounded-box z-1 w-52 p-2 shadow-sm">
-                                                    <li><NavLink to="/suv" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
-                                                    <li><NavLink to="/suv" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
-                                                    <li><NavLink to="/suv" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
-                                                    <li><NavLink to="/suv" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
-                                                    <li><NavLink to="/suv" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
+                                                    <li><NavLink to={`/categories/types-details/suv`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
+                                                    <li><NavLink to={`/categories/types-details/suv`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
+                                                    <li><NavLink to={`/categories/types-details/suv`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
+                                                    <li><NavLink to={`/categories/types-details/suv`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
+                                                    <li><NavLink to={`/categories/types-details/suv`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
                                                 </ul>
                                             </div>
                                         </li>

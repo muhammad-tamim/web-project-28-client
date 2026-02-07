@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import './styles.css';
+import { Link } from 'react-router';
 
 const CarTypes = () => {
     return (
@@ -31,9 +32,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -47,9 +50,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -63,9 +68,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -79,9 +86,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -95,9 +104,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -111,9 +122,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -133,9 +146,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -149,9 +164,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -165,9 +182,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -181,9 +200,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -197,9 +218,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -213,11 +236,12 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
-
                         </div>
                     </SwiperSlide>
 
@@ -235,9 +259,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -251,9 +277,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -267,9 +295,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -283,9 +313,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -299,9 +331,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -315,9 +349,11 @@ const CarTypes = () => {
                             <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
                             <div className='absolute bottom-4 right-4'>
-                                <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                    <MdArrowOutward />
-                                </button>
+                                <Link to={`/categories/types-details/suv`}>
+                                    <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                        <MdArrowOutward />
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
