@@ -169,14 +169,14 @@ const Navbar = () => {
                         </ul>
 
                         <div className="drawer drawer-end">
-                            <input id="my-drawer-1" type="checkbox" className="drawer-toggle" />
+                            <input id="drawer-medium" type="checkbox" className="drawer-toggle" />
                             <div className="drawer-content">
-                                <label htmlFor="my-drawer-1" className="cursor-pointer drawer-button text-gray-500 hover:text-primary">
+                                <label htmlFor="drawer-md" className="cursor-pointer drawer-button text-gray-500 hover:text-primary">
                                     <CiMenuFries size={30} />
                                 </label>
                             </div>
-                            <div className="drawer-side">
-                                <label htmlFor="my-drawer-1" aria-label="close sidebar" className="drawer-overlay"></label>
+                            <div className="drawer-medium">
+                                <label htmlFor="drawer-medium" aria-label="close sidebar" className="drawer-overlay"></label>
                                 <ul className="menu bg-base-200 min-h-full w-48 md:w-80 p-4">
                                     <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Home</NavLink></li>
                                     <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>About</NavLink></li>
@@ -260,14 +260,14 @@ const Navbar = () => {
                         </ul>
 
                         <div className="drawer drawer-end">
-                            <input id="my-drawer-1" type="checkbox" className="drawer-toggle" />
+                            <input id="drawer-small" type="checkbox" className="drawer-toggle" />
                             <div className="drawer-content">
-                                <label htmlFor="my-drawer-1" className="cursor-pointer drawer-button text-gray-500 hover:text-primary">
+                                <label htmlFor="drawer-small" className="cursor-pointer drawer-button text-gray-500 hover:text-primary">
                                     <CiMenuFries size={30} />
                                 </label>
                             </div>
                             <div className="drawer-side">
-                                <label htmlFor="my-drawer-1" aria-label="close sidebar" className="drawer-overlay"></label>
+                                <label htmlFor="drawer-small" aria-label="close sidebar" className="drawer-overlay"></label>
                                 <ul className="menu bg-base-200 min-h-full w-48 md:w-80 p-4">
                                     <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Home</NavLink></li>
                                     <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>About</NavLink></li>
