@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Card from '../components/Card';
 import TableRow from '../components/TableRow';
+import Pagination from '../components/Pagination';
 
 const AvailableCarsPage = () => {
     const [cars, setCars] = useState([]);
@@ -38,7 +39,7 @@ const AvailableCarsPage = () => {
     });
 
     return (
-        <div className='px-4 lg:px-10 my-20'>
+        <div className='px-4 lg:px-10 my-20 space-y-20'>
             <h1 className='text-center text-4xl font-bold mb-10'>Recent Listing</h1>
 
             <div className='flex flex-col lg:flex-row justify-between items-center gap-4 mb-8'>
@@ -89,6 +90,9 @@ const AvailableCarsPage = () => {
                 </div>
             )}
 
+            <div className='flex justify-center'>
+                <Pagination></Pagination>
+            </div>
         </div>
     );
 };

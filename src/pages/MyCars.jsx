@@ -4,6 +4,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
 import TableRow2 from '../components/TableRow2';
+import Pagination from '../components/Pagination';
 
 const MyCars = () => {
     const { user } = use(AuthContext);
@@ -96,7 +97,7 @@ const MyCars = () => {
     };
 
     return (
-        <div className='px-4 lg:px-10 my-20'>
+        <div className='px-4 lg:px-10 my-20 space-y-20'>
             <h1 className='text-center text-4xl font-bold mb-10'>My Cars</h1>
 
             <div className="flex justify-center md:justify-end mb-6">
@@ -151,6 +152,10 @@ const MyCars = () => {
                     </div>
                 </>
             )}
+
+            <div className='flex justify-center'>
+                <Pagination></Pagination>
+            </div>
 
         </div>
     );
