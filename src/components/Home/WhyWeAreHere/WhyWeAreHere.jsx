@@ -9,7 +9,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './styles.css';
 import achievementsVideo from '../../../assets/videos/achievements.mp4'
 
 const WhyWeAreHere = () => {

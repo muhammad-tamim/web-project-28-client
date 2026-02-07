@@ -3,11 +3,8 @@ import car1 from '../../../assets/images/car2.jpg'
 import { MdArrowOutward } from 'react-icons/md';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css';
 import 'swiper/css/pagination';
-
-import './styles.css';
-
+import 'swiper/css';
 
 const LatestNews = () => {
     return (

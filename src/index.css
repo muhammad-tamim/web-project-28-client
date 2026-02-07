@@ -19,3 +19,8 @@
     --color-primary: #f5b754;
     --color-secondary: #6B7280
 }
+
+/* for swiper sliders */
+.swiper-pagination-bullet-active {
+    background-color: #f5b754;
+}
