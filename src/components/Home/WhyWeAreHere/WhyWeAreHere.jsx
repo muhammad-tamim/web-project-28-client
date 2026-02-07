@@ -63,314 +63,347 @@ const WhyWeAreHere = () => {
                         <h3 className='font-bold text-3xl'>Premium Cars</h3>
                     </div>
 
-                    <div>
-                        <div className='hidden xl:block'>
-                            <Swiper slidesPerView={3} spaceBetween={20} loop={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+                    <div className='hidden xl:block'>
+                        <Swiper slidesPerView={3} spaceBetween={20} loop={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ dynamicBullets: true }}>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <div className="hero-overlay rounded-3xl"></div>
+                                    <div className="hero-overlay rounded-3xl"></div>
 
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
 
-                                        <div className='absolute bottom-4 right-4'>
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
                                             <button className="right-1 btn btn-lg btn-circle btn-primary">
                                                 <MdArrowOutward />
                                             </button>
-                                        </div>
-
+                                        </Link>
                                     </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <div className="hero-overlay rounded-3xl"></div>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+                                    <div className="hero-overlay rounded-3xl"></div>
 
-                                        <div className='absolute bottom-4 right-4'>
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
                                             <button className="right-1 btn btn-lg btn-circle btn-primary">
                                                 <MdArrowOutward />
                                             </button>
-                                        </div>
-
+                                        </Link>
                                     </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <div className="hero-overlay rounded-3xl"></div>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+                                    <div className="hero-overlay rounded-3xl"></div>
 
-                                        <div className='absolute bottom-4 right-4'>
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
                                             <button className="right-1 btn btn-lg btn-circle btn-primary">
                                                 <MdArrowOutward />
                                             </button>
-                                        </div>
-
+                                        </Link>
                                     </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <div className="hero-overlay rounded-3xl"></div>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+                                    <div className="hero-overlay rounded-3xl"></div>
 
-                                        <div className='absolute bottom-4 right-4'>
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
                                             <button className="right-1 btn btn-lg btn-circle btn-primary">
                                                 <MdArrowOutward />
                                             </button>
-                                        </div>
-
+                                        </Link>
                                     </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <div className="hero-overlay rounded-3xl"></div>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+                                    <div className="hero-overlay rounded-3xl"></div>
 
-                                        <div className='absolute bottom-4 right-4'>
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
                                             <button className="right-1 btn btn-lg btn-circle btn-primary">
                                                 <MdArrowOutward />
                                             </button>
-                                        </div>
-
+                                        </Link>
                                     </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <div className="hero-overlay rounded-3xl"></div>
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
 
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+                                    <div className="hero-overlay rounded-3xl"></div>
 
-                                        <div className='absolute bottom-4 right-4'>
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
                                             <button className="right-1 btn btn-lg btn-circle btn-primary">
                                                 <MdArrowOutward />
                                             </button>
-                                        </div>
-
+                                        </Link>
                                     </div>
-                                </SwiperSlide>
 
-                            </Swiper>
-                        </div>
+                                </div>
+                            </SwiperSlide>
 
-                        <div className='hidden md:block xl:hidden'>
-                            <Swiper slidesPerView={2} spaceBetween={20} loop={true} modules={[Autoplay, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-
-                            </Swiper>
-                        </div>
-
-                        <div className='md:hidden'>
-                            <Swiper slidesPerView={1} loop={true} modules={[Autoplay, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ clickable: true }}>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
-                                        <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
-
-                                        <div className="hero-overlay rounded-3xl"></div>
-
-                                        <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
-
-                                        <div className='absolute bottom-4 right-4'>
-                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
-                                                <MdArrowOutward />
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </SwiperSlide>
-
-                            </Swiper>
-                        </div>
-
+                        </Swiper>
                     </div>
+
+                    <div className='hidden md:block xl:hidden'>
+                        <Swiper slidesPerView={2} spaceBetween={20} loop={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ dynamicBullets: true }}>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+
+                        </Swiper>
+                    </div>
+
+                    <div className='md:hidden'>
+                        <Swiper slidesPerView={1} spaceBetween={20} loop={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ dynamicBullets: true }}>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div className='hero relative w-full h-[420px] rounded-3xl overflow-hidden '>
+                                    <img src={car1} alt="car1" className='w-full h-full object-cover rounded-3xl' />
+
+                                    <div className="hero-overlay rounded-3xl"></div>
+
+                                    <p className='absolute top-4 left-4 w-full flex justify-start text-primary text-xl font-medium'>Sport Cars</p>
+
+                                    <div className='absolute bottom-4 right-4'>
+                                        <Link to={`/categories/brands-details/sports`}>
+                                            <button className="right-1 btn btn-lg btn-circle btn-primary">
+                                                <MdArrowOutward />
+                                            </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </SwiperSlide>
+
+                        </Swiper>
+                    </div>
+
 
                 </div>
             </MaxWidth>
