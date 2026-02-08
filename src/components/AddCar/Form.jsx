@@ -1,60 +1,124 @@
-import React from 'react';
+import React, { use } from 'react';
 import { MdArrowOutward } from 'react-icons/md';
+import useGetBrands from '../../hooks/queries/Brands/useGetBrands';
+import useGetCategories from '../../hooks/queries/Categories/useGetCategories';
+import LoadingSpinner from '../LoadingSpinner';
+import { AuthContext } from '../../contexts/AuthContext';
+import useCreateCars from '../../hooks/queries/cars/useCreateCars';
 
 const Form = () => {
+
+    const { user } = use(AuthContext)
+
+    const { data: brands, isLoading: brandsLoading, isError: brandsIsError, error: brandsError } = useGetBrands()
+    const { data: categories, isLoading: categoriesLoading, isError: categoriesIsError, error: categoriesError } = useGetCategories()
+    const { mutate: createCar } = useCreateCars()
+
+
+    if (brandsLoading || categoriesLoading) {
+        return <LoadingSpinner minHScreen="min-h-screen" />
+    }
+
+    if (brandsIsError || categoriesIsError) {
+        return <h2 className="text-red-500 text-center my-20">Error: {brandsError.message || categoriesError.message}</h2>
+    }
+
+    const handleFormSubmit = e => {
+        e.preventDefault()
+        const form = e.target;
+        const formData = new FormData(form)
+        const rawData = Object.fromEntries(formData.entries())
+
+        const payload = {
+            name: rawData.name,
+            model: rawData.model,
+            year: Number(rawData.year),
+            brand: rawData.brand,
+            category: rawData.category,
+            description: rawData.description,
+            dailyRentalPrice: Number(rawData.dailyRentalPrice),
+            registrationNumber: rawData.registrationNumber,
+            features: rawData.features,
+            photoUrl: rawData.photoUrl,
+            email: user.email,
+        };
+
+        createCar(payload, {
+            onSuccess: () => {
+                form.reset()
+                alert('Car added successfully 🚗')
+            },
+            onError: (err) => {
+                alert(err.response?.data?.message || 'Failed to add car')
+            }
+        })
+    }
+
+
     return (
-        <form className='space-y-10'>
+        <form className='space-y-10' onSubmit={handleFormSubmit}>
             <div className="grid md:grid-cols-2 gap-6">
 
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Name</label>
-                    <input type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
+                    <input name='name' type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
                 </div>
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Photo URL</label>
-                    <input type="url" className='input w-full input-primary focus:outline-none bg-base-300' />
+                    <input name='photoUrl' type="url" className='input w-full input-primary focus:outline-none bg-base-300' />
                 </div>
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Model</label>
-                    <input type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
+                    <input name='model' type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
                 </div>
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Year</label>
-                    <input type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
+                    <input name='year' type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
                 </div>
+
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Brand</label>
-                    <select defaultValue="Pick a color" className="select w-full select-primary focus:outline-none bg-base-300">
-                        <option disabled={true}>Pick a Brand</option>
-                        <option>Crimson</option>
-                        <option>Amber</option>
-                        <option>Velvet</option>
-                    </select>
+                    {brandsIsError && <h2 className="text-red-500">Error: {brandsError.message}</h2>}
+                    {brandsLoading ?
+                        <LoadingSpinner size={5}></LoadingSpinner>
+                        :
+                        <select name="brand" defaultValue="Pick a Brand" className="select w-full select-primary focus:outline-none bg-base-300">
+                            <option disabled={true}>Pick a Brand</option>
+                            {brands.map(brand =>
+                                <option key={brand._id}>{brand.name}</option>
+                            )}
+                        </select>
+                    }
                 </div>
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Category</label>
-                    <select defaultValue="Pick a color" className="select w-full select-primary focus:outline-none bg-base-300">
-                        <option disabled={true}>Pick a Category</option>
-                        <option>Crimson</option>
-                        <option>Amber</option>
-                        <option>Velvet</option>
-                    </select>
+                    {categoriesIsError && <h2 className="text-red-500">Error: {categoriesError.message}</h2>}
+                    {categoriesLoading ?
+                        <LoadingSpinner size={5}></LoadingSpinner>
+                        :
+                        <select name='category' defaultValue="Pick a Category" className="select w-full select-primary focus:outline-none bg-base-300">
+                            <option disabled={true}>Pick a Category</option>
+                            {categories.map(category =>
+                                <option key={category._id}>{category.name}</option>
+                            )}
+                        </select>
+                    }
                 </div>
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Registration Number</label>
-                    <input type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
+                    <input name='registrationNumber' type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
                 </div>
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Daily Rental Price</label>
-                    <input type="number" className='input w-full input-primary focus:outline-none bg-base-300' placeholder='$' />
+                    <input name="dailyRentalPrice" type="number" className='input w-full input-primary focus:outline-none bg-base-300' placeholder='$' />
                 </div>
                 <div className='space-y-2 col-span-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Features</label>
-                    <textarea className='textarea w-full input-primary focus:outline-none bg-base-300' placeholder='comma separated'></textarea>
+                    <textarea name="features" className='textarea w-full input-primary focus:outline-none bg-base-300' placeholder='comma separated'></textarea>
                 </div>
                 <div className='space-y-2 col-span-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Description</label>
-                    <textarea className='textarea w-full input-primary focus:outline-none bg-base-300'></textarea>
+                    <textarea name="description" className='textarea w-full input-primary focus:outline-none bg-base-300'></textarea>
                 </div>
 
             </div>
@@ -63,7 +127,7 @@ const Form = () => {
                 <button type='submit' className='btn btn-primary rounded-full btn-xl text-black/80 px-12 font-normal hover:-translate-y-1 duration-200 transition'>Submit</button>
             </div>
 
-        </form>
+        </form >
     );
 };
 
