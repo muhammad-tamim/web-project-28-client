@@ -2,7 +2,7 @@ import React from 'react';
 import { SwiperSlide } from "swiper/react";
 import useGetBrands from '../../../hooks/useGetBrands';
 import LoadingSpinner from '../../LoadingSpinner';
-import Swiper1 from '../../Swiper1';
+import Swiper1 from '../../Swiper/Swiper1';
 import Card1 from '../../Cards/Card1';
 
 
