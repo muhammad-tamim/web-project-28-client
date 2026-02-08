@@ -4,7 +4,7 @@ import Card from '../components/Card';
 import TableRow from '../components/TableRow';
 import Pagination from '../components/Pagination';
 
-const AvailableCarsPage = () => {
+const CarsPage = () => {
     const [cars, setCars] = useState([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState('');
@@ -97,4 +97,4 @@ const AvailableCarsPage = () => {
     );
 };
 
-export default AvailableCarsPage;
+export default CarsPage;

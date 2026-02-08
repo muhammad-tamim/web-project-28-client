@@ -47,39 +47,9 @@ const Navbar = () => {
                         <ul className="flex items-center gap-5">
                             <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Home</NavLink></li>
                             <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>About</NavLink></li>
-                            <li>
-                                <div className="dropdown dropdown-hover">
-                                    <div tabIndex={0} role="button" className="cursor-pointer text-secondary hover:text-primary flex items-center gap-0.5">Categories<MdKeyboardArrowDown /></div>
-                                    <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                                        <li>
-                                            <div className="dropdown dropdown-hover dropdown-right">
-                                                <NavLink to="/categories/brands" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}><div tabIndex={0} role="button" className="cursor-pointer text-secondary hover:text-primary">Brands</div></NavLink>
-                                                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 ml-0 rounded-box z-1 w-52 p-2 shadow-sm">
-                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                    <li><NavLink to={`/categories/brands-details/sports-cars`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="dropdown dropdown-hover dropdown-right">
-                                                <NavLink to="/categories/types" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}><div tabIndex={0} role="button" className="cursor-pointer text-secondary hover:text-primary">Types</div></NavLink>
-                                                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 ml-0 rounded-box z-1 w-52 p-2 shadow-sm">
-                                                    <li><NavLink to={`/categories/types-details/suv`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
-                                                    <li><NavLink to={`/categories/types-details/suv`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
-                                                    <li><NavLink to={`/categories/types-details/suv`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
-                                                    <li><NavLink to={`/categories/types-details/suv`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
-                                                    <li><NavLink to={`/categories/types-details/suv`} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>SUV</NavLink></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><NavLink to="/available-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Available Cars</NavLink></li>
+                            <li><NavLink to="/brands" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Brands</NavLink></li>
+                            <li><NavLink to="/categories" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Categories</NavLink></li>
+                            <li><NavLink to="/cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Cars</NavLink></li>
                             {user &&
                                 <>
                                     <li><NavLink to="/add-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Add Car</NavLink></li>
@@ -141,7 +111,9 @@ const Navbar = () => {
                         <ul className="flex items-center gap-5">
                             <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Home</NavLink></li>
                             <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>About</NavLink></li>
-                            <li><NavLink to="/available-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary w-full'}>Cars</NavLink></li>
+                            <li><NavLink to="/brands" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Brands</NavLink></li>
+                            <li><NavLink to="/categories" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Categories</NavLink></li>
+                            <li><NavLink to="/cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Cars</NavLink></li>
                             {user ?
                                 <li><a onClick={handleSignOut} className="cursor-pointer text-secondary hover:text-[#f5b754]">SignOut</a></li>
                                 :
@@ -194,29 +166,9 @@ const Navbar = () => {
                                 <ul className="menu bg-base-200 min-h-full w-48 md:w-80 p-4">
                                     <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Home</NavLink></li>
                                     <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>About</NavLink></li>
-                                    <li className='text-secondary hover:text-primary'><a>Categories</a>
-                                        <ul>
-                                            <li>Brands</li>
-                                            <ul className="">
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                            </ul>
-                                            <li>Types</li>
-                                            <ul className="">
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                            </ul>
-                                        </ul>
-                                    </li>
-                                    <li><NavLink to="/available-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Available Cars</NavLink></li>
+                                    <li><NavLink to="/brands" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Brands</NavLink></li>
+                                    <li><NavLink to="/categories" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Categories</NavLink></li>
+                                    <li><NavLink to="/cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Cars</NavLink></li>
                                     {user &&
                                         <>
                                             <li><NavLink to="/add-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Add Car</NavLink></li>
@@ -238,6 +190,7 @@ const Navbar = () => {
                     </div>
 
                 </div>
+
 
                 {/* for small devices */}
                 <div className='flex justify-between items-center py-5 lg:hidden'>
@@ -292,29 +245,9 @@ const Navbar = () => {
                                 <ul className="menu bg-base-200 min-h-full w-48 md:w-80 p-4">
                                     <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Home</NavLink></li>
                                     <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>About</NavLink></li>
-                                    <li className='text-secondary hover:text-primary'><a>Categories</a>
-                                        <ul>
-                                            <li>Brands</li>
-                                            <ul className="">
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                            </ul>
-                                            <li>Types</li>
-                                            <ul className="">
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                                <li><NavLink to="/sports-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Sports Cars</NavLink></li>
-                                            </ul>
-                                        </ul>
-                                    </li>
-                                    <li><NavLink to="/available-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Available Cars</NavLink></li>
+                                    <li><NavLink to="/brands" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Brands</NavLink></li>
+                                    <li><NavLink to="/categories" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Categories</NavLink></li>
+                                    <li><NavLink to="/cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Cars</NavLink></li>
                                     {user &&
                                         <>
                                             <li><NavLink to="/add-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Add Car</NavLink></li>

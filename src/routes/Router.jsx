@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../layouts/RootLayout";
 import HomePage from "../pages/HomePage";
-import AvailableCarsPage from "../pages/AvailableCarsPage";
+import CarsPage from "../pages/CarsPage";
 import ErrorPage from "../pages/ErrorPage";
 import SignInPage from "../pages/SignInPage";
 import SignUpPage from "../pages/SignUpPage";
@@ -16,8 +16,8 @@ import ContactPage from "../pages/ContactPage";
 import Blog from "../pages/BlogPage";
 import BrandsPage from "../pages/BrandsPage";
 import BrandsDetailsPage from "../pages/BrandsDetailsPage";
-import TypesPage from "../pages/TypesPage";
 import TypesDetailsPage from "../pages/TypesDetailsPage";
+import CategoriesPage from "../pages/CategoriesPage";
 
 export const Router = createBrowserRouter([
     {
@@ -34,20 +34,12 @@ export const Router = createBrowserRouter([
                 Component: AboutPage
             },
             {
-                path: '/categories/brands',
+                path: '/brands',
                 Component: BrandsPage
             },
             {
-                path: '/categories/brands-details/:name',
-                Component: BrandsDetailsPage
-            },
-            {
-                path: '/categories/types',
-                Component: TypesPage
-            },
-            {
-                path: '/categories/types-details/:name',
-                Component: TypesDetailsPage
+                path: '/categories',
+                Component: CategoriesPage
             },
             {
                 path: '/blog',
@@ -58,8 +50,8 @@ export const Router = createBrowserRouter([
                 Component: ContactPage
             },
             {
-                path: '/available-cars',
-                Component: AvailableCarsPage,
+                path: '/cars',
+                Component: CarsPage,
             },
             {
                 path: '/car-details/:id',
