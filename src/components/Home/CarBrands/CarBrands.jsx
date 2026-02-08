@@ -1,6 +1,6 @@
 import React from 'react';
 import { SwiperSlide } from "swiper/react";
-import useGetBrands from '../../../hooks/useGetBrands';
+import useGetBrands from '../../../hooks/queries/Brand/useGetBrands';
 import LoadingSpinner from '../../LoadingSpinner';
 import Swiper1 from '../../Swiper/Swiper1';
 import Card1 from '../../Cards/Card1';
@@ -32,7 +32,7 @@ const CarBrands = () => {
             <Swiper1>
                 {brands.map(brand => (
                     <SwiperSlide key={brand._id}>
-                        <Card1 image={brand.photoUrl} title={brand.name} where={`/categories/brands-details/${brand.name}`} imageP='p-10'></Card1>
+                        <Card1 image={brand.photoUrl} title={brand.name} where={`/categories/brands-details/${brand.name}`} imageClass='m-20' hideOverlay bg></Card1>
                     </SwiperSlide>
                 ))}
             </Swiper1>
