@@ -1,8 +1,8 @@
 import React from 'react';
 import Swiper2 from '../../Swiper/Swiper2';
-import useGetBrands from '../../../hooks/useGetBrands';
 import LoadingSpinner from '../../LoadingSpinner';
 import { SwiperSlide } from 'swiper/react';
+import useGetBrands from '../../../hooks/queries/Brand/useGetBrands';
 
 const FBrandsSlider = () => {
 
@@ -15,6 +15,8 @@ const FBrandsSlider = () => {
     if (isError) {
         return <h2 className="text-red-500 text-center my-5">Error: {error.message}</h2>
     }
+
+    console.log(brands)
 
     return (
         <div>
