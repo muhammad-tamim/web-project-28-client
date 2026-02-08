@@ -1,14 +1,20 @@
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router";
 
-const Card1 = ({ image, title, where, imageP }) => {
+const Card1 = ({ image, title, where, imageClass, hideOverlay = false, bg = false }) => {
     return (
-        <div className="hero relative w-full h-[420px] rounded-3xl overflow-hidden">
-            <div className={`${imageP}`}>
-                <img src={image} alt={title} className="w-full h-full object-contain md:object-cover object-center" />
-            </div>
+        <div className={`hero relative w-full h-[350px] rounded-3xl overflow-hidden ${bg ? 'bg-base-300' : ''}`}>
+            {
+                imageClass
+                    ?
+                    <div className={`${imageClass}`}>
+                        <img src={image} alt={title} className="w-full h-50 rounded-3xl object-fill" />
+                    </div>
+                    :
+                    <img src={image} alt={title} className="w-full h-full rounded-3xl object-fill" />
+            }
 
-            <div className="hero-overlay rounded-3xl" />
+            {!hideOverlay && <div className="hero-overlay rounded-3xl" />}
 
             <p className="absolute top-4 left-4 text-primary text-xl font-medium">
                 {title}
