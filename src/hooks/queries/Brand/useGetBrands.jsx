@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { brandsApi } from '../api/brands.api';
+import { brandsApi } from '../../../api/brands.api';
 
 const useGetBrands = () => {
     return useQuery({
