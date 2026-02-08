@@ -9,7 +9,7 @@ const Swiper1 = ({ children }) => {
         <Swiper
             spaceBetween={20}
             loop
-            autoplay={{ delay: 1500, disableOnInteraction: false }}
+            autoplay={{ delay: 1500, disableOnInteraction: false, pauseOnMouseEnter: true }}
             pagination={{ dynamicBullets: true }}
             modules={[Autoplay, Pagination]}
             breakpoints={{
