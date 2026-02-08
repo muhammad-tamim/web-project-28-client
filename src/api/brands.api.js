@@ -1,0 +1,18 @@
+import { baseApi } from "./axios";
+
+export const brandsApi = {
+    getAll: async () => {
+        const res = await baseApi.get("/brands");
+        return res.data.result;
+    },
+
+    create: async (data) => {
+        const res = await baseApi.post("/brands", data);
+        return res.data;
+    },
+
+    update: async (id, data) => {
+        const res = await baseApi.patch(`/brands/${id}`, data);
+        return res.data;
+    },
+};
