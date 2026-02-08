@@ -7,7 +7,7 @@ const useCreateBrand = () => {
     return useMutation({
         mutationFn: brandsApi.create,
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["brands"] });
+            queryClient.invalidateQueries(["brands"]);
         }
     })
 };
