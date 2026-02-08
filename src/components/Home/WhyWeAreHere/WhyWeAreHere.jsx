@@ -6,14 +6,14 @@ import { IoIosPeople } from 'react-icons/io';
 import { SwiperSlide } from "swiper/react";
 import achievementsVideo from '../../../assets/videos/achievements.mp4'
 import Swiper1 from '../../Swiper/Swiper1';
-import useGetTypes from '../../../hooks/queries/types/useGetTypes';
 import LoadingSpinner from '../../LoadingSpinner';
 import Card1 from '../../Cards/Card1';
+import useGetCategories from '../../../hooks/queries/Categories/useGetCategories';
 
 const WhyWeAreHere = () => {
 
 
-    const { data: types, isLoading, isError, error } = useGetTypes()
+    const { data: categories, isLoading, isError, error } = useGetCategories()
 
     if (isLoading) {
         return <LoadingSpinner marginY={'20'}></LoadingSpinner>;
@@ -74,7 +74,7 @@ const WhyWeAreHere = () => {
                     </div>
 
                     <Swiper1>
-                        {types.map(type => (
+                        {categories.map(type => (
                             <SwiperSlide key={type._id}>
                                 <Card1 image={type.photoUrl} title={type.name} where={`/categories/types-details/${type.name}`}></Card1>
                             </SwiperSlide>

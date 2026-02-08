@@ -1,9 +1,9 @@
 import React from 'react';
 import { SwiperSlide } from "swiper/react";
-import useGetBrands from '../../../hooks/queries/Brand/useGetBrands';
 import LoadingSpinner from '../../LoadingSpinner';
 import Swiper1 from '../../Swiper/Swiper1';
 import Card1 from '../../Cards/Card1';
+import useGetBrands from '../../../hooks/queries/Brands/useGetBrands';
 
 
 const CarBrands = () => {
