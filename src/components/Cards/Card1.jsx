@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const Card1 = ({ image, title, where, imageClass, hideOverlay = false, bg = false }) => {
     return (
-        <div className={`hero relative w-full h-[350px] rounded-3xl overflow-hidden ${bg ? 'bg-base-300' : ''}`}>
+        <div className={`hero relative w-full h-[400px] rounded-3xl overflow-hidden ${bg ? 'bg-base-300' : ''}`}>
             {
                 imageClass
                     ?
