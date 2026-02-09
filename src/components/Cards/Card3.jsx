@@ -17,7 +17,7 @@ const Card3 = ({ car }) => {
                 <p className='text-sm text-secondary'>{shortDescription}</p>
                 <div className="card-actions justify-end">
                     <p><span className='text-primary text-2xl font-bold'>${dailyRentalPrice}</span><sub className='text-gray-500'> / day </sub></p>
-                    <button className="right-1 btn btn-lg btn-circle btn-primary"><MdArrowOutward /></button>
+                    <Link to={`/car-details/${_id}`}><button className="right-1 btn btn-lg btn-circle btn-primary"><MdArrowOutward /></button></Link>
                 </div>
             </div>
         </div>
