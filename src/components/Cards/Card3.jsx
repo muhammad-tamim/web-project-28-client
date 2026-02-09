@@ -3,7 +3,7 @@ import { MdArrowOutward } from 'react-icons/md';
 import { Link } from 'react-router';
 
 const Card3 = ({ car }) => {
-    const { _id, photoUrl, description, dailyRentalPrice, name, year } = car;
+    const { _id, photoUrl, description, dailyRentalPrice, name } = car;
     const shortDescription = description.length > 70 ? description.slice(0, 100) + '...' : description
 
     return (

@@ -1,162 +1,111 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { use, useState } from 'react';
+import PagesBanner from '../components/layouts/PagesBanner';
+import MaxWidth from '../components/MaxWidth';
+import Card3 from '../components/Cards/Card3';
+import TableRow from '../components/TableRow';
+import Pagination from '../components/Pagination';
+import useGetCarsByEmail from '../hooks/queries/cars/useGetCarsByEmail';
 import { AuthContext } from '../contexts/AuthContext';
 import LoadingSpinner from '../components/LoadingSpinner';
-import toast from 'react-hot-toast';
-import Swal from 'sweetalert2';
-import TableRow2 from '../components/TableRow2';
-import Pagination from '../components/Pagination';
 
 const MyCars = () => {
-    const { user } = use(AuthContext);
-    const [loading, setLoading] = useState(true);
-    const [myCars, setMyCars] = useState([]);
-    const [selectedCar, setSelectedCar] = useState(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const { user } = use(AuthContext)
+    const [page, setPage] = useState(1)
+    const [search, setSearch] = useState('');
+    const [sortBy, setSortBy] = useState('newest');
+    const [isGridView, setIsGridView] = useState(true);
 
 
-    useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/cars`)
-            .then((res) => res.json())
-            .then((data) => {
-                setMyCars(data);
-                setLoading(false);
-            });
-    }, []);
+    const { data, isLoading, error, isError } = useGetCarsByEmail(user?.email, page);
 
+    const { result: cars, meta } = data || {};
 
-    if (loading) return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>
+    if (isLoading) {
+        return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
+    }
 
+    if (isError) {
+        return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>
+    }
 
-    const handleSort = (sortType) => {
-        const sorted = [...myCars];
+    // searching
+    const filteredCars = cars.filter((car) => car.name.toLowerCase().includes(search.toLowerCase()))
 
-        if (sortType === "newest") {
-            sorted.sort((a, b) => new Date(b.postedDate) - new Date(a.postedDate));
-        } else if (sortType === "oldest") {
-            sorted.sort((a, b) => new Date(a.postedDate) - new Date(b.postedDate));
-        } else if (sortType === "low-price") {
-            sorted.sort((a, b) => parseFloat(a.rentalPrice) - parseFloat(b.rentalPrice));
-        } else if (sortType === "high-price") {
-            sorted.sort((a, b) => parseFloat(b.rentalPrice) - parseFloat(a.rentalPrice));
+    // sorting
+    const sortedCars = [...filteredCars].sort((a, b) => {
+        if (sortBy === 'newest') {
+            return new Date(b.createdAt) - new Date(a.createdAt)
         }
-
-        setMyCars(sorted);
-    };
-
-    // update my cars data and send them in the server
-    const handleUpdate = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        const updatedCar = Object.fromEntries(formData.entries());
-
-        fetch(`${import.meta.env.VITE_API_URL}/myCars/${selectedCar._id}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(updatedCar)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    setMyCars(prev => prev.map(car => car._id === selectedCar._id ? { ...car, ...updatedCar } : car));
-                    setIsModalOpen(false)
-                    toast.success('Update car data Successfully');
-                }
-            });
-    };
-
-    // delete my cars data and send them in the server
-    const handleDelete = (id) => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#00BF83',
-            cancelButtonColor: '#EB5971',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`${import.meta.env.VITE_API_URL}/myCars/${id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCarCount > 0) {
-                            setMyCars(prev => prev.filter(car => car._id !== id));
-                            toast.success("Your car data has been deleted.")
-                            Swal.fire({
-                                title: 'Deleted!',
-                                text: 'Your car data has been deleted.',
-                                icon: 'success'
-                            });
-                        }
-                    });
-            }
-        });
-    };
+        if (sortBy === 'oldest') {
+            return new Date(a.createdAt) - new Date(b.createdAt)
+        }
+        if (sortBy === 'lowest') {
+            return a.dailyRentalPrice - b.dailyRentalPrice
+        }
+        if (sortBy === 'highest') {
+            return b.dailyRentalPrice - a.dailyRentalPrice
+        }
+        return 0
+    })
 
     return (
-        <div className='px-4 lg:px-10 my-20 space-y-20'>
-            <h1 className='text-center text-4xl font-bold mb-10'>My Cars</h1>
+        <div>
+            <PagesBanner pageName={'rentax'} title={'My Cars'}></PagesBanner>
+            <MaxWidth>
+                <div className='space-y-20 my-20'>
+                    <div className='flex flex-col lg:flex-row justify-between items-center gap-4 mb-8'>
+                        <input type='text' value={search} placeholder='Search...' className='input w-full lg:max-w-sm input-primary focus:outline-none bg-base-300 '
+                            onChange={(e) => setSearch(e.target.value)} />
 
-            <div className="flex justify-center md:justify-end mb-6">
-                <select
-                    onChange={(e) => handleSort(e.target.value)}
-                    className="select select-bordered w-full max-w-xs"
-                >
-                    <option value="">Sort by</option>
-                    <option value="newest">Date Added (Newest First)</option>
-                    <option value="oldest">Date Added (Oldest First)</option>
-                    <option value="low-price">Price (Lowest First)</option>
-                    <option value="high-price">Price (Highest First)</option>
-                </select>
-            </div>
+                        <div className='flex gap-4'>
+                            <select className='select select-primary focus:outline-none bg-base-300'
+                                onChange={(e) => setSortBy(e.target.value)} >
+                                <option value='newest'>Newest First</option>
+                                <option value='oldest'>Oldest First</option>
+                                <option value='lowest'>Price: Low to High</option>
+                                <option value='highest'>Price: High to Low</option>
+                            </select>
 
-            {/* show all of my cars in table format */}
-            {myCars.length === 0 ? (
-                <div className="text-center">
-                    <h2 className="text-2xl font-semibold mb-4">
-                        Oops! No cars found.
-                    </h2>
-                    <p className="mb-6">
-                        It looks like you haven’t added any cars yet. Click the button below to add cars.
-                    </p>
-                    <Link to="/addCar" className="btn btn-primary">
-                        Add Car
-                    </Link>
-                </div>
-            ) : (
-                <>
-                    <p className="text-sm  italic text-center mb-2 lg:hidden">
-                        Scroll left/right to view the full table:
-                    </p>
-
-                    <div className='overflow-x-auto w-full rounded-md border border-gray-200'>
-                        <table className='table w-full'>
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Model</th>
-                                    <th>Daily Price</th>
-                                    <th>Booking Count</th>
-                                    <th>Availability</th>
-                                    <th>Date Added</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {myCars?.map(car => <TableRow2 key={car._id} car={car} setSelectedCar={setSelectedCar} selectedCar={selectedCar} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} handleDelete={handleDelete} handleUpdate={handleUpdate}></TableRow2>)}
-                            </tbody>
-                        </table>
+                            <button
+                                onClick={() => setIsGridView(!isGridView)}
+                                className='btn btn-outline btn-primary'
+                            >
+                                {isGridView ? 'List View' : 'Grid View'}
+                            </button>
+                        </div>
                     </div>
-                </>
-            )}
 
-            <div className='flex justify-center'>
-                <Pagination></Pagination>
-            </div>
 
+
+                    {isGridView ? (
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+                            {sortedCars.map((car) => <Card3 car={car} key={car._id}></Card3>)}
+                        </div>
+                    ) : (
+                        <div className="overflow-x-auto w-full rounded-md border border-gray-200">
+                            <table className="table-auto w-full ">
+                                <thead className="">
+                                    <tr>
+                                        <th className="p-3 text-left">Image</th>
+                                        <th className="p-3 text-left">Model</th>
+                                        <th className="p-3 text-left">Description</th>
+                                        <th className="p-3 text-left">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {sortedCars.map((car) => (
+                                        <TableRow key={car._id} car={car} />
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    )}
+
+                    <div className='flex justify-center'>
+                        <Pagination page={page} totalPages={meta.totalPages} onPageChange={setPage}></Pagination>
+                    </div>
+                </div>
+            </MaxWidth>
         </div>
     );
 };
