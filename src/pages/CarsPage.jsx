@@ -27,7 +27,7 @@ const CarsPage = () => {
     }
 
     // searching
-    const filteredCars = cars.filter((car) => car.model.toLowerCase().includes(search.toLowerCase()))
+    const filteredCars = cars.filter((car) => car.name.toLowerCase().includes(search.toLowerCase()))
 
     // sorting
     const sortedCars = [...filteredCars].sort((a, b) => {
@@ -55,7 +55,7 @@ const CarsPage = () => {
             <MaxWidth>
                 <div className='space-y-20 my-20'>
                     <div className='flex flex-col lg:flex-row justify-between items-center gap-4 mb-8'>
-                        <input type='text' placeholder='Search...' className='input w-full lg:max-w-sm input-primary focus:outline-none bg-base-300 '
+                        <input type='text' value={search} placeholder='Search...' className='input w-full lg:max-w-sm input-primary focus:outline-none bg-base-300 '
                             onChange={(e) => setSearch(e.target.value)} />
 
                         <div className='flex gap-4'>
