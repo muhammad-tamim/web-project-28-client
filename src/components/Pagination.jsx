@@ -23,8 +23,10 @@ const Pagination = ({ page, totalPages, onPageChange }) => {
                 onClick={handlePrevious}>
                 <MdKeyboardArrowLeft />
             </li>
-            {pageNumbers.map(num => <li className={`btn btn-circle btn-lg text-2xl ${num === page ? 'btn-primary' : 'btn-outline btn-primary'}`}
-                onClick={() => onPageChange(num)}>{num}</li>)}
+            {
+                pageNumbers.map(num => <li key={num} className={`btn btn-circle btn-lg text-2xl ${num === page ? 'btn-primary' : 'btn-outline btn-primary'}`}
+                    onClick={() => onPageChange(num)}>{num}</li>)
+            }
             <li className={`btn btn-circle btn-lg btn-primary text-2xl ${page === totalPages ? 'btn-disabled opacity-50 cursor-not-allowed' : ''}`}
                 onClick={handleNext}>
                 <MdKeyboardArrowRight />
