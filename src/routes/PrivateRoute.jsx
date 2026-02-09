@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
     const { user, loading } = use(AuthContext)
 
     if (loading) {
-        return <LoadingSpinner></LoadingSpinner>
+        return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>
     }
 
     if (!user) {
