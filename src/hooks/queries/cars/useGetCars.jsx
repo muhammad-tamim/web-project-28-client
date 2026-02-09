@@ -2,11 +2,11 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { carsApi } from '../../../api/cars.api';
 
-const useGetCars = () => {
+const useGetCars = (page) => {
     return useQuery({
-        queryKey: ['cars'],
-        queryFn: carsApi.findAll
+        queryKey: ['cars', page],
+        queryFn: () => carsApi.findAll(page),
+        keepPreviousData: true
     })
-};
-
+}
 export default useGetCars;

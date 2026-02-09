@@ -7,9 +7,11 @@ export const carsApi = {
         return res.data.result;
     },
 
-    findAll: async () => {
-        const res = await baseApi.get("/cars");
-        return res.data.result;
+    findAll: async (page = 1, limit = 9) => {
+        const res = await baseApi.get("/cars", {
+            params: { page, limit }
+        });
+        return res.data;
     },
 
     findRecent: async () => {

@@ -1,6 +1,8 @@
 import LoadingSpinner from '../LoadingSpinner';
 import Card3 from '../Cards/Card3';
 import useGetRecentCars from '../../hooks/queries/cars/useGetRecentCars';
+import { Link } from 'react-router';
+import { MdOutlineArrowOutward } from 'react-icons/md';
 
 const RecentVehicles = () => {
 
@@ -15,7 +17,7 @@ const RecentVehicles = () => {
     }
 
     return (
-        <div>
+        <div >
             <div className='flex justify-center mb-10'>
                 <div className='border h-14 border-primary w-0'></div>
             </div>
@@ -29,6 +31,10 @@ const RecentVehicles = () => {
 
                 {cars.map((car) => <Card3 car={car} key={car._id}></Card3>)}
 
+            </div>
+
+            <div className='mt-10 flex justify-center'>
+                <Link to={'/cars'}><button className='btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1' > View All<span><MdOutlineArrowOutward /></span></button></Link>
             </div>
         </div>
     );

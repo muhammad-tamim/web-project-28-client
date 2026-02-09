@@ -8,12 +8,15 @@ import MaxWidth from '../components/MaxWidth';
 import Card3 from '../components/Cards/Card3';
 
 const CarsPage = () => {
+    const [page, setPage] = useState(1)
     const [search, setSearch] = useState('');
     const [sortBy, setSortBy] = useState('newest');
     const [isGridView, setIsGridView] = useState(true);
 
 
-    const { data: cars, isLoading, error, isError } = useGetCars();
+    const { data, isLoading, error, isError } = useGetCars(page);
+
+    const { result: cars, meta } = data || {};
 
     if (isLoading) {
         return <LoadingSpinner marginY={'20'}></LoadingSpinner>;
@@ -52,11 +55,11 @@ const CarsPage = () => {
             <MaxWidth>
                 <div className='space-y-20 my-20'>
                     <div className='flex flex-col lg:flex-row justify-between items-center gap-4 mb-8'>
-                        <input type='text' placeholder='Search...' className='input input-bordered w-full lg:max-w-sm border-gray-200 '
+                        <input type='text' placeholder='Search...' className='input w-full lg:max-w-sm input-primary focus:outline-none bg-base-300 '
                             onChange={(e) => setSearch(e.target.value)} />
 
                         <div className='flex gap-4'>
-                            <select className='select select-bordered border-gray-200'
+                            <select className='select select-primary focus:outline-none bg-base-300'
                                 onChange={(e) => setSortBy(e.target.value)} >
                                 <option value='newest'>Newest First</option>
                                 <option value='oldest'>Oldest First</option>
@@ -100,7 +103,7 @@ const CarsPage = () => {
                     )}
 
                     <div className='flex justify-center'>
-                        <Pagination></Pagination>
+                        <Pagination page={page} totalPages={meta.totalPages} onPageChange={setPage}></Pagination>
                     </div>
                 </div>
             </MaxWidth>
