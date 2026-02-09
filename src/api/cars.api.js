@@ -14,9 +14,11 @@ export const carsApi = {
         return res.data;
     },
 
-    findRecent: async () => {
-        const res = await baseApi.get("/cars/recent");
-        return res.data.result;
+    findAllByBrand: async (brand, page, limit = 9) => {
+        const res = await baseApi.get(`cars/brands/${brand}`, {
+            params: { page, limit }
+        })
+        return res.data
     },
 
     findAllByEmail: async (email, page, limit = 9) => {
@@ -25,6 +27,13 @@ export const carsApi = {
         })
         return res.data
     },
+
+    findRecent: async () => {
+        const res = await baseApi.get("/cars/recent");
+        return res.data.result;
+    },
+
+
 
     findOne: async (id) => {
         const res = await baseApi.get(`/cars/${id}`)
