@@ -3,7 +3,7 @@ import { MdArrowOutward } from 'react-icons/md';
 import { Link } from 'react-router';
 
 const Card3 = ({ car }) => {
-    const { _id, photoUrl, description, dailyRentalPrice } = car;
+    const { _id, photoUrl, description, dailyRentalPrice, name, year } = car;
     const shortDescription = description.length > 70 ? description.slice(0, 100) + '...' : description
 
     return (
@@ -13,7 +13,7 @@ const Card3 = ({ car }) => {
                     src={photoUrl} className='w-full h-52 object-cover' alt="Shoes" />
             </figure>
             <div className="card-body space-y-3">
-                <h2 className="card-title font-bold text-2xl">Card Title 2025</h2>
+                <h2 className="card-title font-bold text-2xl">{name}</h2>
                 <p className='text-sm text-secondary'>{shortDescription}</p>
                 <div className="card-actions justify-end">
                     <p><span className='text-primary text-2xl font-bold'>${dailyRentalPrice}</span><sub className='text-gray-500'> / day </sub></p>
