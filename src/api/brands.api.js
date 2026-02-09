@@ -8,11 +8,11 @@ export const brandsApi = {
 
     create: async (data) => {
         const res = await baseApi.post("/brands", data);
-        return res.data;
+        return res.data.result;
     },
 
     update: async (id, data) => {
         const res = await baseApi.patch(`/brands/${id}`, data);
-        return res.data;
+        return res.data.result;
     },
 };
