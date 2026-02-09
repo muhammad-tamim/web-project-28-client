@@ -1,9 +1,51 @@
 import React from 'react';
+import PagesBanner from '../components/layouts/PagesBanner';
+import MaxWidth from '../components/MaxWidth';
+import { Link, useParams } from 'react-router';
+import useGetCar from '../hooks/queries/cars/useGetCar';
+import LoadingSpinner from '../components/LoadingSpinner';
+import BlogCard from '../components/Blog/BlogCard';
+import { MdOutlineArrowOutward } from 'react-icons/md';
+import BookingCard from '../components/CarDetails/BookingCard';
+import DetailsCard from '../components/CarDetails/detailsCard';
+import CarGallery from '../components/CarDetails/CarGallery';
+import Accordion from '../components/CarDetails/Accordion';
+import WhyBookCard from '../components/CarDetails/WhyBookCard';
 
 const CarDetailsPage = () => {
+    const { id } = useParams()
+
+    const { data: car, isLoading, error, isError } = useGetCar(id);
+
+    if (isLoading) {
+        return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
+    }
+
+    if (isError) {
+        return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>
+    }
+
     return (
         <div>
-            Car Details
+            <PagesBanner pageName={'renax'} title={'Car Details'}></PagesBanner>
+            <MaxWidth>
+                <div className='space-y-20 my-20'>
+                    <div className='md:grid grid-cols-12 gap-5 lg:gap-10 space-y-10 md:space-y-0 flex flex-col-reverse'>
+
+                        <div className='col-span-8 space-y-10'>
+                            <DetailsCard car={car}></DetailsCard>
+                            <CarGallery></CarGallery>
+                            <Accordion></Accordion>
+                        </div>
+
+                        <div className='col-span-4 space-y-10'>
+                            <BookingCard car={car}></BookingCard>
+                            <WhyBookCard></WhyBookCard>
+                        </div>
+
+                    </div>
+                </div>
+            </MaxWidth>
         </div>
     );
 };
