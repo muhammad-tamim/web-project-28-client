@@ -12,6 +12,11 @@ export const carsApi = {
         return res.data.result;
     },
 
+    findRecent: async () => {
+        const res = await baseApi.get("/cars/recent");
+        return res.data.result;
+    },
+
     findAllByEmail: async (email) => {
         const res = await baseApi.get(`/cars/owner/${email}`)
         return res.data.result
