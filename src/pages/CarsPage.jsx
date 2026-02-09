@@ -19,7 +19,7 @@ const CarsPage = () => {
     const { result: cars, meta } = data || {};
 
     if (isLoading) {
-        return <LoadingSpinner marginY={'20'}></LoadingSpinner>;
+        return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
     }
 
     if (isError) {
