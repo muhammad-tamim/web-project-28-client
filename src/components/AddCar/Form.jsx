@@ -15,14 +15,6 @@ const Form = () => {
     const { mutate } = useCreateCars()
 
 
-    if (brandsLoading || categoriesLoading) {
-        return <LoadingSpinner minHScreen="min-h-screen" />
-    }
-
-    if (brandsIsError || categoriesIsError) {
-        return <h2 className="text-red-500 text-center my-20">Error: {brandsError.message || categoriesError.message}</h2>
-    }
-
     const handleFormSubmit = e => {
         e.preventDefault()
         const form = e.target;
@@ -79,7 +71,9 @@ const Form = () => {
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Brand</label>
                     {brandsIsError && <h2 className="text-red-500">Error: {brandsError.message}</h2>}
-                    {!brandsLoading &&
+                    {brandsLoading ?
+                        <span className="loading loading-spinner loading-xs"></span>
+                        :
                         <select name="brand" defaultValue="Pick a Brand" className="select w-full select-primary focus:outline-none bg-base-300">
                             <option disabled={true}>Pick a Brand</option>
                             {brands.map(brand =>
@@ -91,7 +85,9 @@ const Form = () => {
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Category</label>
                     {categoriesIsError && <h2 className="text-red-500">Error: {categoriesError.message}</h2>}
-                    {!categoriesLoading &&
+                    {categoriesLoading ?
+                        <span className="loading loading-spinner loading-xs"></span>
+                        :
                         <select name='category' defaultValue="Pick a Category" className="select w-full select-primary focus:outline-none bg-base-300">
                             <option disabled={true}>Pick a Category</option>
                             {categories.map(category =>
