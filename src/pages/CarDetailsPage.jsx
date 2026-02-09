@@ -11,6 +11,7 @@ import DetailsCard from '../components/CarDetails/detailsCard';
 import CarGallery from '../components/CarDetails/CarGallery';
 import Accordion from '../components/CarDetails/Accordion';
 import WhyBookCard from '../components/CarDetails/WhyBookCard';
+import Swal from 'sweetalert2';
 
 const CarDetailsPage = () => {
     const { id } = useParams()
@@ -23,6 +24,38 @@ const CarDetailsPage = () => {
 
     if (isError) {
         return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>
+    }
+
+    const handleBookings = () => {
+        Swal.fire({
+            title: "Are you sure?",
+            icon: "warning",
+            showCancelButton: true,
+
+            buttonsStyling: false,
+
+            confirmButtonText: "Yes, Book it",
+            cancelButtonText: "Cancel",
+
+            customClass: {
+                confirmButton: "btn btn-primary mx-5 btn-lg rounded-full px-10",
+                cancelButton: "btn btn-outline btn-primary btn-lg rounded-full px-10",
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Booked!",
+                    text: "Your car has been Booked successfully.",
+                    icon: "success",
+
+                    buttonsStyling: false,
+
+                    customClass: {
+                        confirmButton: "btn btn-primary btn-lg rounded-full px-10",
+                    },
+                });
+            }
+        });
     }
 
     return (
@@ -39,7 +72,7 @@ const CarDetailsPage = () => {
                         </div>
 
                         <div className='col-span-4 space-y-10'>
-                            <BookingCard car={car}></BookingCard>
+                            <BookingCard handleBookings={handleBookings} car={car}></BookingCard>
                             <WhyBookCard></WhyBookCard>
                         </div>
 
