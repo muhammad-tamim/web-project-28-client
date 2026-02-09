@@ -7,7 +7,7 @@ export const carsApi = {
         return res.data.result;
     },
 
-    findAll: async (page = 1, limit = 9) => {
+    findAll: async (page, limit) => {
         const res = await baseApi.get("/cars", {
             params: { page, limit }
         });
@@ -19,9 +19,11 @@ export const carsApi = {
         return res.data.result;
     },
 
-    findAllByEmail: async (email) => {
-        const res = await baseApi.get(`/cars/owner/${email}`)
-        return res.data.result
+    findAllByEmail: async (email, page, limit = 9) => {
+        const res = await baseApi.get(`/cars/owner/${email}`, {
+            params: { page, limit }
+        })
+        return res.data
     },
 
     findOne: async (id) => {
