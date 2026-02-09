@@ -21,7 +21,7 @@ const BrandsPage = () => {
             <MaxWidth>
                 <div className='space-y-20 my-20'>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                        {brands.map(brand => <Card1 key={brand._id} image={brand.photoUrl} title={brand.name} where={`/categories/brands-details/${brand.name}`} imageClass='m-20' hideOverlay bg></Card1>
+                        {brands.map(brand => <Card1 key={brand._id} image={brand.photoUrl} title={brand.name} where={`/brands-details/${brand.name}`} imageClass='m-20' hideOverlay bg></Card1>
                         )}
                     </div>
                 </div>
