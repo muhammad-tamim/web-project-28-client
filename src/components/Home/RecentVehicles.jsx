@@ -1,25 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import Card from '../Card';
 import LoadingSpinner from '../LoadingSpinner';
+import Card3 from '../Cards/Card3';
+import useGetRecentCars from '../../hooks/queries/cars/useGetRecentCars';
 
-const RecentListing = () => {
+const RecentVehicles = () => {
 
-    const [cars, setCars] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { data: cars, isLoading, error, isError } = useGetRecentCars();
 
-    useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/cars`)
-            .then((res) => res.json())
-            .then((data) => {
-                setCars(data);
-                setLoading(false);
-            });
-    }, []);
+    if (isLoading) {
+        return <LoadingSpinner minHScreen={'min-h-scree'}></LoadingSpinner>;
+    }
 
-    if (loading) return <LoadingSpinner marginY={'my-20'}></LoadingSpinner>
+    if (isError) {
+        return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>
+    }
 
     return (
-        <div className=''>
+        <div>
             <div className='flex justify-center mb-10'>
                 <div className='border h-14 border-primary w-0'></div>
             </div>
@@ -31,11 +27,11 @@ const RecentListing = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
 
-                {cars.map((car) => <Card car={car} key={car._id}></Card>)}
+                {cars.map((car) => <Card3 car={car} key={car._id}></Card3>)}
 
             </div>
         </div>
     );
 };
 
-export default RecentListing;
+export default RecentVehicles;

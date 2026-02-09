@@ -1,24 +1,31 @@
-import React from 'react';
-import { MdArrowOutward } from 'react-icons/md';
-import { Link } from 'react-router';
+import { MdArrowOutward } from "react-icons/md";
+import { Link } from "react-router";
 
-const Card = ({ car }) => {
-    const { _id, imageUrl, carModel, description } = car;
-    const shortDescription = description.length > 70 ? description.slice(0, 100) + '...' : description
-
+const Card = ({ image, title, where, imageClass, hideOverlay = false, bg = false }) => {
     return (
-        <div className="card bg-base-300 shadow-sm">
-            <figure>
-                <img
-                    src={imageUrl} className='w-full h-52 object-cover' alt="Shoes" />
-            </figure>
-            <div className="card-body space-y-3">
-                <h2 className="card-title font-bold text-2xl">Card Title 2025</h2>
-                <p className='text-sm text-secondary'>{shortDescription}</p>
-                <div className="card-actions justify-end">
-                    <p><span className='text-primary text-2xl font-bold'>$750</span><sub className='text-gray-500'> / day </sub></p>
-                    <button className="right-1 btn btn-lg btn-circle btn-primary"><MdArrowOutward /></button>
-                </div>
+        <div className={`hero relative w-full h-[400px] rounded-3xl overflow-hidden ${bg ? 'bg-base-300' : ''}`}>
+            {
+                imageClass
+                    ?
+                    <div className={`${imageClass}`}>
+                        <img src={image} alt={title} className="w-full h-50 rounded-3xl object-fill" />
+                    </div>
+                    :
+                    <img src={image} alt={title} className="w-full h-full rounded-3xl object-fill" />
+            }
+
+            {!hideOverlay && <div className="hero-overlay rounded-3xl" />}
+
+            <p className="absolute top-4 left-4 text-primary text-xl font-medium">
+                {title}
+            </p>
+
+            <div className="absolute bottom-4 right-4">
+                <Link to={`${where}`}>
+                    <button className="btn btn-lg btn-circle btn-primary">
+                        <MdArrowOutward />
+                    </button>
+                </Link>
             </div>
         </div>
     );
