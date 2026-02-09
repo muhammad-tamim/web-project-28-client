@@ -1,10 +1,10 @@
 import React, { use } from 'react';
-import { MdArrowOutward } from 'react-icons/md';
 import useGetBrands from '../../hooks/queries/Brands/useGetBrands';
 import useGetCategories from '../../hooks/queries/Categories/useGetCategories';
 import LoadingSpinner from '../LoadingSpinner';
 import { AuthContext } from '../../contexts/AuthContext';
 import useCreateCars from '../../hooks/queries/cars/useCreateCars';
+import toast from 'react-hot-toast';
 
 const Form = () => {
 
@@ -12,7 +12,7 @@ const Form = () => {
 
     const { data: brands, isLoading: brandsLoading, isError: brandsIsError, error: brandsError } = useGetBrands()
     const { data: categories, isLoading: categoriesLoading, isError: categoriesIsError, error: categoriesError } = useGetCategories()
-    const { mutate: createCar } = useCreateCars()
+    const { mutate } = useCreateCars()
 
 
     if (brandsLoading || categoriesLoading) {
@@ -43,13 +43,13 @@ const Form = () => {
             email: user.email,
         };
 
-        createCar(payload, {
+        mutate(payload, {
             onSuccess: () => {
                 form.reset()
-                alert('Car added successfully 🚗')
+                toast.success('Car added successfully')
             },
             onError: (err) => {
-                alert(err.response?.data?.message || 'Failed to add car')
+                toast.error(err.response?.data?.message || 'Failed to add car')
             }
         })
     }
@@ -79,9 +79,7 @@ const Form = () => {
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Brand</label>
                     {brandsIsError && <h2 className="text-red-500">Error: {brandsError.message}</h2>}
-                    {brandsLoading ?
-                        <LoadingSpinner size={5}></LoadingSpinner>
-                        :
+                    {!brandsLoading &&
                         <select name="brand" defaultValue="Pick a Brand" className="select w-full select-primary focus:outline-none bg-base-300">
                             <option disabled={true}>Pick a Brand</option>
                             {brands.map(brand =>
@@ -93,9 +91,7 @@ const Form = () => {
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Category</label>
                     {categoriesIsError && <h2 className="text-red-500">Error: {categoriesError.message}</h2>}
-                    {categoriesLoading ?
-                        <LoadingSpinner size={5}></LoadingSpinner>
-                        :
+                    {!categoriesLoading &&
                         <select name='category' defaultValue="Pick a Category" className="select w-full select-primary focus:outline-none bg-base-300">
                             <option disabled={true}>Pick a Category</option>
                             {categories.map(category =>
@@ -109,12 +105,12 @@ const Form = () => {
                     <input name='registrationNumber' type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
                 </div>
                 <div className='space-y-2 text-secondary'>
-                    <label className="text-sm block text-secondary font-medium">Daily Rental Price</label>
-                    <input name="dailyRentalPrice" type="number" className='input w-full input-primary focus:outline-none bg-base-300' placeholder='$' />
+                    <label className="text-sm block text-secondary font-medium">Daily Rental Price($)</label>
+                    <input name="dailyRentalPrice" type="number" className='input w-full input-primary focus:outline-none bg-base-300' />
                 </div>
                 <div className='space-y-2 col-span-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Features</label>
-                    <textarea name="features" className='textarea w-full input-primary focus:outline-none bg-base-300' placeholder='comma separated'></textarea>
+                    <textarea name="features" className='textarea w-full input-primary focus:outline-none bg-base-300'></textarea>
                 </div>
                 <div className='space-y-2 col-span-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Description</label>
