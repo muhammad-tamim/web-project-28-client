@@ -106,7 +106,7 @@ const Form = () => {
                 </div>
                 <div className='space-y-2 col-span-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Features</label>
-                    <textarea name="features" className='textarea w-full input-primary focus:outline-none bg-base-300'></textarea>
+                    <textarea name="features" className='textarea w-full input-primary focus:outline-none bg-base-300' placeholder='comma separated (4 seat,  Air Condition, Safety Sense, Audio Multimedia etc)'></textarea>
                 </div>
                 <div className='space-y-2 col-span-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Description</label>
