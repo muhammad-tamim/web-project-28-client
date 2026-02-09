@@ -3,7 +3,7 @@ import heroVideo from '../../assets/videos/hero-video.mp4'
 
 const PagesBanner = ({ title, pageName = '' }) => {
     return (
-        <div className='relative min-h-[70vh] overflow-hidden' >
+        <div className='relative min-h-[40vh] overflow-hidden' >
 
             <video className="absolute inset-0 w-full h-full object-cover" src={heroVideo} autoPlay loop muted playsInline />
 
