@@ -3,24 +3,17 @@ import { Link } from 'react-router';
 
 const TableRow = ({ car }) => {
     return (
-        <tr
-            className="border border-gray-200"
-        >
-            <td className="p-2">
-                <img
-                    src={car.imageUrl}
-                    alt={car.carModel}
-                    className="w-24 h-16 object-cover rounded"
-                />
+        <tr className="text-secondary">
+            <td className="p-3">
+                <div className="w-24 h-16 overflow-hidden rounded-lg">
+                    <img src={car.photoUrl} alt={car.name} className="w-full h-full object-cover" />
+                </div>
             </td>
-            <td className="p-2 font-semibold">{car.carModel}</td>
-            <td className="p-2 truncate max-w-xs">
-                {car.description ? car.description.substring(0, 60) + '...' : 'No description'}
-            </td>
+            <td className="p-2">{car.name}</td>
+            <td className="p-2">{car.description.length >= 20 ? car.description.slice(0, 20) + '...' : car.description}</td>
+            <td className="p-2">${car.dailyRentalPrice}</td>
             <td className="p-2">
-                <Link to={`/car-details/${car._id}`} className="btn btn-sm btn-primary">
-                    Book Now
-                </Link>
+                <Link to={`/car-details/${car._id}`} className="btn btn-sm btn-primary">Book Now</Link>
             </td>
         </tr>
     );
