@@ -34,6 +34,8 @@ const Navbar = () => {
             })
     }
 
+    const bookingCount = localStorage.getItem("bookingsCount")
+
     return (
         <div className={`w-full fixed top-0 left-0 z-50  transition-all duration-500 ease-out ${scrolled ? 'bg-base-100 shadow-md' : 'bg-transparent'}`}>
             <MaxWidth>
@@ -76,7 +78,7 @@ const Navbar = () => {
                                 {user &&
                                     <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
-                                        <span className="badge bg-transparent border-none badge-xs font-bold indicator-item text-secondary">8</span>
+                                        <span className="badge bg-transparent border-none badge-xs font-bold indicator-item text-secondary">{bookingCount}</span>
                                     </NavLink>
                                 }
                             </li>
@@ -132,7 +134,7 @@ const Navbar = () => {
                                 {user &&
                                     <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
-                                        <span className="badge bg-transparent border-none badge-xs font-bold indicator-item">8</span>
+                                        <span className="badge bg-transparent border-none badge-xs font-bold indicator-item">{bookingCount}</span>
                                     </NavLink>
                                 }
                             </li>
@@ -211,7 +213,7 @@ const Navbar = () => {
                                 {user &&
                                     <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
-                                        <span className="badge bg-transparent border-none badge-xs font-bold indicator-item">8</span>
+                                        <span className="badge bg-transparent border-none badge-xs font-bold indicator-item">{bookingCount}</span>
                                     </NavLink>
                                 }
                             </li>
