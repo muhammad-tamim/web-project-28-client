@@ -80,23 +80,40 @@ const BrandsDetailsPage = () => {
                             {sortedCars.map((car) => <Card3 car={car} key={car._id}></Card3>)}
                         </div>
                     ) : (
-                        <div className="overflow-x-auto w-full rounded-md border border-gray-200">
-                            <table className="table-auto w-full ">
-                                <thead className="">
-                                    <tr>
-                                        <th className="p-3 text-left">Image</th>
-                                        <th className="p-3 text-left">Model</th>
-                                        <th className="p-3 text-left">Description</th>
-                                        <th className="p-3 text-left">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {sortedCars.map((car) => (
-                                        <TableRow key={car._id} car={car} />
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
+                        <>
+                            <p className="text-sm text-secondary italic text-center mb-2 lg:hidden">
+                                Scroll left/right to view the full table:
+                            </p>
+
+                            <div className="overflow-x-auto w-full rounded-xl">
+                                <div className="overflow-x-auto w-full rounded-xl">
+                                    <table className="table w-full bg-base-300">
+                                        <thead>
+                                            <tr>
+                                                <th className="p-3 text-left font-bold">Image</th>
+                                                <th className="p-3 text-left">Name</th>
+                                                <th className="p-3 text-left">Description</th>
+                                                <th className="p-3 text-left">Rental price</th>
+                                                <th className="p-3 text-left">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {sortedCars.length > 0 ? (
+                                                sortedCars.map((car) => (
+                                                    <TableRow key={car._id} car={car} />
+                                                ))
+                                            ) : (
+                                                <tr>
+                                                    <td colSpan={6} className="text-center py-8 text-gray-500">
+                                                        No bookings found
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </>
                     )}
 
                     <div className='flex justify-center'>
