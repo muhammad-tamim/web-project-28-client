@@ -57,10 +57,10 @@ export const carsApi = {
         return res.data.result
     },
 
-    search: async (brand, sort) => {
+    search: async (brand, category, sort, page, limit = 9) => {
         const res = await baseApi.get('/cars/search', {
-            params: { brand, sort },
+            params: { brand, category, sort, page, limit },
         })
-        return res.data.result
+        return res.data
     }
 };
