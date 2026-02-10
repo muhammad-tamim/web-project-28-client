@@ -21,6 +21,13 @@ export const carsApi = {
         return res.data
     },
 
+    findAllByCategory: async (category, page, limit = 9) => {
+        const res = await baseApi.get(`cars/categories/${category}`, {
+            params: { page, limit }
+        })
+        return res.data
+    },
+
     findAllByEmail: async (email, page, limit = 9) => {
         const res = await baseApi.get(`/cars/owner/${email}`, {
             params: { page, limit }
