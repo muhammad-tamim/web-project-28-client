@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import { MdOutlineArrowOutward } from 'react-icons/md';
+import Swal from 'sweetalert2';
+import useCreateBooking from '../../hooks/queries/bookings/useCreateBooking';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router';
 
-const BookingCard = ({ car, handleBookings }) => {
+const BookingCard = ({ car }) => {
+
+    const { mutate } = useCreateBooking();
 
     const { dailyRentalPrice } = car || {};
+    const navigate = useNavigate()
 
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
@@ -16,12 +23,55 @@ const BookingCard = ({ car, handleBookings }) => {
         const start = new Date(startDate);
         const end = new Date(endDate);
 
-        const diffTime = end - start;
-        days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-        if (days > 0) {
-            totalPrice = days * dailyRentalPrice;
+        if (end <= start) {
+            days = 0
         }
+        else {
+            const diffTime = end - start;
+            days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        }
+
+        totalPrice = days > 0 ? days * dailyRentalPrice : 0;
+    }
+
+    const handleBookings = () => {
+
+        if (!startDate || !endDate) {
+            return toast.error("Please select dates");
+        }
+        const payload = {
+            carId: car._id,
+            startDate,
+            endDate,
+            email: car.email
+        }
+
+        Swal.fire({
+            title: "Are you sure?",
+            icon: "warning",
+            showCancelButton: true,
+
+            buttonsStyling: false,
+
+            confirmButtonText: "Yes, Book it",
+            cancelButtonText: "Cancel",
+
+            customClass: {
+                confirmButton: "btn btn-primary mx-5 btn-lg rounded-full px-10",
+                cancelButton: "btn btn-outline btn-primary btn-lg rounded-full px-10",
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                mutate(payload, {
+                    onSuccess: () => {
+                        toast.success('Your car has been Booked successfully.')
+                        navigate('/my-bookings', { replace: true })
+                    }
+                })
+
+            }
+        });
     }
 
 
@@ -34,11 +84,11 @@ const BookingCard = ({ car, handleBookings }) => {
                 <div className='space-y-5'>
                     <div className='space-y-2 text-secondary'>
                         <label className="text-sm block text-secondary font-medium">Start Date</label>
-                        <input onChange={(e) => setStartDate(e.target.value)} name="startDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' />
+                        <input value={startDate} onChange={(e) => setStartDate(e.target.value)} name="startDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' />
                     </div>
                     <div className='space-y-2 text-secondary'>
                         <label className="text-sm block text-secondary font-medium">End Date</label>
-                        <input onChange={(e) => setEndDate(e.target.value)} name="endDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' />
+                        <input value={endDate} onChange={(e) => setEndDate(e.target.value)} name="endDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' />
                     </div>
                 </div>
 
@@ -52,10 +102,14 @@ const BookingCard = ({ car, handleBookings }) => {
                                 Total: ${totalPrice}
                             </p>
                         </>
-                        :
-                        <p className="text-sm text-secondary">
-                            Select valid start and end dates
-                        </p>
+                        : startDate && endDate ?
+                            <p className="text-sm text-red-500">
+                                End date must be after start date
+                            </p>
+                            :
+                            <p className="text-sm text-secondary">
+                                Select valid start and end dates
+                            </p>
                     }
                 </div>
 
