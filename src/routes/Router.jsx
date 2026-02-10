@@ -39,7 +39,7 @@ export const Router = createBrowserRouter([
                 Component: BrandsPage
             },
             {
-                path: '/brands-details/:name',
+                path: '/brands-details/:brand',
                 Component: BrandsDetailsPage
             },
             {
@@ -47,7 +47,7 @@ export const Router = createBrowserRouter([
                 Component: CategoriesPage
             },
             {
-                path: '/category-details/:name',
+                path: '/category-details/:category',
                 Component: CategoryDetailsPage
             },
             {
