@@ -19,6 +19,7 @@ import BrandsDetailsPage from "../pages/BrandsDetailsPage";
 import TypesDetailsPage from "../pages/TypesDetailsPage";
 import CategoriesPage from "../pages/CategoriesPage";
 import CategoryDetailsPage from "../pages/CategoryDetailsPage";
+import SearchPage from "../pages/SearchPage.";
 
 export const Router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ export const Router = createBrowserRouter([
             {
                 path: '/about',
                 Component: AboutPage
+            },
+            {
+                path: 'cars/search',
+                Component: SearchPage
             },
             {
                 path: '/brands',
