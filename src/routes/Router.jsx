@@ -20,6 +20,8 @@ import TypesDetailsPage from "../pages/TypesDetailsPage";
 import CategoriesPage from "../pages/CategoriesPage";
 import CategoryDetailsPage from "../pages/CategoryDetailsPage";
 import SearchPage from "../pages/SearchPage.";
+import DashboardLayout from "../layouts/DashboardLayout";
+import DashboardHomePage from "../pages/Dashboard/DashboardHomePage";
 
 export const Router = createBrowserRouter([
     {
@@ -90,6 +92,16 @@ export const Router = createBrowserRouter([
             {
                 path: '/sign-in',
                 Component: SignInPage
+            }
+        ]
+    },
+    {
+        path: '/dashboard',
+        Component: DashboardLayout,
+        children: [
+            {
+                index: true,
+                Component: DashboardHomePage
             }
         ]
     },
