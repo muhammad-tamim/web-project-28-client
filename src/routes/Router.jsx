@@ -22,6 +22,7 @@ import CategoryDetailsPage from "../pages/CategoryDetailsPage";
 import SearchPage from "../pages/SearchPage.";
 import DashboardLayout from "../layouts/DashboardLayout";
 import DashboardHomePage from "../pages/Dashboard/DashboardHomePage";
+import DashboardUpdateCar from "../pages/Dashboard/DashboardUpdateCar";
 
 export const Router = createBrowserRouter([
     {
@@ -102,6 +103,10 @@ export const Router = createBrowserRouter([
             {
                 path: 'seller/my-cars',
                 element: <PrivateRoute><MyCars></MyCars></PrivateRoute>
+            },
+            {
+                path: 'seller/update-car/:id',
+                Component: DashboardUpdateCar
             },
         ]
     },
