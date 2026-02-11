@@ -86,8 +86,9 @@ const Navbar = () => {
                                         </div>
                                         <ul
                                             tabIndex="-1"
-                                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-2">
                                             <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Dashboard</NavLink></li>
+                                            <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
                                     </div>
                                 )}
@@ -142,8 +143,9 @@ const Navbar = () => {
                                         </div>
                                         <ul
                                             tabIndex="-1"
-                                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                                            <li><NavLink className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`} to={'/dashboard'}>Dashboard</NavLink></li>
+                                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-2">
+                                            <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Dashboard</NavLink></li>
+                                            <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
                                     </div>
                                 )}
@@ -215,8 +217,9 @@ const Navbar = () => {
                                         </div>
                                         <ul
                                             tabIndex="-1"
-                                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                                            <li><NavLink className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`} to={'/dashboard'}>Dashboard</NavLink></li>
+                                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-2">
+                                            <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Dashboard</NavLink></li>
+                                            <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
                                     </div>
                                 )}
