@@ -1,19 +1,17 @@
 import React, { use, useState } from 'react';
 import PagesBanner from '../components/layouts/PagesBanner';
 import MaxWidth from '../components/MaxWidth';
-import Card3 from '../components/Cards/Card3';
-import TableRow from '../components/TableRow';
 import Pagination from '../components/Pagination';
 import useGetCarsByEmail from '../hooks/queries/cars/useGetCarsByEmail';
 import { AuthContext } from '../contexts/AuthContext';
 import LoadingSpinner from '../components/LoadingSpinner';
+import TableRowForMyCars from '../components/TableRowForMyCars';
 
 const MyCars = () => {
     const { user } = use(AuthContext)
     const [page, setPage] = useState(1)
     const [search, setSearch] = useState('');
     const [sortBy, setSortBy] = useState('newest');
-    const [isGridView, setIsGridView] = useState(true);
 
 
     const { data, isLoading, error, isError } = useGetCarsByEmail(user?.email, page);
@@ -65,58 +63,44 @@ const MyCars = () => {
                                 <option value='lowest'>Price: Low to High</option>
                                 <option value='highest'>Price: High to Low</option>
                             </select>
-
-                            <button
-                                onClick={() => setIsGridView(!isGridView)}
-                                className='btn btn-outline btn-primary'
-                            >
-                                {isGridView ? 'List View' : 'Grid View'}
-                            </button>
                         </div>
                     </div>
 
 
+                    <p className="text-sm text-secondary italic text-center mb-2 lg:hidden">
+                        Scroll left/right to view the full table:
+                    </p>
 
-                    {isGridView ? (
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                            {sortedCars.map((car) => <Card3 car={car} key={car._id}></Card3>)}
+                    <div className="overflow-x-auto w-full rounded-xl">
+                        <div className="overflow-x-auto w-full rounded-xl">
+                            <table className="table w-full bg-base-300">
+                                <thead>
+                                    <tr>
+                                        <th className="p-3 text-left font-bold">Image</th>
+                                        <th className="p-3 text-left">Name</th>
+                                        <th className="p-3 text-left">Brand</th>
+                                        <th className="p-3 text-left">Registration Number</th>
+                                        <th className="p-3 text-left">Total Booking</th>
+                                        <th className="p-3 text-left">Current Status</th>
+                                        <th className="p-3 text-left">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {sortedCars.length > 0 ? (
+                                        sortedCars.map((car) => (
+                                            <TableRowForMyCars key={car._id} car={car} />
+                                        ))
+                                    ) : (
+                                        <tr>
+                                            <td colSpan={6} className="text-center py-8 text-gray-500">
+                                                No Cars found
+                                            </td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </table>
                         </div>
-                    ) : (
-                        <>
-                            <p className="text-sm text-secondary italic text-center mb-2 lg:hidden">
-                                Scroll left/right to view the full table:
-                            </p>
-
-                            <div className="overflow-x-auto w-full rounded-xl">
-                                <div className="overflow-x-auto w-full rounded-xl">
-                                    <table className="table w-full bg-base-300">
-                                        <thead>
-                                            <tr>
-                                                <th className="p-3 text-left font-bold">Image</th>
-                                                <th className="p-3 text-left">Name</th>
-                                                <th className="p-3 text-left">Description</th>
-                                                <th className="p-3 text-left">Rental price</th>
-                                                <th className="p-3 text-left">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {sortedCars.length > 0 ? (
-                                                sortedCars.map((car) => (
-                                                    <TableRow key={car._id} car={car} />
-                                                ))
-                                            ) : (
-                                                <tr>
-                                                    <td colSpan={6} className="text-center py-8 text-gray-500">
-                                                        No bookings found
-                                                    </td>
-                                                </tr>
-                                            )}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </>
-                    )}
+                    </div>
 
                     <div className='flex justify-center'>
                         <Pagination page={page} totalPages={meta.totalPages} onPageChange={setPage}></Pagination>
