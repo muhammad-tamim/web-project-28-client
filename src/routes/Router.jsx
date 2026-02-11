@@ -74,14 +74,6 @@ export const Router = createBrowserRouter([
                 Component: CarDetailsPage
             },
             {
-                path: '/add-car',
-                element: <PrivateRoute><AddCar></AddCar></PrivateRoute>
-            },
-            {
-                path: '/my-cars',
-                element: <PrivateRoute><MyCars></MyCars></PrivateRoute>
-            },
-            {
                 path: '/my-bookings',
                 element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>
             },
@@ -102,7 +94,15 @@ export const Router = createBrowserRouter([
             {
                 index: true,
                 Component: DashboardHomePage
-            }
+            },
+            {
+                path: 'seller/add-car',
+                Component: AddCar
+            },
+            {
+                path: 'seller/my-cars',
+                element: <PrivateRoute><MyCars></MyCars></PrivateRoute>
+            },
         ]
     },
     {
