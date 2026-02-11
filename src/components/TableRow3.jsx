@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import useDeleteBooking from '../hooks/queries/bookings/useDeleteBooking';
 import toast from 'react-hot-toast';
 import useUpdateBooking from '../hooks/queries/bookings/useUpdateBooking';
-import BookingCard from './CarDetails/BookingCard';
-import { MdOutlineArrowOutward } from 'react-icons/md';
 import Swal from 'sweetalert2';
 
 const TableRow3 = ({ booking }) => {
