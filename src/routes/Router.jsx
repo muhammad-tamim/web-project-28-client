@@ -23,6 +23,7 @@ import SearchPage from "../pages/SearchPage.";
 import DashboardLayout from "../layouts/DashboardLayout";
 import DashboardHomePage from "../pages/Dashboard/DashboardHomePage";
 import DashboardUpdateCar from "../pages/Dashboard/DashboardUpdateCar";
+import ProfilePage from "../pages/Dashboard/ProfilePage";
 
 export const Router = createBrowserRouter([
     {
@@ -107,6 +108,10 @@ export const Router = createBrowserRouter([
             {
                 path: 'seller/update-car/:id',
                 Component: DashboardUpdateCar
+            },
+            {
+                path: 'profile',
+                Component: ProfilePage
             },
         ]
     },

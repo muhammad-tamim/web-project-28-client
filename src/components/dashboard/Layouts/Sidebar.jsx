@@ -32,6 +32,13 @@ const Sidebar = () => {
                     </NavLink>
                 </li>
 
+                <li>
+                    <NavLink to="/dashboard/profile" className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>
+                        <FiFileText className="w-5 h-5" />
+                        <span>Profile</span>
+                    </NavLink>
+                </li>
+
             </ul>
         </div>
     );
