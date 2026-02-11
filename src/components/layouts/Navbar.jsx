@@ -52,12 +52,6 @@ const Navbar = () => {
                             <li><NavLink to="/brands" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Brands</NavLink></li>
                             <li><NavLink to="/categories" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Categories</NavLink></li>
                             <li><NavLink to="/cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Cars</NavLink></li>
-                            {user &&
-                                <>
-                                    <li><NavLink to="/add-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Add Car</NavLink></li>
-                                    <li><NavLink to="/my-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>My Cars</NavLink></li>
-                                </>
-                            }
                             <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Blog</NavLink></li>
                             <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Contact</NavLink></li>
                             {user ?
@@ -93,7 +87,7 @@ const Navbar = () => {
                                         <ul
                                             tabIndex="-1"
                                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                                            <li><NavLink to={'/dashboard'} className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Dashboard</NavLink></li>
+                                            <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Dashboard</NavLink></li>
                                         </ul>
                                     </div>
                                 )}
@@ -149,7 +143,7 @@ const Navbar = () => {
                                         <ul
                                             tabIndex="-1"
                                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                                            <li><NavLink className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'} to={'/dashboard'}>Dashboard</NavLink></li>
+                                            <li><NavLink className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`} to={'/dashboard'}>Dashboard</NavLink></li>
                                         </ul>
                                     </div>
                                 )}
@@ -171,12 +165,6 @@ const Navbar = () => {
                                     <li><NavLink to="/brands" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Brands</NavLink></li>
                                     <li><NavLink to="/categories" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Categories</NavLink></li>
                                     <li><NavLink to="/cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Cars</NavLink></li>
-                                    {user &&
-                                        <>
-                                            <li><NavLink to="/add-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Add Car</NavLink></li>
-                                            <li><NavLink to="/my-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>My Cars</NavLink></li>
-                                        </>
-                                    }
                                     <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Blog</NavLink></li>
                                     <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Contact</NavLink></li>
                                     {user ?
@@ -228,7 +216,7 @@ const Navbar = () => {
                                         <ul
                                             tabIndex="-1"
                                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                                            <li><NavLink className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'} to={'/dashboard'}>Dashboard</NavLink></li>
+                                            <li><NavLink className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`} to={'/dashboard'}>Dashboard</NavLink></li>
                                         </ul>
                                     </div>
                                 )}
@@ -250,12 +238,6 @@ const Navbar = () => {
                                     <li><NavLink to="/brands" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Brands</NavLink></li>
                                     <li><NavLink to="/categories" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Categories</NavLink></li>
                                     <li><NavLink to="/cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Cars</NavLink></li>
-                                    {user &&
-                                        <>
-                                            <li><NavLink to="/add-car" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Add Car</NavLink></li>
-                                            <li><NavLink to="/my-cars" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>My Cars</NavLink></li>
-                                        </>
-                                    }
                                     <li><NavLink to="/blog" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Blog</NavLink></li>
                                     <li><NavLink to="/contact" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Contact</NavLink></li>
                                     {user ?
