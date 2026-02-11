@@ -9,7 +9,7 @@ const AddCar = () => {
         <div>
             <PagesBanner pageName={'rentax'} title={'Add Car'}></PagesBanner>
             <MaxWidth>
-                <div className='space-y-20 my-20'>
+                <div className='space-y-20 my-20 xl:px-10'>
                     <Form></Form>
                 </div>
             </MaxWidth>
