@@ -25,6 +25,14 @@ import DashboardHomePage from "../pages/Dashboard/DashboardHomePage";
 import DashboardUpdateCar from "../pages/Dashboard/DashboardUpdateCar";
 import ProfilePage from "../pages/Dashboard/ProfilePage";
 import BookingsHistory from "../pages/Dashboard/BookingsHistory";
+import NotificationPage from "../pages/Dashboard/NotificationPage";
+import PaymentsHistory from "../pages/Dashboard/PaymentsHistory";
+import ManageUsers from "../pages/Dashboard/ManageUsers";
+import ManageCars from "../pages/Dashboard/ManageCars";
+import ManageBrands from "../pages/Dashboard/ManageBrands";
+import ManageCategories from "../pages/Dashboard/ManageCategories";
+import SalesReport from "../pages/Dashboard/SalesReport";
+import MySales from "../pages/Dashboard/MySales";
 
 export const Routes = createBrowserRouter([
     {
@@ -94,10 +102,32 @@ export const Routes = createBrowserRouter([
         path: '/dashboard',
         Component: DashboardLayout,
         children: [
+            // common
             {
                 index: true,
                 Component: DashboardHomePage
             },
+            {
+                path: 'profile',
+                Component: ProfilePage
+            },
+            {
+                path: 'notification',
+                Component: NotificationPage
+            },
+
+
+            // customer
+            {
+                path: 'customer/bookings-history',
+                element: <PrivateRoute><BookingsHistory></BookingsHistory></PrivateRoute>
+            },
+            {
+                path: 'customer/payments-history',
+                Component: PaymentsHistory
+            },
+
+            // seller
             {
                 path: 'seller/add-car',
                 Component: AddCar
@@ -111,12 +141,30 @@ export const Routes = createBrowserRouter([
                 Component: DashboardUpdateCar
             },
             {
-                path: 'customer/bookings-history',
-                element: <PrivateRoute><BookingsHistory></BookingsHistory></PrivateRoute>
+                path: 'seller/my-sales',
+                Component: MySales
+            },
+
+            // admin
+            {
+                path: 'admin/manage-users',
+                Component: ManageUsers
             },
             {
-                path: 'profile',
-                Component: ProfilePage
+                path: 'admin/manage-cars',
+                Component: ManageCars
+            },
+            {
+                path: 'admin/manage-brands',
+                Component: ManageBrands
+            },
+            {
+                path: 'admin/manage-categories',
+                Component: ManageCategories
+            },
+            {
+                path: 'admin/sales-report',
+                Component: SalesReport
             },
         ]
     },
