@@ -15,4 +15,9 @@ export const brandsApi = {
         const res = await baseApi.patch(`/brands/${id}`, data);
         return res.data.result;
     },
+
+    delete: async (id) => {
+        const res = await baseApi.delete(`/brands/${id}`)
+        return res.data.result
+    },
 };
