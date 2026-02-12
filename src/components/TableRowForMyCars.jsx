@@ -55,7 +55,7 @@ const TableRowForMyCars = ({ car }) => {
                 <td className='p-3'>
                     <div className="flex gap-2">
 
-                        <Link to={`/dashboard/seller/update-car/${car._id}`} className={`btn btn-sm btn-primary ${car.bookingStatus && 'btn-disabled'}`}>Update</Link>
+                        <Link to={`/dashboard/seller/update-car/${car._id}`} className={`btn btn-sm btn-primary ${car.bookingStatus && 'btn-disabled'}`}>Edit</Link>
                         <Link to={`/car-details/${car._id}`}><button className="btn btn-sm btn-primary">Details</button></Link>
                         <button onClick={handleDelete} className={`btn btn-sm btn-error ${car.bookingStatus && 'btn-disabled'}`}>Delete</button>
                     </div>
