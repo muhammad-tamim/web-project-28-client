@@ -24,8 +24,9 @@ import DashboardLayout from "../layouts/DashboardLayout";
 import DashboardHomePage from "../pages/Dashboard/DashboardHomePage";
 import DashboardUpdateCar from "../pages/Dashboard/DashboardUpdateCar";
 import ProfilePage from "../pages/Dashboard/ProfilePage";
+import BookingsHistory from "../pages/Dashboard/BookingsHistory";
 
-export const Router = createBrowserRouter([
+export const Routes = createBrowserRouter([
     {
         path: '/',
         Component: RootLayout,
@@ -103,11 +104,15 @@ export const Router = createBrowserRouter([
             },
             {
                 path: 'seller/my-cars',
-                element: <PrivateRoute><MyCars></MyCars></PrivateRoute>
+                Component: MyCars
             },
             {
                 path: 'seller/update-car/:id',
                 Component: DashboardUpdateCar
+            },
+            {
+                path: 'customer/bookings-history',
+                element: <PrivateRoute><BookingsHistory></BookingsHistory></PrivateRoute>
             },
             {
                 path: 'profile',

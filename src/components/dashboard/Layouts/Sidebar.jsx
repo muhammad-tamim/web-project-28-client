@@ -33,6 +33,20 @@ const Sidebar = () => {
                 </li>
 
                 <li>
+                    <NavLink to="/dashboard/seller/payments-history" className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>
+                        <FiFileText className="w-5 h-5" />
+                        <span>Payments History</span>
+                    </NavLink>
+                </li>
+
+                <li>
+                    <NavLink to="/dashboard/customer/bookings-history" className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>
+                        <FiFileText className="w-5 h-5" />
+                        <span>Bookings History</span>
+                    </NavLink>
+                </li>
+
+                <li>
                     <NavLink to="/dashboard/profile" className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>
                         <FiFileText className="w-5 h-5" />
                         <span>Profile</span>
