@@ -16,8 +16,6 @@ const MyCars = () => {
 
     const { data, isLoading, error, isError } = useGetCarsByEmail(user?.email, page);
 
-    const { result: cars, meta } = data || {};
-
     if (isLoading) {
         return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
     }
@@ -26,8 +24,12 @@ const MyCars = () => {
         return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>
     }
 
+    const { result: cars = [], meta = {} } = data || {};
+
     // searching
-    const filteredCars = cars.filter((car) => car.name.toLowerCase().includes(search.toLowerCase()))
+    const filteredCars = (cars || []).filter((car) =>
+        car.name.toLowerCase().includes(search.toLowerCase())
+    );
 
     // sorting
     const sortedCars = [...filteredCars].sort((a, b) => {
