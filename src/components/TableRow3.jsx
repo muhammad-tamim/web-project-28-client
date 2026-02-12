@@ -114,57 +114,61 @@ const TableRow3 = ({ booking }) => {
                         <button onClick={handleDelete} className="btn btn-sm btn-primary btn-outline">Cancel</button>
                     </div>
                 </td>
+
+                <td>
+                    <dialog id={`modal-${booking._id}`} className="modal">
+                        <div className="modal-box">
+                            <div className='bg-base-300 rounded-3xl'>
+                                <div className='text-center bg-primary py-10 rounded-b-none rounded-3xl'>
+                                    <p><span className='font-bold text-4xl'>${booking.car.dailyRentalPrice}</span> <span className='text-secondary text-sm'>/ rent per day</span></p>
+                                </div>
+                                <div className='p-5 lg:p-10 space-y-10'>
+                                    <div className='space-y-5'>
+                                        <div className='space-y-2 text-secondary'>
+                                            <label className="text-sm block text-secondary font-medium">Start Date</label>
+                                            <input value={startDate} onChange={(e) => setStartDate(e.target.value)} name="startDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' />
+                                        </div>
+                                        <div className='space-y-2 text-secondary'>
+                                            <label className="text-sm block text-secondary font-medium">End Date</label>
+                                            <input value={endDate} onChange={(e) => setEndDate(e.target.value)} name="endDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' />
+                                        </div>
+                                    </div>
+
+                                    <div className="bg-base-200 rounded-3xl p-4 text-center">
+                                        {days > 0 ?
+                                            <>
+                                                <p className="text-sm text-secondary">
+                                                    {days} day{days > 1 ? 's' : ''}
+                                                </p>
+                                                <p className="text-2xl font-bold text-primary">
+                                                    Total: ${totalPrice}
+                                                </p>
+                                            </>
+                                            : startDate && endDate ?
+                                                <p className="text-sm text-red-500">
+                                                    End date must be after start date
+                                                </p>
+                                                :
+                                                <p className="text-sm text-secondary">
+                                                    Select valid start and end dates
+                                                </p>
+                                        }
+                                    </div>
+
+                                    <div className='flex justify-center'>
+                                        <form method="dialog" className='flex gap-3'>
+                                            <button onClick={handleUpdate} className='btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition' >Update</button>
+                                            <button onClick={() => document.getElementById(`modal-${booking._id}`).close()} className='btn btn-primary btn-outline rounded-full btn-xl hover:-translate-y-1 duration-200 transition' >Close</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dialog>
+                </td>
             </tr>
 
-            <dialog id={`modal-${booking._id}`} className="modal">
-                <div className="modal-box">
-                    <div className='bg-base-300 rounded-3xl'>
-                        <div className='text-center bg-primary py-10 rounded-b-none rounded-3xl'>
-                            <p><span className='font-bold text-4xl'>${booking.car.dailyRentalPrice}</span> <span className='text-secondary text-sm'>/ rent per day</span></p>
-                        </div>
-                        <div className='p-5 lg:p-10 space-y-10'>
-                            <div className='space-y-5'>
-                                <div className='space-y-2 text-secondary'>
-                                    <label className="text-sm block text-secondary font-medium">Start Date</label>
-                                    <input value={startDate} onChange={(e) => setStartDate(e.target.value)} name="startDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' />
-                                </div>
-                                <div className='space-y-2 text-secondary'>
-                                    <label className="text-sm block text-secondary font-medium">End Date</label>
-                                    <input value={endDate} onChange={(e) => setEndDate(e.target.value)} name="endDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' />
-                                </div>
-                            </div>
 
-                            <div className="bg-base-200 rounded-3xl p-4 text-center">
-                                {days > 0 ?
-                                    <>
-                                        <p className="text-sm text-secondary">
-                                            {days} day{days > 1 ? 's' : ''}
-                                        </p>
-                                        <p className="text-2xl font-bold text-primary">
-                                            Total: ${totalPrice}
-                                        </p>
-                                    </>
-                                    : startDate && endDate ?
-                                        <p className="text-sm text-red-500">
-                                            End date must be after start date
-                                        </p>
-                                        :
-                                        <p className="text-sm text-secondary">
-                                            Select valid start and end dates
-                                        </p>
-                                }
-                            </div>
-
-                            <div className='flex justify-center'>
-                                <form method="dialog" className='flex gap-3'>
-                                    <button onClick={handleUpdate} className='btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition' >Update</button>
-                                    <button onClick={() => document.getElementById(`modal-${booking._id}`).close()} className='btn btn-primary btn-outline rounded-full btn-xl hover:-translate-y-1 duration-200 transition' >Close</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </dialog>
         </>
     );
 };
