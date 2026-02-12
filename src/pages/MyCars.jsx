@@ -48,7 +48,7 @@ const MyCars = () => {
 
     return (
         <div>
-            <PagesBanner pageName={'rentax'} title={'My Cars'}></PagesBanner>
+            {/* <PagesBanner pageName={'rentax'} title={'My Cars'}></PagesBanner> */}
             <MaxWidth>
                 <div className='space-y-20 my-20 xl:px-10'>
                     <div className='flex flex-col lg:flex-row justify-between items-center gap-4 mb-8'>

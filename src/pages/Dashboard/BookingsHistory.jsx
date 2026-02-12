@@ -44,7 +44,7 @@ const BookingsHistory = () => {
     })
     return (
         <div>
-            <PagesBanner pageName={'rentax'} title={'Bookings History'}></PagesBanner>
+            {/* <PagesBanner pageName={'rentax'} title={'Bookings History'}></PagesBanner> */}
 
             <MaxWidth>
                 <div className='space-y-20 my-20 xl:px-10'>

@@ -7,7 +7,7 @@ const AddCar = () => {
 
     return (
         <div>
-            <PagesBanner pageName={'rentax'} title={'Add Car'}></PagesBanner>
+            {/* <PagesBanner pageName={'rentax'} title={'Add Car'}></PagesBanner> */}
             <MaxWidth>
                 <div className='space-y-20 my-20 xl:px-10'>
                     <Form></Form>

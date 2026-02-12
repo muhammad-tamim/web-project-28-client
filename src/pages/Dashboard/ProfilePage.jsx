@@ -44,7 +44,7 @@ const ProfilePage = () => {
     }
     return (
         <div>
-            <PagesBanner pageName={'rentax'} title={'Profile'}></PagesBanner>
+            {/* <PagesBanner pageName={'rentax'} title={'Profile'}></PagesBanner> */}
 
             <MaxWidth>
                 <div className='space-y-20 my-20 xl:px-10'>

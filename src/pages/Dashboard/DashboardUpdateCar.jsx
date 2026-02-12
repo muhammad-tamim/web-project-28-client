@@ -78,7 +78,7 @@ const DashboardUpdateCar = () => {
     }
     return (
         <div>
-            <PagesBanner pageName={'rentax'} title={'Update Car'}></PagesBanner>
+            {/* <PagesBanner pageName={'rentax'} title={'Update Car'}></PagesBanner> */}
             <MaxWidth>
                 <div className='space-y-20 my-20 xl:px-10'>
                     <form className='space-y-10' onSubmit={handleFormSubmit}>
