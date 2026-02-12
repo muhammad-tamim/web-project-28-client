@@ -8,6 +8,7 @@ import { GiShoppingCart } from 'react-icons/gi';
 import { CiMenuFries } from 'react-icons/ci';
 import MaxWidth from '../../MaxWidth';
 import useAuth from '../../../hooks/useAuth';
+import { IoIosNotificationsOutline } from 'react-icons/io';
 
 const DashboardNavbar = () => {
     const { user, signOutUser } = useAuth()
@@ -47,6 +48,48 @@ const DashboardNavbar = () => {
                             </label>
                         </li>
                         <li>
+                            <div className="dropdown dropdown-end">
+                                <button tabIndex={0} role='button' className='btn btn-ghost btn-circle'>
+                                    <div className="indicator">
+                                        <span><IoIosNotificationsOutline size={30} className='text-secondary' /></span>
+                                        <span className="badge badge-xs badge-primary indicator-item">1</span>
+                                    </div>
+                                </button>
+
+                                <ul tabIndex={0} className="dropdown-content bg-base-100 rounded-box z-50 mt-5 w-56 md:w-72 p-3 shadow gap-2 max-h-80 overflow-y-auto">
+                                    <li>
+                                        <div className="flex items-start gap-3 p-2 rounded-lg hover:bg-base-200 transition cursor-pointer">
+                                            <img src={user?.photoURL} alt="user" className="size-10 rounded-full object-cover" />
+                                            <div className='flex-1 min-w-0'>
+                                                <p className="text-sm font-medium text-primary">John booked your Tesla Model S him ydfdif</p>
+                                                <span className="text-xs text-secondary">2 minutes ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="flex items-start gap-3 p-2 rounded-lg hover:bg-base-200 transition cursor-pointer">
+                                            <img src={user?.photoURL} alt="user" className="size-10 rounded-full object-cover" />
+                                            <div className='flex-1 min-w-0'>
+                                                <p className="text-sm font-medium text-primary">John booked your Tesla Model S him ydfdif</p>
+                                                <span className="text-xs text-secondary">2 minutes ago</span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                    <div className="divider"></div>
+
+                                    <li>
+                                        <NavLink to="/dashboard/notifications" className="text-center flex justify-center text-sm text-primary font-medium hover:underline">
+                                            View All Notifications
+                                        </NavLink>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </li>
+                        <li>
                             {user && (
                                 <div className="dropdown dropdown-end">
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -54,7 +97,7 @@ const DashboardNavbar = () => {
                                             <img alt="" src={user?.photoURL} />
                                         </div>
                                     </div>
-                                    <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-2">
+                                    <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-5 w-52 p-2 shadow gap-2">
                                         <div className="text-center border-b border-gray-200 pb-2">
                                             <h3 className="font-medium text-base text-primary">{user.displayName}</h3>
                                             <p className="text-sm text-gray-500 truncate">{user.email}</p>
