@@ -5,10 +5,43 @@ import { Link } from 'react-router';
 import { CiEdit, CiFacebook, CiInstagram, CiTwitter } from 'react-icons/ci';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import MaxWidth from '../../components/MaxWidth';
+import toast from 'react-hot-toast';
 
 const ProfilePage = () => {
-    const { user } = useAuth()
-    console.log(user)
+    const { user, setUser, updateUserInfo, updateUserEmail, updateUserPassword, loading } = useAuth()
+
+    const handleUpdateProfile = e => {
+        e.preventDefault();
+
+        const form = e.target;
+        const name = form.name.value;
+        const photoURL = form.photoURL.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        try {
+            updateUserInfo({ displayName: name, photoURL: photoURL })
+                .then(() => {
+                    setUser({ ...user, displayName: name, photoURL: photoURL })
+                })
+
+            if (email !== user.email) {
+                updateUserEmail(email);
+            }
+
+            if (password) {
+                updateUserPassword(password);
+            }
+
+            // auth.currentUser.reload();
+
+            toast.success("Profile updated successfully");
+            document.getElementById("my_modal_1").close();
+        }
+        catch (err) {
+            toast.error(err.message);
+        }
+    }
     return (
         <div>
             <PagesBanner pageName={'rentax'} title={'Profile'}></PagesBanner>
@@ -27,8 +60,8 @@ const ProfilePage = () => {
                                 </div>
 
                                 <div className='text-center'>
-                                    <h4 className='font-semibold text-xl'>{user.displayName}</h4>
-                                    <p className='text-secondary'>{user.email}</p>
+                                    <h4 className='font-semibold text-xl'>{user?.displayName}</h4>
+                                    <p className='text-secondary'>{user?.email}</p>
                                 </div>
 
                             </div>
@@ -38,7 +71,7 @@ const ProfilePage = () => {
                                 <Link ><button className='btn btn-circle btn-outline btn-primary btn-lg'><CiTwitter /></button></Link>
                                 <Link ><button className='btn btn-circle btn-outline btn-primary btn-lg'><CiInstagram /></button></Link>
                                 <Link ><button className='btn btn-circle btn-outline btn-primary btn-lg'><FaFacebookF /></button></Link>
-                                <Link ><button className='btn rounded-4xl btn-outline btn-primary btn-lg flex items-center gap-2'><span><CiEdit /></span><span>Edit</span></button></Link>
+                                <button onClick={() => document.getElementById('my_modal_1').showModal()} className='btn rounded-4xl btn-outline btn-primary btn-lg flex items-center gap-2'><span><CiEdit /></span><span>Edit</span></button>
                             </div>
 
                         </div>
@@ -122,6 +155,49 @@ const ProfilePage = () => {
 
                     </div>
                 </div>
+
+                <dialog id="my_modal_1" className="modal">
+                    <div className="modal-box bg-base-300 rounded-3xl space-y-5">
+                        <h3 className="font-bold text-2xl text-center">
+                            Update Profile
+                        </h3>
+
+                        <form onSubmit={handleUpdateProfile} className="space-y-5">
+
+                            <div className='space-y-2 text-secondary'>
+                                <label className="text-sm block text-secondary font-medium">Name</label>
+                                <input name='name' defaultValue={user?.displayName} type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
+                            </div>
+
+                            <div className='space-y-2 text-secondary'>
+                                <label className="text-sm block text-secondary font-medium">Photo URL</label>
+                                <input name='photoURL' type="url" defaultValue={user?.photoURL} className='input w-full input-primary focus:outline-none bg-base-300' />
+                            </div>
+
+                            <div className='space-y-2 text-secondary'>
+                                <label className="text-sm block text-secondary font-medium">Email</label>
+                                <input name='email' type="email" defaultValue={user?.email} className='input w-full input-primary focus:outline-none bg-base-300' />
+                            </div>
+
+
+                            <div className='space-y-2 text-secondary'>
+                                <label className="text-sm block text-secondary font-medium">Password</label>
+                                <input name='password' type="password" className='input w-full input-primary focus:outline-none bg-base-300' placeholder="Leave blank to keep current password" />
+                            </div>
+
+                            <div className="modal-action flex justify-center gap-3">
+                                <button type="submit" className='btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition' disabled={loading}>
+                                    Update
+                                </button>
+                                <button type="button" onClick={() => document.getElementById("my_modal_1").close()} className='btn btn-primary btn-outline rounded-full btn-xl hover:-translate-y-1 duration-200 transition'>
+                                    Cancel
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                </dialog>
+
             </MaxWidth>
         </div>
     );
