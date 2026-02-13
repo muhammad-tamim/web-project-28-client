@@ -5,6 +5,7 @@ import LoadingSpinner from '../LoadingSpinner';
 import { AuthContext } from '../../contexts/AuthContext';
 import useCreateCars from '../../hooks/queries/cars/useCreateCars';
 import toast from 'react-hot-toast';
+import { imageUpload } from '../../api/utils';
 
 const Form = () => {
 
@@ -15,11 +16,15 @@ const Form = () => {
     const { mutate } = useCreateCars()
 
 
-    const handleFormSubmit = e => {
+    const handleFormSubmit = async e => {
         e.preventDefault()
         const form = e.target;
         const formData = new FormData(form)
         const rawData = Object.fromEntries(formData.entries())
+
+        const image = form.image.files[0]
+
+        const imageUrl = await imageUpload(image)
 
         const payload = {
             name: rawData.name,
@@ -31,7 +36,7 @@ const Form = () => {
             dailyRentalPrice: Number(rawData.dailyRentalPrice),
             registrationNumber: rawData.registrationNumber,
             features: rawData.features,
-            photoUrl: rawData.photoUrl,
+            photoUrl: imageUrl,
             email: user.email,
         };
 
@@ -57,7 +62,8 @@ const Form = () => {
                 </div>
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Photo URL</label>
-                    <input name='photoUrl' type="url" className='input w-full input-primary focus:outline-none bg-base-300' />
+                    <input name='image' type="file" className='file-input file-input-primary  w-full focus:outline-none bg-base-300' />
+                    {/* <input type="file" className="file-input file-input-ghost" /> */}
                 </div>
                 <div className='space-y-2 text-secondary'>
                     <label className="text-sm block text-secondary font-medium">Model</label>
