@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 import MaxWidth from '../../components/MaxWidth';
 import Pagination from '../../components/Pagination';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -8,6 +8,7 @@ import TableRowForBrands from '../../components/dashboard/ManageBrands/TableRowF
 import useGetBrands from '../../hooks/queries/Brands/useGetBrands';
 import useCreateBrand from '../../hooks/queries/Brands/useCreateBrand';
 import toast from 'react-hot-toast';
+import { imageUpload } from '../../api/utils';
 
 const ManageBrands = () => {
     const [search, setSearch] = useState('');
@@ -40,10 +41,12 @@ const ManageBrands = () => {
         return 0
     })
 
-    const handleFormSubmit = e => {
+    const handleFormSubmit = async e => {
         e.preventDefault()
         const name = e.target.name.value
-        const photoUrl = e.target.photoUrl.value;
+
+        const image = e.target.image.files[0]
+        const photoUrl = await imageUpload(image)
 
         const payload = { name, photoUrl }
 
@@ -125,7 +128,7 @@ const ManageBrands = () => {
                                 </div>
 
                                 <div className='space-y-2 text-secondary'>
-                                    <label className="text-sm block text-secondary font-medium">Photo URL</label>
+                                    <label className="text-sm block text-secondary font-medium">Photo</label>
                                     <input name='photoUrl' type="url" className='input w-full input-primary focus:outline-none bg-base-300' />
                                 </div>
 
