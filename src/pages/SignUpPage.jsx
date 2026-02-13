@@ -2,16 +2,18 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router';
 import useAuth from '../hooks/useAuth';
+import { imageUpload } from '../api/utils';
 
 const SignUpPage = () => {
     const navigate = useNavigate();
     const { signUpUser, signInUserWithGoogle, setUser, updateUserInfo } = useAuth()
 
-    const handleSignUp = (e) => {
+    const handleSignUp = async (e) => {
         e.preventDefault()
 
         const name = e.target.name.value
-        const url = e.target.url.value
+        const image = e.target.image.files[0]
+        const imageUrl = await imageUpload(image)
         const email = e.target.email.value
         const password = e.target.password.value
 
@@ -20,9 +22,9 @@ const SignUpPage = () => {
                 toast.success('Sign Up Successful')
                 const user = result.user
 
-                updateUserInfo({ displayName: name, photoURL: url })
+                updateUserInfo({ displayName: name, photoURL: imageUrl })
                     .then(() => {
-                        setUser({ ...user, displayName: name, photoURL: url })
+                        setUser({ ...user, displayName: name, photoURL: imageUrl })
                         navigate('/')
                     })
             })
@@ -52,7 +54,7 @@ const SignUpPage = () => {
                 </div>
                 <div className="space-y-1 text-sm">
                     <label htmlFor="username" className="block ">Photo URL</label>
-                    <input type="url" name="url" required id="userUrl" placeholder="URL" className="outline w-full px-4 py-3 rounded-md" />
+                    <input type="file" name="image" required id="userImage" className="file-input file-input-ghost w-full" />
                 </div>
                 <div className="space-y-1 text-sm">
                     <label htmlFor="username" className="block ">Email</label>
