@@ -5,6 +5,7 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 import toast from 'react-hot-toast';
 import MaxWidth from '../../components/MaxWidth';
 import TableRowForCategories from '../../components/dashboard/ManageCategories/TableRowForCategories';
+import { imageUpload } from '../../api/utils';
 
 const ManageCategories = () => {
     const [search, setSearch] = useState('');
@@ -37,10 +38,11 @@ const ManageCategories = () => {
         return 0
     })
 
-    const handleFormSubmit = e => {
+    const handleFormSubmit = async e => {
         e.preventDefault()
         const name = e.target.name.value
-        const photoUrl = e.target.photoUrl.value;
+        const image = e.target.image.files[0]
+        const photoUrl = await imageUpload(image)
 
         const payload = { name, photoUrl }
 
@@ -72,7 +74,7 @@ const ManageCategories = () => {
                                 <option value='oldest'>Oldest First</option>
                             </select>
 
-                            <button onClick={() => document.getElementById('add-modal').showModal()} className='btn btn-primary'>Add Brands</button>
+                            <button onClick={() => document.getElementById('add-modal').showModal()} className='btn btn-primary'>Add Category</button>
                         </div>
                     </div>
 
@@ -112,18 +114,18 @@ const ManageCategories = () => {
 
                     <dialog id='add-modal' className="modal">
                         <div className="modal-box bg-base-300 rounded-3xl space-y-5">
-                            <h3 className="font-bold text-2xl text-center">Add Brand</h3>
+                            <h3 className="font-bold text-2xl text-center">Add Category</h3>
 
                             <form onSubmit={handleFormSubmit} className="space-y-5">
 
                                 <div className='space-y-2 text-secondary'>
-                                    <label className="text-sm block text-secondary font-medium">Brand Name</label>
+                                    <label className="text-sm block text-secondary font-medium">Category Name</label>
                                     <input name='name' type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
                                 </div>
 
                                 <div className='space-y-2 text-secondary'>
-                                    <label className="text-sm block text-secondary font-medium">Photo URL</label>
-                                    <input name='photoUrl' type="url" className='input w-full input-primary focus:outline-none bg-base-300' />
+                                    <label className="text-sm block text-secondary font-medium">Photo</label>
+                                    <input name='image' type="file" className='file-input file-input-primary  w-full focus:outline-none bg-base-300' />
                                 </div>
 
                                 <div className="modal-action flex justify-center gap-3">
