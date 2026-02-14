@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import Swal from 'sweetalert2';
-import useCreateBooking from '../../hooks/queries/bookings/useCreateBooking';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router';
+// import { useNavigate } from 'react-router';
+import { stripeApi } from '../../api/stripe.api';
 
 const BookingCard = ({ car }) => {
 
-    const { mutate } = useCreateBooking();
-
     const { dailyRentalPrice } = car || {};
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
@@ -35,19 +33,26 @@ const BookingCard = ({ car }) => {
         totalPrice = days > 0 ? days * dailyRentalPrice : 0;
     }
 
-    const handleBookings = () => {
+    const handleBookings = async () => {
 
         if (!startDate || !endDate) {
             return toast.error("Please select dates");
         }
-        const payload = {
-            carId: car._id,
-            startDate,
-            endDate,
-            email: car.email
+
+        if (days <= 0) {
+            return toast.error("Invalid dates");
         }
 
-        Swal.fire({
+
+        const payload = {
+            carId: car._id,
+            email: car.email,
+            startDate,
+            endDate,
+            totalCost: totalPrice
+        }
+
+        const result = await Swal.fire({
             title: "Are you sure?",
             icon: "warning",
             showCancelButton: true,
@@ -61,17 +66,18 @@ const BookingCard = ({ car }) => {
                 confirmButton: "btn btn-primary mx-5 btn-lg rounded-full px-10",
                 cancelButton: "btn btn-outline btn-primary btn-lg rounded-full px-10",
             },
-        }).then((result) => {
-            if (result.isConfirmed) {
-                mutate(payload, {
-                    onSuccess: () => {
-                        toast.success('Your car has been Booked successfully.')
-                        navigate('/my-bookings', { replace: true })
-                    }
-                })
+        })
 
+
+        if (result.isConfirmed) {
+            try {
+                const url = await stripeApi.createSession(payload);
+                window.location.href = url;
+            } catch (err) {
+                toast.error(err.message || 'Payment Failed');
             }
-        });
+        }
+
     }
 
 
