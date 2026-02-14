@@ -16,7 +16,7 @@ const BookingsHistory = () => {
     localStorage.setItem("bookingsCount", bookings?.length)
 
     if (isLoading) {
-        return <LoadingSpinner marginY={'my-20'}></LoadingSpinner>;
+        return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
     }
 
     if (isError) {
