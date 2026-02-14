@@ -33,6 +33,8 @@ import ManageBrands from "../pages/Dashboard/ManageBrands";
 import ManageCategories from "../pages/Dashboard/ManageCategories";
 import SalesReport from "../pages/Dashboard/SalesReport";
 import MySales from "../pages/Dashboard/MySales";
+import PaymentSuccessPage from "../pages/PaymentSuccessPage";
+import PaymentCancelPage from "../pages/PaymentCancelPage";
 
 export const Routes = createBrowserRouter([
     {
@@ -95,6 +97,14 @@ export const Routes = createBrowserRouter([
             {
                 path: '/sign-in',
                 Component: SignInPage
+            },
+            {
+                path: '/payment-success',
+                Component: PaymentSuccessPage
+            },
+            {
+                path: '/payment-cancel',
+                Component: PaymentCancelPage
             }
         ]
     },
