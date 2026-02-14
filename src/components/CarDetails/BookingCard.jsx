@@ -4,8 +4,11 @@ import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
 // import { useNavigate } from 'react-router';
 import { stripeApi } from '../../api/stripe.api';
+import useAuth from '../../hooks/useAuth';
 
 const BookingCard = ({ car }) => {
+
+    const { user } = useAuth()
 
     const { dailyRentalPrice } = car || {};
     // const navigate = useNavigate()
@@ -120,7 +123,7 @@ const BookingCard = ({ car }) => {
                 </div>
 
                 <div className='flex justify-center'>
-                    <button onClick={handleBookings} type='submit' className={`btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1`} > Book Now <span><MdOutlineArrowOutward /></span></button>
+                    <button onClick={handleBookings} type='submit' className={`btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1 ${user?.email === car.email && 'btn-disabled'}`} > Book Now <span><MdOutlineArrowOutward /></span></button>
                 </div>
             </div>
         </div>
