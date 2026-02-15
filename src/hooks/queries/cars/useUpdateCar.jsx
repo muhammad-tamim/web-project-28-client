@@ -8,7 +8,8 @@ const useUpdateCar = () => {
         mutationFn: ({ id, data }) => carsApi.update(id, data),
         onSuccess: (_, { id }) => {
             queryClient.invalidateQueries(["cars"]);
-            queryClient.invalidateQueries(["cars", id]);
+            queryClient.invalidateQueries(["car", id]);
+            queryClient.invalidateQueries(['cars-recent']);
         },
     });
 };

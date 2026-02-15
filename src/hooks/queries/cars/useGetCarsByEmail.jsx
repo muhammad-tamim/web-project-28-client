@@ -2,10 +2,10 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { carsApi } from '../../../api/cars.api';
 
-const useGetCarsByEmail = (email, page) => {
+const useGetCarsByEmail = (email, page, limit = 9) => {
     return useQuery({
-        queryKey: ['cars', email, page],
-        queryFn: () => carsApi.findAllByEmail(email, page),
+        queryKey: ['cars-email', email, page, limit],
+        queryFn: () => carsApi.findAllByEmail(email, page, limit),
         enabled: !!email,
     })
 };

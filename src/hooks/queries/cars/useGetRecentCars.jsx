@@ -4,7 +4,7 @@ import { carsApi } from '../../../api/cars.api';
 
 const useGetRecentCars = () => {
     return useQuery({
-        queryKey: ['cars'],
+        queryKey: ['cars-recent'],
         queryFn: carsApi.findRecent
     })
 };

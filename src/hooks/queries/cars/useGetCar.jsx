@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const useGetCar = (id) => {
     return useQuery({
-        queryKey: ['cars', id],
+        queryKey: ['car', id],
         queryFn: () => carsApi.findOne(id),
         enabled: !!id,
     })

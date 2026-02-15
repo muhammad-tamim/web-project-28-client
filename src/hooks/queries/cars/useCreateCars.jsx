@@ -8,6 +8,7 @@ const useCreateCars = () => {
         mutationFn: carsApi.create,
         onSuccess: () => {
             queryClient.invalidateQueries(['cars'])
+            queryClient.invalidateQueries(['cars-recent']);
         }
     })
 };

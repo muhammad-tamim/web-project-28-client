@@ -6,11 +6,10 @@ const useDeleteCar = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: (id) => carsApi.delete(id),
-        onSuccess: () => {
-            queryClient.invalidateQueries({
-                queryKey: ['cars'],
-                exact: false,
-            });
+        onSuccess: (_, id) => {
+            queryClient.invalidateQueries(['cars']);      // update list
+            queryClient.invalidateQueries(['car', id]);  // clear single car cache
+            queryClient.invalidateQueries(['cars-recent']);
         },
     });
 };

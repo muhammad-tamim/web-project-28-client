@@ -2,10 +2,10 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { carsApi } from '../../../api/cars.api';
 
-const useGetCarsByBrand = (brand, page) => {
+const useGetCarsByBrand = (brand, page, limit = 9) => {
     return useQuery({
-        queryKey: ['brands', brand, page],
-        queryFn: () => carsApi.findAllByBrand(brand, page),
+        queryKey: ['cars-brand', brand, page, limit],
+        queryFn: () => carsApi.findAllByBrand(brand, page, limit),
         keepPreviousData: true
     })
 };
