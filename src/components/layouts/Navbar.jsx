@@ -85,8 +85,13 @@ const Navbar = () => {
                                             </div>
                                         </div>
                                         <ul
+
                                             tabIndex="-1"
                                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-2">
+                                            <div className="text-center border-b border-gray-200 pb-2">
+                                                <h3 className="font-medium text-base text-primary">{user.displayName}</h3>
+                                                <p className="text-sm text-gray-500 truncate">{user.email}</p>
+                                            </div>
                                             <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Dashboard</NavLink></li>
                                             <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
@@ -144,6 +149,10 @@ const Navbar = () => {
                                         <ul
                                             tabIndex="-1"
                                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-2">
+                                            <div className="text-center border-b border-gray-200 pb-2">
+                                                <h3 className="font-medium text-base text-primary">{user.displayName}</h3>
+                                                <p className="text-sm text-gray-500 truncate">{user.email}</p>
+                                            </div>
                                             <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Dashboard</NavLink></li>
                                             <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
@@ -218,6 +227,10 @@ const Navbar = () => {
                                         <ul
                                             tabIndex="-1"
                                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-2">
+                                            <div className="text-center border-b border-gray-200 pb-2">
+                                                <h3 className="font-medium text-base text-primary">{user.displayName}</h3>
+                                                <p className="text-sm text-gray-500 truncate">{user.email}</p>
+                                            </div>
                                             <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Dashboard</NavLink></li>
                                             <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
