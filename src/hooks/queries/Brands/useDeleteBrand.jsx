@@ -7,10 +7,7 @@ const useDeleteBrand = () => {
     return useMutation({
         mutationFn: (id) => brandsApi.delete(id),
         onSuccess: () => {
-            queryClient.invalidateQueries({
-                queryKey: ['brands'],
-                exact: false,
-            });
+            queryClient.invalidateQueries(["brands"]);
         },
     });
 };
