@@ -6,6 +6,7 @@ const useGetBookings = (email) => {
     return useQuery({
         queryKey: ['bookings', email],
         queryFn: () => bookingsApi.findAll(email),
+        enabled: !!email,
     })
 }
 export default useGetBookings;
