@@ -4,10 +4,12 @@ import useDeleteBooking from '../hooks/queries/bookings/useDeleteBooking';
 import toast from 'react-hot-toast';
 import useUpdateBooking from '../hooks/queries/bookings/useUpdateBooking';
 import Swal from 'sweetalert2';
+import useAuth from '../hooks/useAuth';
 
 const TableRow3 = ({ booking }) => {
-    const { mutate: deleteBooking } = useDeleteBooking();
-    const { mutate: updateBooking } = useUpdateBooking();
+    const { user } = useAuth()
+    const { mutate: deleteBooking } = useDeleteBooking(user?.email);
+    const { mutate: updateBooking } = useUpdateBooking(user?.email);
 
     const [startDate, setStartDate] = useState(booking.startDate?.split('T')[0] || '');
     const [endDate, setEndDate] = useState(booking.endDate?.split('T')[0] || '');
