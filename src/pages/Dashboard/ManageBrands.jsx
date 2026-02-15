@@ -43,8 +43,8 @@ const ManageBrands = () => {
 
     const handleFormSubmit = async e => {
         e.preventDefault()
-        const name = e.target.name.value
 
+        const name = e.target.name.value
         const image = e.target.image.files[0]
         const photoUrl = await imageUpload(image)
 
@@ -129,7 +129,7 @@ const ManageBrands = () => {
 
                                 <div className='space-y-2 text-secondary'>
                                     <label className="text-sm block text-secondary font-medium">Photo</label>
-                                    <input name='photoUrl' type="url" className='input w-full input-primary focus:outline-none bg-base-300' />
+                                    <input name='image' type="file" className='file-input file-input-primary  w-full focus:outline-none bg-base-300' />
                                 </div>
 
                                 <div className="modal-action flex justify-center gap-3">
