@@ -10,8 +10,7 @@ const BookingCard = ({ car }) => {
 
     const { user } = useAuth()
 
-    const { dailyRentalPrice } = car || {};
-    // const navigate = useNavigate()
+    const { dailyRentalPrice, bookingStatus, availability } = car || {};
 
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
@@ -49,7 +48,7 @@ const BookingCard = ({ car }) => {
 
         const payload = {
             carId: car._id,
-            email: car.email,
+            email: user?.email,
             startDate,
             endDate,
             totalCost: totalPrice
@@ -123,7 +122,7 @@ const BookingCard = ({ car }) => {
                 </div>
 
                 <div className='flex justify-center'>
-                    <button onClick={handleBookings} type='submit' className={`btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1 ${user?.email === car.email && 'btn-disabled'}`} > Book Now <span><MdOutlineArrowOutward /></span></button>
+                    <button onClick={handleBookings} type='submit' className={`btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1 ${(user?.email === car.email || bookingStatus || !availability) && 'btn-disabled'}`}>Book Now <span><MdOutlineArrowOutward /></span></button>
                 </div>
             </div>
         </div>
