@@ -6,11 +6,6 @@ export const bookingsApi = {
         return res.data.result;
     },
 
-    create: async (data) => {
-        const res = await baseApi.post("/bookings", data);
-        return res.data.result;
-    },
-
     update: async (id, data) => {
         const res = await baseApi.patch(`/bookings/${id}`, data);
         return res.data.result;
