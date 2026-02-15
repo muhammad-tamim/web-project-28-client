@@ -8,7 +8,7 @@ const useUpdateCategory = () => {
         mutationFn: ({ id, data }) => categoriesApi.update(id, data),
         onSuccess: (_, { id }) => {
             queryClient.invalidateQueries(["categories"]);
-            queryClient.invalidateQueries(["categories", id]);
+            queryClient.invalidateQueries(["category", id]);
         },
     });
 };
