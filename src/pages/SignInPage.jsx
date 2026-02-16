@@ -2,11 +2,14 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
 import useAuth from '../hooks/useAuth';
+import useCreateUser from '../hooks/queries/users/useCreateUser';
 
 const SignInPage = () => {
     const { signInUser, signInUserWithGoogle } = useAuth()
     const navigate = useNavigate();
     const location = useLocation()
+    const { mutate: createUser, isPending } = useCreateUser()
+
 
     const handleSignIn = e => {
         e.preventDefault()
@@ -15,9 +18,22 @@ const SignInPage = () => {
         const password = e.target.password.value
 
         signInUser(email, password)
-            .then(() => {
-                toast.success('Login Successful')
-                navigate(location?.state || '/')
+            .then((result) => {
+                const payload = {
+                    name: result?.user?.displayName,
+                    email: result?.user?.email,
+                    photoUrl: result?.user?.photoURL,
+                }
+                createUser(payload, {
+                    onSuccess: () => {
+                        toast.success('Login Successful')
+                        navigate(location?.state || '/')
+                    },
+                    onError: (err) => {
+                        toast.error(err.response?.data?.message || 'Failed to create user in DB')
+                    }
+                })
+
             })
             .catch((error) => {
                 toast.error(error.message)
@@ -26,9 +42,22 @@ const SignInPage = () => {
 
     const handleGoogleSignIn = () => {
         signInUserWithGoogle()
-            .then(() => {
-                toast.success('Login Successful')
-                navigate(location?.state || '/')
+            .then((result) => {
+                const payload = {
+                    name: result?.user?.displayName,
+                    email: result?.user?.email,
+                    photoUrl: result?.user?.photoURL,
+                }
+                createUser(payload, {
+                    onSuccess: () => {
+                        toast.success('Login Successful')
+                        navigate(location?.state || '/')
+                    },
+                    onError: (err) => {
+                        toast.error(err.response?.data?.message || 'Failed to create user in DB')
+                    }
+                })
+
             })
             .catch((error) => {
                 toast.error(error.message)
@@ -66,7 +95,7 @@ const SignInPage = () => {
                     </div>
                 </div>
 
-                <input type="submit" className="btn btn-primary w-full text-white" value={'Sign In'} />
+                <input type="submit" className={`btn bg-primary w-full text-white ${isPending && 'btn-disabled'}`} value={'Sign In'} />
             </form>
 
             <div className="flex items-center pt-4 space-x-2">
@@ -79,7 +108,7 @@ const SignInPage = () => {
             <div className="flex justify-center">
                 <button onClick={handleGoogleSignIn}
                     aria-label="Sign in with Google"
-                    className="btn btn-circle btn-outline hover:text-primary"
+                    className={`btn btn-circle btn-outline hover:text-primary ${isPending && 'btn-disabled'}`}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
