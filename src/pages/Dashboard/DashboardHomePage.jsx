@@ -27,7 +27,7 @@ const DashboardHomePage = () => {
         <div>
             {/* <PagesBanner pageName={'rentax'} title={`${data.role} dashboard`}></PagesBanner> */}
             <MaxWidth>
-                <div className='space-y-20 my-10'>
+                <div className='space-y-20 my-20 xl:px-10'>
                     {data?.role === 'customer' && <CustomerStatistics></CustomerStatistics>}
                     {data?.role === 'seller' && <SellerStatistics></SellerStatistics>}
                     {data?.role === 'admin' && <AdminStatistics></AdminStatistics>}
