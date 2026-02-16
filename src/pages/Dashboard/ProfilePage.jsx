@@ -6,9 +6,18 @@ import { CiEdit, CiFacebook, CiInstagram, CiTwitter } from 'react-icons/ci';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import MaxWidth from '../../components/MaxWidth';
 import toast from 'react-hot-toast';
+import useGetUser from '../../hooks/queries/users/usegetUser';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 const ProfilePage = () => {
     const { user, setUser, updateUserInfo, updateUserEmail, updateUserPassword, loading } = useAuth()
+
+    const { data, isLoading } = useGetUser(user?.email);
+
+
+    if (isLoading || loading) {
+        return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>
+    }
 
     const handleUpdateProfile = e => {
         e.preventDefault();
@@ -44,8 +53,6 @@ const ProfilePage = () => {
     }
     return (
         <div>
-            {/* <PagesBanner pageName={'rentax'} title={'Profile'}></PagesBanner> */}
-
             <MaxWidth>
                 <div className='space-y-20 my-20 xl:px-10'>
 
@@ -59,9 +66,9 @@ const ProfilePage = () => {
                                     </div>
                                 </div>
 
-                                <div className='text-center'>
-                                    <h4 className='font-semibold text-xl'>{user?.displayName}</h4>
-                                    <p className='text-secondary'>{user?.email}</p>
+                                <div className='text-center space-y-3'>
+                                    <h4 className='font-bold text-2xl'>{user?.displayName}</h4>
+                                    <p className='text-secondary'>{user?.email} | {data.role}</p>
                                 </div>
 
                             </div>
