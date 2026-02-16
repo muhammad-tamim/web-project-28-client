@@ -5,8 +5,15 @@ import { FiUser, FiBell } from 'react-icons/fi';
 import CustomerMenu from '../Menu/CustomerMenu';
 import SellerMenu from '../Menu/SellerMenu';
 import AdminMenu from '../Menu/AdminMenu';
+import CommonMenu from '../Menu/CommonMenu';
+import useGetUser from '../../../hooks/queries/users/usegetUser';
+import useAuth from '../../../hooks/useAuth';
+import LoadingSpinner from '../../LoadingSpinner';
 
 const Sidebar = () => {
+    const { user } = useAuth()
+    const { data } = useGetUser(user?.email);
+
     return (
         <div className="drawer-side z-50">
             <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
@@ -15,34 +22,10 @@ const Sidebar = () => {
 
                 <li className="text-sm text-gray-400 uppercase tracking-wider mb-2">Menu</li>
 
-                {/* common */}
-                <li>
-                    <NavLink to="/dashboard" end className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>
-                        <FiHome className="w-5 h-5" />
-                        <span>Dashboard</span>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/dashboard/profile" className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>
-                        <FiUser className="w-5 h-5" />
-                        <span>Profile</span>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/dashboard/notification" className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>
-                        <FiBell className="w-5 h-5" />
-                        <span>Notifications</span>
-                    </NavLink>
-                </li>
-
-                {/* customer */}
-                <CustomerMenu></CustomerMenu>
-
-                {/* seller */}
-                <SellerMenu></SellerMenu>
-
-                {/* admin */}
-                <AdminMenu></AdminMenu>
+                <CommonMenu></CommonMenu>
+                {data?.role === 'customer' && <CustomerMenu></CustomerMenu>}
+                {data?.role === 'seller' && <SellerMenu></SellerMenu>}
+                {data?.role === 'admin' && <AdminMenu></AdminMenu>}
 
             </ul>
         </div>
