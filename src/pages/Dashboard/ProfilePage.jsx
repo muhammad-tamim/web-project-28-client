@@ -8,12 +8,14 @@ import MaxWidth from '../../components/MaxWidth';
 import toast from 'react-hot-toast';
 import useGetUser from '../../hooks/queries/users/usegetUser';
 import LoadingSpinner from '../../components/LoadingSpinner';
+import Swal from 'sweetalert2';
+import useUpdateUser from '../../hooks/queries/users/useUpdateUser';
 
 const ProfilePage = () => {
     const { user, setUser, updateUserInfo, updateUserEmail, updateUserPassword, loading } = useAuth()
 
     const { data, isLoading } = useGetUser(user?.email);
-
+    const { mutate: updateUser } = useUpdateUser(user?.email)
 
     if (isLoading || loading) {
         return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>
@@ -51,6 +53,37 @@ const ProfilePage = () => {
             toast.error(err.message);
         }
     }
+
+    const handleWantToSeller = () => {
+        const id = data?._id
+        const payload = { wantToSellerRequest: true }
+        Swal.fire({
+            title: "Are you sure?",
+            icon: "warning",
+            showCancelButton: true,
+
+            buttonsStyling: false,
+
+            confirmButtonText: "Yes, want to",
+            cancelButtonText: "Cancel",
+
+            customClass: {
+                confirmButton: "btn btn-primary mx-5 btn-lg rounded-full px-10",
+                cancelButton: "btn btn-outline btn-primary btn-lg rounded-full px-10",
+            },
+        }).then((result) => {
+            if (result.isConfirmed) {
+                updateUser({ id, data: payload }, {
+                    onSuccess: () => {
+                        toast.success("Your Request has been send successfully to admin")
+                    },
+                    onError: (err) => toast.error(err.message || "Update failed"),
+                })
+
+            }
+        });
+
+    }
     return (
         <div>
             <MaxWidth>
@@ -79,6 +112,7 @@ const ProfilePage = () => {
                                 <Link ><button className='btn btn-circle btn-outline btn-primary btn-lg'><CiInstagram /></button></Link>
                                 <Link ><button className='btn btn-circle btn-outline btn-primary btn-lg'><FaFacebookF /></button></Link>
                                 <button onClick={() => document.getElementById('my_modal_1').showModal()} className='btn rounded-4xl btn-outline btn-primary btn-lg flex items-center gap-2'><span><CiEdit /></span><span>Edit</span></button>
+                                <button onClick={handleWantToSeller} className='btn rounded-4xl btn-outline btn-primary btn-lg flex items-center gap-2'><span></span><span>Want to Seller</span></button>
                             </div>
 
                         </div>
