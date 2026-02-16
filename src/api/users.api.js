@@ -16,6 +16,11 @@ export const usersApi = {
     getUser: async (email) => {
         const res = await baseApi.get(`/users/${email}`)
         return res.data.result
+    },
+
+    updateUser: async (id, data) => {
+        const res = await baseApi.patch(`/users/${id}`, data)
+        return res.data.result
     }
 
 }
