@@ -11,6 +11,11 @@ export const usersApi = {
             params: { page, limit }
         })
         return res.data
+    },
+
+    getUser: async (email) => {
+        const res = await baseApi.get(`/users/${email}`)
+        return res.data.result
     }
 
 }
