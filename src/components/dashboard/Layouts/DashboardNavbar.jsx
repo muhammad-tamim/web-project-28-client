@@ -60,7 +60,7 @@ const DashboardNavbar = () => {
                                             <h3 className="font-medium text-base text-primary">{user.displayName}</h3>
                                             <p className="text-sm text-gray-500 truncate">{user.email}</p>
                                         </div>
-                                        <li><NavLink to={'/profile'} className={({ isActive }) => `block px-3 py-2 rounded hover:bg-primary hover:text-white transition ${isActive ? 'bg-primary text-white' : 'text-secondary'}`}>Profile</NavLink></li>
+                                        <li><NavLink to={'/dashboard/profile'} className={({ isActive }) => `block px-3 py-2 rounded hover:bg-primary hover:text-white transition ${isActive ? 'bg-primary text-white' : 'text-secondary'}`}>Profile</NavLink></li>
                                         <li><a onClick={handleSignOut} className="w-full text-left px-3 py-2 rounded hover:bg-red-500 hover:text-white transition text-secondary">SignOut</a></li>
                                     </ul>
                                 </div>
