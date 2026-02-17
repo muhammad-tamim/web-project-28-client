@@ -32,8 +32,8 @@ const TableRowForManageUsers = ({ user }) => {
             <td className='p-3'>{user.email}</td>
             <td className='p-3'>{user.role}</td>
             <td className='p-3'>{user.wantToSellerRequest ? "true" : "false"}</td>
-            <td>
-                <select onChange={handleActions} value={selectedValue} className="select select-primary focus:outline-none bg-base-300">
+            <td className='p-3'>
+                <select onChange={handleActions} value={selectedValue} className="select select-primary focus:outline-none bg-base-300 w-44">
                     <option value={''} disabled={true}>Select an action</option>
                     <option value={'customer'}>Make Customer</option>
                     <option value={'seller'}>Make Seller</option>
