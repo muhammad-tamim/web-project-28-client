@@ -6,6 +6,11 @@ export const bookingsApi = {
         return res.data.result;
     },
 
+    findAllBySellerEmail: async (email) => {
+        const res = await baseApi.get(`/bookings/seller/${email}`);
+        return res.data.result
+    },
+
     update: async (id, data) => {
         const res = await baseApi.patch(`/bookings/${id}`, data);
         return res.data.result;
