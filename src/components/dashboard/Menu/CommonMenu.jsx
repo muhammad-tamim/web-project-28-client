@@ -17,12 +17,6 @@ const CommonMenu = () => {
                     <span>Profile</span>
                 </NavLink>
             </li>
-            <li>
-                <NavLink to="/dashboard/notification" className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>
-                    <FiBell className="w-5 h-5" />
-                    <span>Notifications</span>
-                </NavLink>
-            </li>
         </>
     );
 };
