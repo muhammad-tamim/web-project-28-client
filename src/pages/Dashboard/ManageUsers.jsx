@@ -64,13 +64,12 @@ const ManageUsers = () => {
                             <table className="table w-full bg-base-300">
                                 <thead>
                                     <tr>
-                                        <th className="p-3 text-left">Image</th>
-                                        <th className="p-3 text-left">Name</th>
-                                        <th className="p-3 text-left">Email</th>
-                                        <th className="p-3 text-left">Role</th>
-                                        <th className="p-3 text-left">Want to Seller</th>
-                                        <th className="p-3 text-left"></th>
-                                        <th className="p-3 text-left">Actions</th>
+                                        <th className="p-3">Image</th>
+                                        <th className="p-3">Name</th>
+                                        <th className="p-3">Email</th>
+                                        <th className="p-3">Role</th>
+                                        <th className="p-3">Want to Seller</th>
+                                        <th className="p-3">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
