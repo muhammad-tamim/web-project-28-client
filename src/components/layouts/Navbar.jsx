@@ -93,7 +93,7 @@ const Navbar = () => {
                                                 <p className="text-sm text-gray-500 truncate">{user.email}</p>
                                             </div>
                                             <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Dashboard</NavLink></li>
-                                            <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
+                                            <li><NavLink to={'/dashboard/profile'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
                                     </div>
                                 )}
@@ -154,7 +154,7 @@ const Navbar = () => {
                                                 <p className="text-sm text-gray-500 truncate">{user.email}</p>
                                             </div>
                                             <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Dashboard</NavLink></li>
-                                            <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
+                                            <li><NavLink to={'/dashboard/profile'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
                                     </div>
                                 )}
@@ -232,7 +232,7 @@ const Navbar = () => {
                                                 <p className="text-sm text-gray-500 truncate">{user.email}</p>
                                             </div>
                                             <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Dashboard</NavLink></li>
-                                            <li><NavLink to={'/dashboard'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
+                                            <li><NavLink to={'/dashboard/profile'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
                                     </div>
                                 )}
