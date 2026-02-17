@@ -11,6 +11,13 @@ export const bookingsApi = {
         return res.data.result
     },
 
+    findAllBySellerEmailWithPagination: async (email, page, limit = 9) => {
+        const res = await baseApi.get(`/bookings/seller/pagination/${email}`, {
+            params: { page, limit }
+        });
+        return res.data
+    },
+
     update: async (id, data) => {
         const res = await baseApi.patch(`/bookings/${id}`, data);
         return res.data.result;
