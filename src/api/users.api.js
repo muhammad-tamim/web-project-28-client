@@ -19,7 +19,7 @@ export const usersApi = {
     },
 
     updateUser: async (id, data) => {
-        const res = await baseApi.patch(`/users/${id}`, data)
+        const res = await baseApi.patch(`/users/update/${id}`, data)
         return res.data.result
     }
 
