@@ -112,7 +112,7 @@ const ProfilePage = () => {
                                 <Link ><button className='btn btn-circle btn-outline btn-primary btn-lg'><CiInstagram /></button></Link>
                                 <Link ><button className='btn btn-circle btn-outline btn-primary btn-lg'><FaFacebookF /></button></Link>
                                 <button onClick={() => document.getElementById('my_modal_1').showModal()} className='btn rounded-4xl btn-outline btn-primary btn-lg flex items-center gap-2'><span><CiEdit /></span><span>Edit</span></button>
-                                <button onClick={handleWantToSeller} className={`btn rounded-4xl btn-outline btn-primary btn-lg flex items-center gap-2 ${(data.wantToSellerRequest === true || data.role === 'seller') && 'hidden'}`}><span></span><span>Want to Seller</span></button>
+                                <button onClick={handleWantToSeller} className={`btn rounded-4xl btn-outline btn-primary btn-lg flex items-center gap-2 ${(data.wantToSellerRequest === true || data.role === 'seller' || data.role === 'admin') && 'hidden'}`}><span></span><span>Want to Seller</span></button>
                             </div>
 
                         </div>
