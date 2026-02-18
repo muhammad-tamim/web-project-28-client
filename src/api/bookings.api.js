@@ -6,6 +6,16 @@ export const bookingsApi = {
         return res.data.result;
     },
 
+    findAllBookings: async () => {
+        const res = await baseApi.get('/bookings')
+        return res.data.result
+    },
+
+    countAll: async () => {
+        const res = await baseApi.get("/bookings/count")
+        return res.data.result
+    },
+
     findAllBySellerEmail: async (email) => {
         const res = await baseApi.get(`/bookings/seller/${email}`);
         return res.data.result
