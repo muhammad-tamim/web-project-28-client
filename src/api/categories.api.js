@@ -19,5 +19,10 @@ export const categoriesApi = {
     delete: async (id) => {
         const res = await baseApi.delete(`/categories/${id}`)
         return res.data.result
+    },
+
+    countAll: async () => {
+        const res = await baseApi.get('/categories/count')
+        return res.data.result
     }
 };
