@@ -4,15 +4,17 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 import useFindAllBookingsWithPagination from '../../hooks/queries/bookings/useFindAllBookingsWithPagination';
 import TableRowForSalesReport from '../../components/dashboard/SalesReport/TableRowForSalesReport';
 import Pagination from '../../components/Pagination';
+import useGetReport from '../../hooks/queries/bookings/useGetReport';
 
 const SalesReport = () => {
     const [page, setPage] = useState(1)
     const [search, setSearch] = useState('')
     const [sortBy, setSortBy] = useState('newest')
     const { data, isLoading, isError, error } = useFindAllBookingsWithPagination(page)
+    const { data: report, isLoading: reportIsLoading, isError: reportIsError, error: reportError } = useGetReport()
 
 
-    if (isLoading) {
+    if (isLoading || reportIsLoading) {
         return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
     }
 
@@ -46,6 +48,17 @@ const SalesReport = () => {
     })
 
 
+    const downloadReport = () => {
+
+        const url = window.URL.createObjectURL(report)
+
+        const a = document.createElement("a")
+        a.href = url
+        a.download = "sales-report.xlsx"
+        a.click()
+        window.URL.revokeObjectURL(url);
+    }
+
     return (
         <div>
             <MaxWidth>
@@ -63,7 +76,7 @@ const SalesReport = () => {
                                 <option value='highest'>Price: High to Low</option>
                             </select>
 
-                            <button className='btn btn-primary btn-outline'>Download Report</button>
+                            <button onClick={downloadReport} className='btn btn-primary btn-outline'>Download Report</button>
                         </div>
                     </div>
 
