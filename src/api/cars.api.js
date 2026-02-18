@@ -40,7 +40,10 @@ export const carsApi = {
         return res.data.result;
     },
 
-
+    countAllCarsCount: async () => {
+        const res = await baseApi.get('cars/count')
+        return res.data.result
+    },
 
     findOne: async (id) => {
         const res = await baseApi.get(`/cars/${id}`)
