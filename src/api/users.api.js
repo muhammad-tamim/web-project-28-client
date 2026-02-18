@@ -13,6 +13,16 @@ export const usersApi = {
         return res.data
     },
 
+    getRecentSellers: async () => {
+        const res = await baseApi.get('/users/recent-sellers')
+        return res.data.result
+    },
+
+    getRecentCustomers: async () => {
+        const res = await baseApi.get('/users/recent-customers')
+        return res.data.result
+    },
+
     getCountAll: async () => {
         const res = await baseApi.get('/users/count')
         return res.data.result
