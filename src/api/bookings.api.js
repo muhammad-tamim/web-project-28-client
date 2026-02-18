@@ -11,6 +11,13 @@ export const bookingsApi = {
         return res.data.result
     },
 
+    findAllBookingsWithPagination: async (page, limit = 9) => {
+        const res = await baseApi.get('/bookings/pagination', {
+            params: { page, limit }
+        })
+        return res.data
+    },
+
     countAll: async () => {
         const res = await baseApi.get("/bookings/count")
         return res.data.result
