@@ -28,6 +28,11 @@ export const bookingsApi = {
         return res.data.result
     },
 
+    getReport: async () => {
+        const res = await baseApi.get('/bookings/report', { responseType: 'blob' })
+        return res.data
+    },
+
     findAllBySellerEmailWithPagination: async (email, page, limit = 9) => {
         const res = await baseApi.get(`/bookings/seller/pagination/${email}`, {
             params: { page, limit }
