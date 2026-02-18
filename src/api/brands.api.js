@@ -20,4 +20,9 @@ export const brandsApi = {
         const res = await baseApi.delete(`/brands/${id}`)
         return res.data.result
     },
+
+    countAll: async () => {
+        const res = await baseApi.get("/brands/count")
+        return res.data.result
+    }
 };
