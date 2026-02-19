@@ -84,13 +84,20 @@ const BookingCard = ({ car }) => {
                 try {
                     const payload = {
                         carId: car._id,
-                        email: user?.email,
+                        product_name: car.name,
+                        cus_name: userInfo.name,
+                        cus_email: userInfo.email,
+                        cus_add1: "123 Test Street",
+                        cus_city: "Dhaka",
+                        cus_postcode: "1200",
+                        cus_country: "Bangladesh",
+                        cus_phone: "01712345678",
                         startDate,
                         endDate,
-                        totalCost: totalPrice
                     }
-                    const url = await stripeApi.createSession(payload);
-                    window.location.href = url;
+
+                    const { gatewayURL } = await stripeApi.createSession(payload);
+                    window.location.href = gatewayURL;
                 } catch (err) {
                     toast.error(err.message || 'Payment Failed');
                 }
