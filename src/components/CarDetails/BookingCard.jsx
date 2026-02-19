@@ -87,6 +87,7 @@ const BookingCard = ({ car }) => {
                         product_name: car.name,
                         cus_name: userInfo.name,
                         cus_email: userInfo.email,
+                        cus_photoUrl: userInfo.photoUrl,
                         cus_add1: "123 Test Street",
                         cus_city: "Dhaka",
                         cus_postcode: "1200",
@@ -108,14 +109,9 @@ const BookingCard = ({ car }) => {
                         carId: car._id,
                         product_name: car.name,
 
-                        // Customer Information
                         cus_name: userInfo.name,
                         cus_email: userInfo.email,
-                        // cus_add1: userInfo.add1,
-                        // cus_city: userInfo.city,
-                        // cus_postcode: userInfo.postcode,
-                        // cus_country: userInfo.country,
-                        // cus_phone: userInfo.phone,
+                        cus_photoUrl: userInfo.photoUrl,
                         cus_add1: "123 Test Street",
                         cus_city: "Dhaka",
                         cus_postcode: "1200",
