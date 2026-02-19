@@ -2,12 +2,12 @@ import { baseApi } from "./axios";
 
 export const stripeApi = {
     createSession: async (data) => {
-        const res = await baseApi.post("/stripe/create-session", data);
-        return res.data.url;
+        const res = await baseApi.post("/stripe/init", data);
+        return res.data; // { gatewayURL, tran_id, val_id }
     },
 
-    verifyPayment: async (sessionId) => {
-        const res = await baseApi.get(`/stripe/verify/${sessionId}`);
-        return res.data;
+    verifyPayment: async (tran_id, val_id) => {
+        const res = await baseApi.post("/stripe/validate", { tran_id, val_id });
+        return res.data; // { success: true/false }
     }
 };
