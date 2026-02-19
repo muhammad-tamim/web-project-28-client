@@ -1,6 +1,12 @@
 import { baseApi } from "./axios";
 
 export const bookingsApi = {
+
+    create: async (tran_id) => {
+        const res = await baseApi.post(`/bookings`, { tran_id });
+        return res.data.result;
+    },
+
     findAll: async (email) => {
         const res = await baseApi.get(`/bookings/${email}`);
         return res.data.result;
