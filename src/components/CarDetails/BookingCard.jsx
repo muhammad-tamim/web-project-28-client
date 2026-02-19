@@ -5,15 +5,31 @@ import toast from 'react-hot-toast';
 // import { useNavigate } from 'react-router';
 import { stripeApi } from '../../api/stripe.api';
 import useAuth from '../../hooks/useAuth';
+import useGetUser from '../../hooks/queries/users/useGetUser';
+import LoadingSpinner from '../LoadingSpinner';
+import { sslcommerzApi } from '../../api/sslcommerz.api';
 
 const BookingCard = ({ car }) => {
 
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [paymentMethod, setPaymentMethod] = useState('')
+
     const { user } = useAuth()
+    const { data: userInfo, isLoading, isError, error } = useGetUser(user?.email)
+
+    if (isLoading) {
+        return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
+    }
+
+    if (isError) {
+        return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>
+    }
+
 
     const { dailyRentalPrice, bookingStatus, availability } = car || {};
 
-    const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('');
+
 
 
     let days = 0;
@@ -46,14 +62,6 @@ const BookingCard = ({ car }) => {
         }
 
 
-        const payload = {
-            carId: car._id,
-            email: user?.email,
-            startDate,
-            endDate,
-            totalCost: totalPrice
-        }
-
         const result = await Swal.fire({
             title: "Are you sure?",
             icon: "warning",
@@ -72,11 +80,51 @@ const BookingCard = ({ car }) => {
 
 
         if (result.isConfirmed) {
-            try {
-                const url = await stripeApi.createSession(payload);
-                window.location.href = url;
-            } catch (err) {
-                toast.error(err.message || 'Payment Failed');
+            if (paymentMethod === 'stripe') {
+                try {
+                    const payload = {
+                        carId: car._id,
+                        email: user?.email,
+                        startDate,
+                        endDate,
+                        totalCost: totalPrice
+                    }
+                    const url = await stripeApi.createSession(payload);
+                    window.location.href = url;
+                } catch (err) {
+                    toast.error(err.message || 'Payment Failed');
+                }
+            }
+            else if (paymentMethod === 'sslcommerz') {
+                try {
+                    const payload = {
+                        carId: car._id,
+                        product_name: car.name,
+
+                        // Customer Information
+                        cus_name: userInfo.name,
+                        cus_email: userInfo.email,
+                        // cus_add1: userInfo.add1,
+                        // cus_city: userInfo.city,
+                        // cus_postcode: userInfo.postcode,
+                        // cus_country: userInfo.country,
+                        // cus_phone: userInfo.phone,
+                        cus_add1: "123 Test Street",
+                        cus_city: "Dhaka",
+                        cus_postcode: "1200",
+                        cus_country: "Bangladesh",
+                        cus_phone: "01712345678",
+
+                        startDate,
+                        endDate,
+                    };
+
+                    const gatewayURL = await sslcommerzApi.init(payload);
+
+                    window.location.href = gatewayURL;
+                } catch (err) {
+                    toast.error(err.message || "Payment initialization failed");
+                }
             }
         }
 
@@ -92,11 +140,19 @@ const BookingCard = ({ car }) => {
                 <div className='space-y-5'>
                     <div className='space-y-2 text-secondary'>
                         <label className="text-sm block text-secondary font-medium">Start Date</label>
-                        <input value={startDate} onChange={(e) => setStartDate(e.target.value)} name="startDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' />
+                        <input value={startDate} onChange={(e) => setStartDate(e.target.value)} name="startDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' required />
                     </div>
                     <div className='space-y-2 text-secondary'>
                         <label className="text-sm block text-secondary font-medium">End Date</label>
-                        <input value={endDate} onChange={(e) => setEndDate(e.target.value)} name="endDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' />
+                        <input value={endDate} onChange={(e) => setEndDate(e.target.value)} name="endDate" type="date" className='input w-full input-primary focus:outline-none bg-base-300' required />
+                    </div>
+                    <div className='space-y-2 text-secondary'>
+                        <label className="text-sm block text-secondary font-medium">Payment Method</label>
+                        <select onChange={(e) => setPaymentMethod(e.target.value)} value={paymentMethod} className="select w-full select-primary focus:outline-none bg-base-300" required>
+                            <option value={''} disabled={true}>Pick a Payment Method</option>
+                            <option value={'stripe'}>Stripe</option>
+                            <option value={'sslcommerz'}>SSLCOMMERZ</option>
+                        </select>
                     </div>
                 </div>
 
@@ -122,7 +178,7 @@ const BookingCard = ({ car }) => {
                 </div>
 
                 <div className='flex justify-center'>
-                    <button onClick={handleBookings} type='submit' className={`btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1 ${(user?.email === car.email || bookingStatus || !availability) && 'btn-disabled'}`}>Book Now <span><MdOutlineArrowOutward /></span></button>
+                    <button onClick={handleBookings} type='submit' className={`btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1 ${(user?.email === car.email || bookingStatus || !availability || paymentMethod === '' || startDate === '' || endDate === '') && 'btn-disabled'}`}>Book Now <span><MdOutlineArrowOutward /></span></button>
                 </div>
             </div>
         </div>
