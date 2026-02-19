@@ -5,17 +5,17 @@ import { stripeApi } from '../api/stripe.api';
 import { sslcommerzApi } from '../api/sslcommerz.api';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { MdOutlineArrowOutward } from 'react-icons/md';
+import useCreateBookings from '../hooks/queries/bookings/useCreateBookings';
 
 const PaymentSuccessPage = () => {
     const [params] = useSearchParams();
     const tran_id = params.get('tran_id'); // unified for Stripe & SSLCommerz
     const val_id = params.get('val_id');   // Stripe session ID or SSLCommerz val_id
     const navigate = useNavigate();
+    const { mutate: createCar } = useCreateBookings()
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        let timer;
-
         const verifyPayment = async () => {
             try {
                 if (!tran_id || !val_id) {
@@ -40,9 +40,11 @@ const PaymentSuccessPage = () => {
                 }
 
                 if (success) {
-                    timer = setTimeout(() => {
-                        navigate('/dashboard/customer/bookings-history', { replace: true });
-                    }, 5000);
+                    createCar({ tran_id }, {
+                        onSuccess: () => toast.success('Booking created successfully!'),
+                        onError: (err) => toast.error(err.message || 'Failed to create booking')
+                    });
+
                 }
             } catch (err) {
                 toast.error(err.message || 'Payment verification failed');
@@ -53,8 +55,7 @@ const PaymentSuccessPage = () => {
 
         verifyPayment();
 
-        return () => clearTimeout(timer);
-    }, [tran_id, val_id, navigate, params]);
+    }, [tran_id, val_id, navigate, params, createCar]);
 
     if (loading) return <LoadingSpinner minHScreen="min-h-screen" />;
 
@@ -82,10 +83,6 @@ const PaymentSuccessPage = () => {
                     <MdOutlineArrowOutward />
                 </button>
             </div>
-
-            <p className="text-sm text-gray-500 mt-3">
-                You will be automatically redirected to your bookings in a few seconds...
-            </p>
         </div>
     );
 };
