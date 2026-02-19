@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PagesBanner from '../components/layouts/PagesBanner';
 import MaxWidth from '../components/MaxWidth';
 import useGetBookings from '../hooks/queries/bookings/useGetBookings';
@@ -7,13 +7,20 @@ import useAuth from '../hooks/useAuth';
 import TableRow3 from '../components/tableRow3';
 
 const MyBookings = () => {
+
     const { user } = useAuth()
     const [search, setSearch] = useState('');
     const [sortBy, setSortBy] = useState('newest');
 
     const { data: bookings, isLoading, error, isError } = useGetBookings(user?.email);
 
-    localStorage.setItem("bookingsCount", bookings?.length)
+
+    useEffect(() => {
+        if (bookings) {
+            localStorage.setItem("bookingsCount", bookings.length.toString())
+        }
+    }, [bookings])
+
 
     if (isLoading) {
         return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
@@ -42,6 +49,7 @@ const MyBookings = () => {
         }
         return 0
     })
+
 
     return (
         <div>
