@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PagesBanner from '../components/layouts/PagesBanner';
 import MaxWidth from '../components/MaxWidth';
 import useGetBookings from '../hooks/queries/bookings/useGetBookings';
@@ -13,13 +13,6 @@ const MyBookings = () => {
     const [sortBy, setSortBy] = useState('newest');
 
     const { data: bookings, isLoading, error, isError } = useGetBookings(user?.email);
-
-
-    useEffect(() => {
-        if (bookings) {
-            localStorage.setItem("bookingsCount", bookings.length.toString())
-        }
-    }, [bookings])
 
 
     if (isLoading) {
