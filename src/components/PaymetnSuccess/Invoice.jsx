@@ -133,23 +133,6 @@ const Invoice = ({ booking }) => {
                 </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row w-full justify-center items-center  gap-4 mt-20">
-                <Link to="/my-bookings">
-                    <button className="btn btn-primary rounded-full btn-lg flex items-center gap-2">
-                        <span>See All Bookings</span>
-                        <MdOutlineArrowOutward />
-                    </button>
-                </Link>
-
-                <Link to="/cars">
-                    <button className="btn btn-outline btn-primary rounded-full btn-lg flex items-center gap-2">
-                        <span>Add More Cars</span>
-                        <MdOutlineArrowOutward />
-                    </button>
-                </Link>
-            </div>
-
         </div>
     );
 };

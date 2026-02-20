@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchParams, useNavigate } from 'react-router';
+import { useSearchParams, useNavigate, Link } from 'react-router';
 import toast from 'react-hot-toast';
 import { stripeApi } from '../api/stripe.api';
 import { sslcommerzApi } from '../api/sslcommerz.api';
@@ -84,6 +84,22 @@ const PaymentSuccessPage = () => {
             <MaxWidth>
                 <div className='space-y-20 my-20'>
                     <Invoice booking={booking}></Invoice>
+                </div>
+
+                <div className="flex flex-col sm:flex-row w-full justify-center items-center  gap-4 my-20">
+                    <Link to="/my-bookings">
+                        <button className="btn btn-primary rounded-full btn-lg flex items-center gap-2">
+                            <span>See All Bookings</span>
+                            <MdOutlineArrowOutward />
+                        </button>
+                    </Link>
+
+                    <Link to="/cars">
+                        <button className="btn btn-outline btn-primary rounded-full btn-lg flex items-center gap-2">
+                            <span>Add More Cars</span>
+                            <MdOutlineArrowOutward />
+                        </button>
+                    </Link>
                 </div>
             </MaxWidth>
         </div>
