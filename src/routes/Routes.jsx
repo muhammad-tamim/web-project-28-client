@@ -35,6 +35,7 @@ import SalesReport from "../pages/Dashboard/SalesReport";
 import MySales from "../pages/Dashboard/MySales";
 import PaymentSuccessPage from "../pages/PaymentSuccessPage";
 import PaymentCancelPage from "../pages/PaymentCancelPage";
+import InvoicePage from "../pages/Dashboard/InvoicePage";
 
 export const Routes = createBrowserRouter([
     {
@@ -135,6 +136,10 @@ export const Routes = createBrowserRouter([
             {
                 path: 'customer/payments-history',
                 Component: PaymentsHistory
+            },
+            {
+                path: 'customer/invoice',
+                Component: InvoicePage
             },
 
             // seller

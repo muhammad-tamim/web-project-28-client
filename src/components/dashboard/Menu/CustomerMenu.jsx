@@ -17,6 +17,12 @@ const CustomerMenu = () => {
                     <span>Payments History</span>
                 </NavLink>
             </li>
+            <li>
+                <NavLink to="/dashboard/customer/invoice" className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>
+                    <FiCreditCard className="w-5 h-5" />
+                    <span>Invoice</span>
+                </NavLink>
+            </li>
         </>
     );
 };
