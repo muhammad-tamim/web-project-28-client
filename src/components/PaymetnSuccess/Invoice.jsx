@@ -1,21 +1,18 @@
 import React from 'react';
-import LoadingSpinner from '../LoadingSpinner';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import { Link } from 'react-router';
-import { format } from 'date-fns';
-import TableRowForInvoice from './TableRowForInvoice';
+import { differenceInCalendarDays, format } from 'date-fns';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import InvoicePDF from './InvoicePDF';
 
-const Invoice = ({ bookings }) => {
+const Invoice = ({ booking }) => {
 
 
-    if (!bookings || bookings.length === 0) {
+    if (!booking || booking.length === 0) {
         return <h2 className="text-center my-20">No invoice found</h2>;
     }
 
-    const booking = bookings?.[bookings.length - 1];
-    const { payment, tran_id, createdAt, carId } = booking;
+    const { car, payment, tran_id, createdAt, carId, startDate, endDate, totalCost } = booking;
 
 
 
@@ -73,6 +70,9 @@ const Invoice = ({ bookings }) => {
                             Invoice ID: {tran_id}
                         </p>
                         <p className="text-secondary">
+                            Validation ID: {payment.val_id}
+                        </p>
+                        <p className="text-secondary">
                             Car ID: {carId}
                         </p>
                     </div>
@@ -97,7 +97,17 @@ const Invoice = ({ bookings }) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {bookings.map(booking => <TableRowForInvoice key={booking._id} booking={booking}></TableRowForInvoice>)}
+
+                                <tr>
+                                    <td>{car.name}</td>
+                                    <td>
+                                        {format(new Date(startDate), 'PP')} | {format(new Date(endDate), 'PP')}
+                                    </td>
+                                    <td>{differenceInCalendarDays(new Date(endDate), new Date(startDate))} Days</td>
+                                    <td>{car.dailyRentalPrice} {payment.currency}</td>
+                                    <td>{totalCost} {payment.currency}</td>
+                                    <td>{payment.paymentMethod}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -105,7 +115,7 @@ const Invoice = ({ bookings }) => {
 
                 <div className='my-8'>
                     <PDFDownloadLink
-                        document={<InvoicePDF bookings={bookings} />}
+                        document={<InvoicePDF booking={booking} />}
                         fileName={`Invoice.pdf`}
                         style={{ textDecoration: 'none' }}>
                         {({ loading }) => (

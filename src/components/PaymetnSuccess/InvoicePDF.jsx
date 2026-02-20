@@ -90,11 +90,9 @@ const styles = StyleSheet.create({
 });
 
 
-const InvoicePDF = ({ bookings }) => {
-    if (!bookings || bookings.length === 0) return null;
-
-    const booking = bookings[bookings.length - 1];
-    const { payment, tran_id, createdAt, carId } = booking;
+const InvoicePDF = ({ booking }) => {
+    if (!booking || booking.length === 0) return null;
+    const { car, payment, tran_id, createdAt, carId, startDate, endDate, totalCost } = booking;
     return (
         <Document>
             <Page style={styles.page}>
@@ -147,18 +145,16 @@ const InvoicePDF = ({ bookings }) => {
                     </View>
 
                     {/* Rows */}
-                    {bookings.map(b => (
-                        <View key={b._id} style={styles.tableRow}>
-                            <Text style={styles.tableCol}>{b.car?.name || b.carId}</Text>
-                            <Text style={styles.tableCol}>
-                                {format(new Date(b.startDate), 'PP')} - {format(new Date(b.endDate), 'PP')}
-                            </Text>
-                            <Text style={styles.tableCol}>{differenceInCalendarDays(new Date(b.endDate), new Date(b.startDate))} Days</Text>
-                            <Text style={styles.tableCol}>{b.car?.dailyRentalPrice} {b.payment.currency}</Text>
-                            <Text style={styles.tableCol}>{b.totalCost} {b.payment.currency}</Text>
-                            <Text style={styles.tableCol}>{b.payment.paymentMethod}</Text>
-                        </View>
-                    ))}
+                    <View style={styles.tableRow}>
+                        <Text style={styles.tableCol}>{car?.name || carId}</Text>
+                        <Text style={styles.tableCol}>
+                            {format(new Date(startDate), 'PP')} - {format(new Date(endDate), 'PP')}
+                        </Text>
+                        <Text style={styles.tableCol}>{differenceInCalendarDays(new Date(endDate), new Date(startDate))} Days</Text>
+                        <Text style={styles.tableCol}>{car?.dailyRentalPrice} {payment.currency}</Text>
+                        <Text style={styles.tableCol}>{totalCost} {payment.currency}</Text>
+                        <Text style={styles.tableCol}>{payment.paymentMethod}</Text>
+                    </View>
                 </View>
 
                 {/* Footer */}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
 import { stripeApi } from '../api/stripe.api';
@@ -19,6 +19,7 @@ const PaymentSuccessPage = () => {
     const val_id = params.get('val_id');   // Stripe session ID or SSLCommerz val_id
     const navigate = useNavigate();
     const { mutate: createCar } = useCreateBookings()
+    const [booking, setBooking] = useState();
     const { data: bookings, isLoading, isError, error } = useGetBookings(user?.email)
 
 
@@ -48,7 +49,10 @@ const PaymentSuccessPage = () => {
 
                 if (success) {
                     createCar({ tran_id }, {
-                        onSuccess: () => toast.success('Booking created successfully!'),
+                        onSuccess: (booking) => {
+                            toast.success('Booking created successfully!')
+                            setBooking(booking)
+                        },
                         onError: (err) => toast.error(err.message || 'Failed to create booking')
                     });
 
@@ -79,7 +83,7 @@ const PaymentSuccessPage = () => {
             <PagesBanner pageName={'rentax'} title={'Your Payment Invoice'}></PagesBanner>
             <MaxWidth>
                 <div className='space-y-20 my-20'>
-                    <Invoice bookings={bookings}></Invoice>
+                    <Invoice booking={booking}></Invoice>
                 </div>
             </MaxWidth>
         </div>
