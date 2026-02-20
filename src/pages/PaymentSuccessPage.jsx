@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
 import { stripeApi } from '../api/stripe.api';
@@ -6,14 +6,21 @@ import { sslcommerzApi } from '../api/sslcommerz.api';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import useCreateBookings from '../hooks/queries/bookings/useCreateBookings';
+import PagesBanner from '../components/layouts/PagesBanner';
+import Invoice from '../components/PaymetnSuccess/Invoice';
+import MaxWidth from '../components/MaxWidth';
+import useGetBookings from '../hooks/queries/bookings/useGetBookings';
+import useAuth from '../hooks/useAuth';
 
 const PaymentSuccessPage = () => {
+    const { user } = useAuth()
     const [params] = useSearchParams();
     const tran_id = params.get('tran_id'); // unified for Stripe & SSLCommerz
     const val_id = params.get('val_id');   // Stripe session ID or SSLCommerz val_id
     const navigate = useNavigate();
     const { mutate: createCar } = useCreateBookings()
-    const [loading, setLoading] = useState(true);
+    const { data: bookings, isLoading, isError, error } = useGetBookings(user?.email)
+
 
     useEffect(() => {
         const verifyPayment = async () => {
@@ -48,8 +55,6 @@ const PaymentSuccessPage = () => {
                 }
             } catch (err) {
                 toast.error(err.message || 'Payment verification failed');
-            } finally {
-                setLoading(false);
             }
         };
 
@@ -57,32 +62,26 @@ const PaymentSuccessPage = () => {
 
     }, [tran_id, val_id, navigate, params, createCar]);
 
-    if (loading) return <LoadingSpinner minHScreen="min-h-screen" />;
+    if (isLoading) {
+        return <LoadingSpinner minHScreen={'min-h-screen'} />;
+    }
+
+    if (isError) {
+        return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>;
+    }
+
+    if (bookings) {
+        localStorage.setItem("bookingsCount", bookings.length)
+    }
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center space-y-8 p-5 text-center">
-            <h1 className="text-5xl font-bold text-primary">Payment Successful!</h1>
-            <p className="text-lg text-secondary max-w-md">
-                Your booking has been confirmed. Thank you for choosing our service!
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mt-5">
-                <button
-                    onClick={() => navigate('/dashboard/customer/bookings-history')}
-                    className="btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1"
-                >
-                    <span>Go to Bookings</span>
-                    <MdOutlineArrowOutward />
-                </button>
-
-                <button
-                    onClick={() => navigate('/cars')}
-                    className="btn btn-primary rounded-full btn-outline btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1"
-                >
-                    <span>Add More Cars</span>
-                    <MdOutlineArrowOutward />
-                </button>
-            </div>
+        <div>
+            <PagesBanner pageName={'rentax'} title={'Your Payment Invoice'}></PagesBanner>
+            <MaxWidth>
+                <div className='space-y-20 my-20'>
+                    <Invoice bookings={bookings}></Invoice>
+                </div>
+            </MaxWidth>
         </div>
     );
 };
