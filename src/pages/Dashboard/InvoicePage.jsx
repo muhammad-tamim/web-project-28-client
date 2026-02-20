@@ -19,7 +19,7 @@ const InvoicePage = () => {
 
     return (
         <div className='space-y-20 my-20 xl:px-10'>
-            <Invoice bookings={bookings}></Invoice>
+            {bookings.map(booking => <Invoice booking={booking}></Invoice>)}
         </div>
     );
 };
