@@ -16,7 +16,11 @@ const TableRow3 = ({ booking }) => {
 
     const handleDelete = () => {
         deleteBooking(booking._id, {
-            onSuccess: () => toast.success("Booking deleted successfully"),
+            onSuccess: () => {
+                toast.success("Booking deleted successfully")
+                const bookingsCount = JSON.parse(localStorage.getItem('bookingsCount'))
+                localStorage.setItem('bookingsCount', JSON.stringify(bookingsCount - 1))
+            },
             onError: (err) => toast.error(err.message || "Delete failed"),
         });
     };
