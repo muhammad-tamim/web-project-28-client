@@ -3,13 +3,25 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
 import useAuth from '../hooks/useAuth';
 import useCreateUser from '../hooks/queries/users/useCreateUser';
+import PagesBanner from '../components/layouts/PagesBanner';
+import MaxWidth from '../components/MaxWidth';
+import LoadingSpinner from '../components/LoadingSpinner';
+import { FcGoogle } from 'react-icons/fc';
+import { IoEyeOutline } from 'react-icons/io5';
+import { MdOutlineMailOutline } from 'react-icons/md';
+import signInImage from '../assets/images/signin-image.webp'
 
 const SignInPage = () => {
-    const { signInUser, signInUserWithGoogle } = useAuth()
+    const { signInUser, signInUserWithGoogle, loading } = useAuth()
     const navigate = useNavigate();
     const location = useLocation()
-    const { mutate: createUser, isPending } = useCreateUser()
+    const { mutate: createUser } = useCreateUser()
 
+
+
+    if (loading) {
+        return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
+    }
 
     const handleSignIn = e => {
         e.preventDefault()
@@ -65,69 +77,82 @@ const SignInPage = () => {
     }
 
     return (
-        <div className="my-10 w-full max-w-md mx-auto space-y-3 border border-base-300 rounded-lg shadow-md p-6 hover:shadow-lg">
+        <div>
+            <PagesBanner pageName={'rentax'} title={'About Us'}></PagesBanner>
+            <MaxWidth>
+                <div className='space-y-20 my-20'>
+                    <div className="py-10 lg:py-20 flex flex-col items-center justify-center px-4 lg:px-8 xl:px-0">
+                        <div className="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-6xl max-md:max-w-lg w-full p-4 [box-shadow:0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
 
-            <h1 className="text-2xl font-bold text-center">Sign In</h1>
+                            <div className="md:max-w-md w-full px-4 py-4">
+                                <form onSubmit={handleSignIn}>
+                                    <div className="mb-12">
+                                        <h1 className="text-slate-900 text-3xl font-bold">Sign in</h1>
+                                        <p className="text-[15px] mt-6 text-slate-600">
+                                            Don't have an account
+                                            <Link to="/sign-up" className="text-[#f89223] font-medium hover:underline ml-1 whitespace-nowrap">
+                                                Register here
+                                            </Link>
+                                        </p>
+                                    </div>
 
-            <form className="space-y-6" onSubmit={handleSignIn}>
-                <div className="space-y-1 text-sm">
-                    <label className="block">Email</label>
-                    <input
-                        name='email'
-                        type="email"
-                        placeholder="Email"
-                        className="input input-bordered w-full"
-                    />
-                </div>
+                                    <label className="text-slate-900 text-[13px] font-medium block mb-2">Email</label>
+                                    <div className="relative flex items-center">
+                                        <input
+                                            name="email"
+                                            type="email"
+                                            required
+                                            className="input w-full border-0 bg-gray-100 focus:outline-[#f89223]"
+                                            placeholder="Enter email"
+                                        />
+                                        <span className='size-5 absolute right-2 text-slate-400'><MdOutlineMailOutline /></span>
+                                    </div>
 
-                <div className="space-y-1 text-sm">
-                    <label className="block">Password</label>
-                    <input
-                        name='password'
-                        type="password"
-                        placeholder="Password"
-                        className="input input-bordered w-full"
-                    />
-                    <div className="flex justify-end text-xs">
-                        <a className="cursor-pointer hover:underline">
-                            Forgot Password?
-                        </a>
+                                    <label className="mt-8 text-slate-900 text-[13px] font-medium block mb-2">Password</label>
+                                    <div className="relative flex items-center">
+                                        <input
+                                            name="password"
+                                            type="password"
+                                            required
+                                            className="input w-full border-0 bg-gray-100 focus:outline-[#f89223]"
+                                            placeholder="Enter password"
+                                        />
+                                        <span className='size-5 absolute right-2 text-slate-400'><IoEyeOutline /></span>
+                                    </div>
+
+                                    <p className="text-[#f89223] font-medium text-sm hover:underline mt-8 text-right cursor-pointer">
+                                        Forgot Password?
+                                    </p>
+
+                                    <button
+                                        type="submit"
+                                        className={`mt-12 btn w-full btn-primary ${loading ? 'btn-disabled' : ''}`}
+                                    >
+                                        {loading ? 'Signing in...' : 'Sign in'}
+                                    </button>
+
+                                    <div className="divider">or</div>
+
+                                    <button
+                                        type="button"
+                                        onClick={handleGoogleSignIn}
+                                        className={`w-full flex items-center justify-center gap-4 btn btn-primary btn-outline`}
+                                    >
+                                        <FcGoogle className='size-5' />
+                                        Continue with Google
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div className="w-full h-full flex items-center bg-primary rounded-xl p-8">
+                                <img src={signInImage} className="w-full aspect-12/12 object-contain" alt="login-image" />
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-
-                <input type="submit" className={`btn bg-primary w-full text-white ${isPending && 'btn-disabled'}`} value={'Sign In'} />
-            </form>
-
-            <div className="flex items-center pt-4 space-x-2">
-                <div className="flex-1 h-px bg-base-300"></div>
-                <p className="text-sm">Sign in with Google</p>
-                <div className="flex-1 h-px bg-base-300"></div>
-            </div>
-
-            {/* Google Button */}
-            <div className="flex justify-center">
-                <button onClick={handleGoogleSignIn}
-                    aria-label="Sign in with Google"
-                    className={`btn btn-circle btn-outline hover:text-primary ${isPending && 'btn-disabled'}`}
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 32 32"
-                        className="w-5 h-5 fill-current"
-                    >
-                        <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z" />
-                    </svg>
-                </button>
-            </div>
-
-            <p className="text-xs text-center">
-                Don’t have an account?
-                <Link to={'/sign-up'} className="underline ml-1 hover:text-primary cursor-pointer">
-                    Sign Up
-                </Link>
-            </p>
-        </div>
-
+            </MaxWidth >
+        </div >
     );
 };
 
