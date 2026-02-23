@@ -124,12 +124,12 @@ const ManageBrands = () => {
 
                                 <div className='space-y-2 text-secondary'>
                                     <label className="text-sm block text-secondary font-medium">Brand Name</label>
-                                    <input name='name' type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
+                                    <input required name='name' type="text" className='input w-full input-primary focus:outline-none bg-base-300' />
                                 </div>
 
                                 <div className='space-y-2 text-secondary'>
                                     <label className="text-sm block text-secondary font-medium">Photo</label>
-                                    <input name='image' type="file" className='file-input file-input-primary  w-full focus:outline-none bg-base-300' />
+                                    <input required name='image' type="file" className='file-input file-input-primary  w-full focus:outline-none bg-base-300' />
                                 </div>
 
                                 <div className="modal-action flex justify-center gap-3">
