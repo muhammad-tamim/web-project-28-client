@@ -4,11 +4,18 @@ import { Link, useNavigate } from 'react-router';
 import useAuth from '../hooks/useAuth';
 import { imageUpload } from '../api/utils';
 import useCreateUser from '../hooks/queries/users/useCreateUser';
+import PagesBanner from '../components/layouts/PagesBanner';
+import MaxWidth from '../components/MaxWidth';
+import signInImage from '../assets/images/signin-image.webp'
+import { FcGoogle } from 'react-icons/fc';
+import { IoMdPhotos } from 'react-icons/io';
+import { IoEyeOutline, IoPerson } from 'react-icons/io5';
+import { MdOutlineMailOutline } from 'react-icons/md';
 
 const SignUpPage = () => {
     const navigate = useNavigate();
-    const { signUpUser, signInUserWithGoogle, setUser, updateUserInfo } = useAuth()
-    const { mutate: createUser, isPending } = useCreateUser()
+    const { signUpUser, signInUserWithGoogle, setUser, updateUserInfo, loading } = useAuth()
+    const { mutate: createUser } = useCreateUser()
 
     const handleSignUp = async (e) => {
         e.preventDefault()
@@ -70,44 +77,82 @@ const SignUpPage = () => {
     }
 
     return (
-        <div className="my-10 w-full max-w-md  space-y-3 border border-white rounded-lg shadow-md p-4  mx-auto hover:shadow-lg">
-            <h1 className="text-2xl font-bold text-center">Sign Up</h1>
-            <form onSubmit={handleSignUp} className="space-y-6">
-                <div className="space-y-1 text-sm">
-                    <label htmlFor="username" className="block ">Your Name</label>
-                    <input type="text" name="name" required id="userName" placeholder="Name" className="outline w-full px-4 py-3 rounded-md" />
+        <div>
+            <PagesBanner pageName={'rentax'} title={'SignUp'}></PagesBanner>
+            <MaxWidth>
+                <div className='space-y-20 my-20'>
+                    <div className="py-10 lg:py-20 flex flex-col items-center justify-center px-4 lg:px-8 xl:px-0">
+                        <div className="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-6xl max-md:max-w-lg w-full p-4 [box-shadow:0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
+                            <div className="md:max-w-md w-full px-4 py-4">
+                                <form onSubmit={handleSignUp}>
+                                    <div className="mb-12">
+                                        <h1 className="text-slate-900 text-3xl font-bold">Sign up</h1>
+                                        <p className="text-[15px] mt-6 text-slate-600">
+                                            Already have an account{' '}
+                                            <Link to="/sign-in" className="text-[#f89223] font-medium hover:underline ml-1 whitespace-nowrap">
+                                                Login here
+                                            </Link>
+                                        </p>
+                                    </div>
+
+                                    <label className="text-slate-900 text-[13px] font-medium block mb-2">Name</label>
+                                    <div className="relative flex items-center">
+                                        <input name="name" type="text" required className="input w-full border-0 bg-gray-100 focus:outline-[#f89223]" placeholder="Enter Name" />
+                                        <span className="size-5 absolute right-2 text-slate-400"><IoPerson /></span>
+                                    </div>
+
+                                    <label className="mt-8 text-slate-900 text-[13px] font-medium block mb-2">Photo</label>
+                                    <div className="relative flex items-center">
+                                        <input name="url" type="file" required className='file-input w-full focus:outline-[#f89223]' placeholder="Enter URL" />
+                                        <span className="size-5 absolute right-2 text-slate-400"><IoMdPhotos /></span>
+                                    </div>
+
+                                    <label className="mt-8 text-slate-900 text-[13px] font-medium block mb-2">Email</label>
+                                    <div className="relative flex items-center">
+                                        <input name="email" type="email" required className="input w-full border-0 bg-gray-100 focus:outline-[#f89223]" placeholder="Enter email" />
+                                        <span className="size-5 absolute right-2 text-slate-400"><MdOutlineMailOutline /></span>
+                                    </div>
+
+                                    <label className="mt-8 text-slate-900 text-[13px] font-medium block mb-2">Password</label>
+                                    <div className="relative flex items-center">
+                                        <input name="password" type="password" required className="input w-full border-0 bg-gray-100 focus:outline-[#f89223]" placeholder="Enter password" />
+                                        <span className="size-5 absolute right-2 text-slate-400"><IoEyeOutline /></span>
+                                    </div>
+
+
+                                    <p className="text-[#f89223] font-medium text-sm hover:underline mt-8 text-right cursor-pointer">
+                                        Forgot Password?
+                                    </p>
+
+                                    <button
+                                        type="submit"
+                                        className={`mt-12 btn w-full btn-primary ${loading ? 'btn-disabled' : ''}`}
+                                    >
+                                        Sign In
+                                    </button>
+
+                                    <div className="divider">or</div>
+
+                                    <button
+                                        type="button"
+                                        onClick={handleGoogleSignIn}
+                                        className={`w-full flex items-center justify-center gap-4 btn btn-primary btn-outline ${loading ? 'btn-disabled' : ''}`}
+                                    >
+                                        <FcGoogle className='size-5' />
+                                        Continue with Google
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div className="w-full h-full flex items-center bg-primary rounded-xl p-8">
+                                <img src={signInImage} className="w-full aspect-12/12 object-contain" alt="login-image" />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div className="space-y-1 text-sm">
-                    <label htmlFor="username" className="block ">Photo URL</label>
-                    <input type="file" name="image" required id="userImage" className="file-input file-input-ghost w-full" />
-                </div>
-                <div className="space-y-1 text-sm">
-                    <label htmlFor="username" className="block ">Email</label>
-                    <input type="email" name="email" required id="userEmail" placeholder="Email" className="outline w-full px-4 py-3 rounded-md" />
-                </div>
-                <div className="space-y-1 text-sm">
-                    <label htmlFor="password" className="block ">Password</label>
-                    <input type="text" name="password" required id="password" placeholder="Password" className="outline w-full px-4 py-3 rounded-md" />
-                    <small className="text-xs">Password must contain at least 6 characters, 1 uppercase and 1 lowercase letter.</small>
-                </div>
-                <button type='submit' className={`btn bg-primary w-full text-white ${isPending && 'btn-disabled'}`}>Sign Up</button>
-            </form>
-            <div className="flex items-center pt-4 space-x-1">
-                <div className="flex-1 h-px sm:w-16"></div>
-                <p className="px-3 text-sm">SignUp with Google</p>
-                <div className="flex-1 h-px sm:w-16"></div>
-            </div>
-            <div className="flex justify-center space-x-4">
-                <button onClick={handleGoogleSignIn} aria-label="Log in with Google" className={`p-3 rounded-sm cursor-pointer ${isPending && 'btn-disabled'}`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current hover:text-primary">
-                        <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
-                    </svg>
-                </button>
-            </div>
-            <p className="text-xs text-center sm:px-6">Already have an account?
-                <Link to="/sign-in" rel="noopener noreferrer" href="#" className="underline ml-1 hover:text-primary">Sign In</Link>
-            </p>
-        </div>
+            </MaxWidth >
+        </div >
     );
 };
 

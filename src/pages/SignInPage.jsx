@@ -78,7 +78,7 @@ const SignInPage = () => {
 
     return (
         <div>
-            <PagesBanner pageName={'rentax'} title={'About Us'}></PagesBanner>
+            <PagesBanner pageName={'rentax'} title={'SignIn'}></PagesBanner>
             <MaxWidth>
                 <div className='space-y-20 my-20'>
                     <div className="py-10 lg:py-20 flex flex-col items-center justify-center px-4 lg:px-8 xl:px-0">
@@ -128,7 +128,7 @@ const SignInPage = () => {
                                         type="submit"
                                         className={`mt-12 btn w-full btn-primary ${loading ? 'btn-disabled' : ''}`}
                                     >
-                                        {loading ? 'Signing in...' : 'Sign in'}
+                                        Sign In
                                     </button>
 
                                     <div className="divider">or</div>
@@ -136,7 +136,7 @@ const SignInPage = () => {
                                     <button
                                         type="button"
                                         onClick={handleGoogleSignIn}
-                                        className={`w-full flex items-center justify-center gap-4 btn btn-primary btn-outline`}
+                                        className={`w-full flex items-center justify-center gap-4 btn btn-primary btn-outline ${loading ? 'btn-disabled' : ''}`}
                                     >
                                         <FcGoogle className='size-5' />
                                         Continue with Google
