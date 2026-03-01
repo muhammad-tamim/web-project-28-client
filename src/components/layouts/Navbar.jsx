@@ -7,10 +7,12 @@ import { FaMoon } from 'react-icons/fa';
 import { GiShoppingCart } from 'react-icons/gi';
 import { CiMenuFries } from 'react-icons/ci';
 import toast from 'react-hot-toast';
+import useGetUser from '../../hooks/queries/users/usegetUser';
 
 const Navbar = () => {
     const { user, signOutUser } = use(AuthContext)
     const [scrolled, setScrolled] = useState(false);
+    const { data } = useGetUser(user?.email);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,8 +35,10 @@ const Navbar = () => {
                 toast.error(err.message)
             })
     }
-
-    const bookingCount = localStorage.getItem("bookingsCount")
+    let bookingCount = 0
+    if (data?.role === 'customer') {
+        bookingCount = localStorage.getItem("bookingsCount")
+    }
 
     return (
         <div className={`w-full fixed top-0 left-0 z-50  transition-all duration-500 ease-out ${scrolled ? 'bg-base-100 shadow-md' : 'bg-transparent'}`}>

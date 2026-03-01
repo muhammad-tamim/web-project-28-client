@@ -3,6 +3,7 @@ import React from 'react';
 
 const MySalesTableRow = ({ booking }) => {
     console.log(booking)
+    console.log("createdAt:", booking?.car?.createdAt)
     return (
         <tr className="text-secondary">
             <td className="p-3">
@@ -16,8 +17,8 @@ const MySalesTableRow = ({ booking }) => {
             </td>
 
             <td className='p-3'>{booking?.car.name}</td>
-            <td className='p-3'>{booking?.payment.paymentIntentId}</td>
-            <td className='p-3'>{format(new Date(booking?.car.createdAt), "PP, p")}</td>
+            <td className='p-3'>{booking?.payment.tran_id}</td>
+            <td className='p-3'>{format(new Date(booking.car.createdAt), "yyyy-MM-dd")}</td>
             <td className='p-3'>{booking?.email}</td>
             <td className='p-3'>${booking?.totalCost}</td>
         </tr>
