@@ -12,7 +12,9 @@ import LoadingSpinner from '../../LoadingSpinner';
 
 const Sidebar = () => {
     const { user } = useAuth()
-    const { data } = useGetUser(user?.email);
+    const { data, isLoading } = useGetUser(user?.email);
+
+
 
     return (
         <div className="drawer-side z-50">
@@ -23,12 +25,19 @@ const Sidebar = () => {
                 <li className="text-sm text-gray-400 uppercase tracking-wider mb-2">Menu</li>
 
                 <CommonMenu></CommonMenu>
+                {isLoading && <div className="flex w-full flex-col gap-4 space-y-2">
+                    <div className="skeleton w-full p-3"></div>
+                    <div className="skeleton w-full p-3"></div>
+                    <div className="skeleton w-full p-3"></div>
+                    <div className="skeleton w-full p-3"></div>
+                </div>
+                }
                 {data?.role === 'customer' && <CustomerMenu></CustomerMenu>}
                 {data?.role === 'seller' && <SellerMenu></SellerMenu>}
                 {data?.role === 'admin' && <AdminMenu></AdminMenu>}
 
-            </ul>
-        </div>
+            </ul >
+        </div >
     );
 };
 
