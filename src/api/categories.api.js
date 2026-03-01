@@ -3,7 +3,7 @@ import axiosSecure from "./axiosSecure";
 
 export const categoriesApi = {
     getAll: async () => {
-        const res = await axiosSecure.get("/categories");
+        const res = await baseApi.get("/categories");
         return res.data.result;
     },
 

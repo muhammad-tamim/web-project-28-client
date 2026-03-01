@@ -3,7 +3,7 @@ import axiosSecure from "./axiosSecure";
 
 export const brandsApi = {
     getAll: async () => {
-        const res = await axiosSecure.get("/brands");
+        const res = await baseApi.get("/brands");
         return res.data.result;
     },
 
