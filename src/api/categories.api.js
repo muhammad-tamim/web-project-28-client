@@ -8,22 +8,22 @@ export const categoriesApi = {
     },
 
     create: async (data) => {
-        const res = await axiosSecure.post("/categories", data);
+        const res = await baseApi.post("/categories", data);
         return res.data.result;
     },
 
     update: async (id, data) => {
-        const res = await axiosSecure.patch(`/categories/${id}`, data);
+        const res = await baseApi.patch(`/categories/${id}`, data);
         return res.data.result;
     },
 
     delete: async (id) => {
-        const res = await axiosSecure.delete(`/categories/${id}`)
+        const res = await baseApi.delete(`/categories/${id}`)
         return res.data.result
     },
 
     countAll: async () => {
-        const res = await axiosSecure.get('/categories/count')
+        const res = await baseApi.get('/categories/count')
         return res.data.result
     }
 };

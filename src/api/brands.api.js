@@ -8,22 +8,22 @@ export const brandsApi = {
     },
 
     create: async (data) => {
-        const res = await axiosSecure.post("/brands", data);
+        const res = await baseApi.post("/brands", data);
         return res.data.result;
     },
 
     update: async (id, data) => {
-        const res = await axiosSecure.patch(`/brands/${id}`, data);
+        const res = await baseApi.patch(`/brands/${id}`, data);
         return res.data.result;
     },
 
     delete: async (id) => {
-        const res = await axiosSecure.delete(`/brands/${id}`)
+        const res = await baseApi.delete(`/brands/${id}`)
         return res.data.result
     },
 
     countAll: async () => {
-        const res = await axiosSecure.get("/brands/count")
+        const res = await baseApi.get("/brands/count")
         return res.data.result
     }
 };

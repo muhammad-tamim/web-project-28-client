@@ -4,7 +4,7 @@ import axiosSecure from "./axiosSecure";
 export const carsApi = {
 
     create: async (data) => {
-        const res = await axiosSecure.post("/cars", data);
+        const res = await baseApi.post("/cars", data);
         return res.data.result;
     },
 
@@ -35,7 +35,7 @@ export const carsApi = {
     },
 
     findAllByEmail: async (email, page, limit = 9) => {
-        const res = await axiosSecure.get(`/cars/owner/${email}`, {
+        const res = await baseApi.get(`/cars/owner/${email}`, {
             params: { page, limit }
         })
         return res.data
@@ -57,12 +57,12 @@ export const carsApi = {
     },
 
     update: async (id, data) => {
-        const res = await axiosSecure.patch(`/cars/${id}`, data);
+        const res = await baseApi.patch(`/cars/${id}`, data);
         return res.data.result;
     },
 
     delete: async (id) => {
-        const res = await axiosSecure.delete(`/cars/${id}`)
+        const res = await baseApi.delete(`/cars/${id}`)
         return res.data.result
     },
 
