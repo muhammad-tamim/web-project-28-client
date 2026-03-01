@@ -24,10 +24,10 @@ const CustomerStatistics = () => {
         );
     }
 
-    const totalBookings = bookings.length;
-    const totalAmount = bookings.reduce((sum, booking) => sum + booking.payment.amount, 0);
-    const bestPayment = bookings.reduce((max, booking) => booking.payment.amount > max ? booking.payment.amount : max, 0)
 
+    const totalBookings = bookings.length;
+    const totalAmount = bookings.reduce((sum, booking) => sum + Number(booking.payment.total_amount), 0);
+    const bestPayment = bookings.reduce((max, booking) => Number(booking.payment.total_amount) > max ? Number(booking.payment.total_amount) : max, 0)
     return (
         <div className='space-y-10'>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 bg-base-300 rounded-3xl p-5 md:p-10">

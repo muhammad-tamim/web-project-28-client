@@ -9,13 +9,13 @@ const PaymentHistory = ({ bookings }) => {
     const monthlyDataObj = months.map(month => ({ month, totalAmount: 0, }));
 
     bookings.forEach(booking => {
-        const date = new Date(booking.payment.paidAt);
+        const date = new Date(booking.payment.createdAt);
 
         if (date.getFullYear() !== currentYear) return;
 
         const monthIndex = date.getMonth();
 
-        monthlyDataObj[monthIndex].totalAmount += booking.payment.amount;
+        monthlyDataObj[monthIndex].totalAmount += Number(booking.payment.total_amount);
     });
 
     return (

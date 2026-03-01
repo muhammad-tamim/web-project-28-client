@@ -4,7 +4,7 @@ import axiosSecure from "./axiosSecure";
 export const bookingsApi = {
 
     create: async (tran_id) => {
-        const res = await axiosSecure.post(`/bookings`, { tran_id });
+        const res = await baseApi.post(`/bookings`, { tran_id });
         return res.data.result;
     },
 
