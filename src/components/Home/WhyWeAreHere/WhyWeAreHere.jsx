@@ -8,13 +8,14 @@ import achievementsVideo from '../../../assets/videos/achievements.mp4'
 import Swiper1 from '../../Swiper/Swiper1';
 import LoadingSpinner from '../../LoadingSpinner';
 import Card1 from '../../Cards/Card1';
-import useGetCategories from '../../../hooks/queries/Categories/useGetCategories';
+import useGetPremiumCars from '../../../hooks/queries/cars/useGetPremiumCars';
+import Card3 from '../../Cards/Card3';
 
 const WhyWeAreHere = () => {
 
 
-    const { data: categories, isLoading, isError, error } = useGetCategories()
-
+    const { data: cars, isLoading, isError, error } = useGetPremiumCars()
+    console.log(cars)
     if (isLoading) {
         return <LoadingSpinner marginY={'20'}></LoadingSpinner>;
     }
@@ -74,9 +75,10 @@ const WhyWeAreHere = () => {
                     </div>
 
                     <Swiper1>
-                        {categories.map(type => (
-                            <SwiperSlide key={type._id}>
-                                <Card1 image={type.photoUrl} title={type.name} where={`/categories/types-details/${type.name}`}></Card1>
+                        {cars?.map(car => (
+                            <SwiperSlide key={car._id}>
+                                {/* <Card3 car={car} key={car._id}></Card3> */}
+                                <Card1 image={car.photoUrl} title={car.name} where={`/car-details/${car._id}`}></Card1>
                             </SwiperSlide>
                         ))}
                     </Swiper1>
