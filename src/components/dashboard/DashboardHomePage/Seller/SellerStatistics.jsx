@@ -19,9 +19,11 @@ const SellerStatistics = () => {
         return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>
     }
 
+    console.log(bookings)
+
     const totalBookings = bookings?.length
-    const totalRevenue = bookings.reduce((sum, booking) => sum + booking.payment.amount, 0)
-    const bestPayment = bookings.reduce((max, booking) => booking.payment.amount > max ? booking.payment.amount : max, 0)
+    const totalRevenue = bookings.reduce((sum, booking) => sum + Number(booking.payment.total_amount), 0)
+    const bestPayment = bookings.reduce((max, booking) => Number(booking.payment.total_amount) > max ? Number(booking.payment.total_amount) : max, 0)
 
     return (
         <div className='space-y-10'>

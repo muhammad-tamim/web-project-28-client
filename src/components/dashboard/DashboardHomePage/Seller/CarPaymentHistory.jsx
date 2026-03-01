@@ -10,7 +10,7 @@ const CarPaymentHistory = ({ bookings }) => {
     bookings.forEach(booking => {
         const foundCar = carRevenueArray.find(car => car.uniqueCar === booking.car.name)
         if (foundCar) {
-            foundCar.totalAmount += booking.payment.amount
+            foundCar.totalAmount += Number(booking.payment.total_amount)
         }
     });
 
