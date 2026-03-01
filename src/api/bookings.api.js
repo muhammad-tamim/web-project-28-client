@@ -9,51 +9,51 @@ export const bookingsApi = {
     },
 
     findAll: async (email) => {
-        const res = await axiosSecure.get(`/bookings/${email}`);
+        const res = await baseApi.get(`/bookings/${email}`);
         return res.data.result;
     },
 
     findAllBookings: async () => {
-        const res = await axiosSecure.get('/bookings')
+        const res = await baseApi.get('/bookings')
         return res.data.result
     },
 
     findAllBookingsWithPagination: async (page, limit = 9) => {
-        const res = await axiosSecure.get('/bookings/pagination', {
+        const res = await baseApi.get('/bookings/pagination', {
             params: { page, limit }
         })
         return res.data
     },
 
     countAll: async () => {
-        const res = await axiosSecure.get("/bookings/count")
+        const res = await baseApi.get("/bookings/count")
         return res.data.result
     },
 
     findAllBySellerEmail: async (email) => {
-        const res = await axiosSecure.get(`/bookings/seller/${email}`);
+        const res = await baseApi.get(`/bookings/seller/${email}`);
         return res.data.result
     },
 
     getReport: async () => {
-        const res = await axiosSecure.get('/bookings/report', { responseType: 'blob' })
+        const res = await baseApi.get('/bookings/report', { responseType: 'blob' })
         return res.data
     },
 
     findAllBySellerEmailWithPagination: async (email, page, limit = 9) => {
-        const res = await axiosSecure.get(`/bookings/seller/pagination/${email}`, {
+        const res = await baseApi.get(`/bookings/seller/pagination/${email}`, {
             params: { page, limit }
         });
         return res.data
     },
 
     update: async (id, data) => {
-        const res = await axiosSecure.patch(`/bookings/${id}`, data);
+        const res = await baseApi.patch(`/bookings/${id}`, data);
         return res.data.result;
     },
 
     delete: async (id) => {
-        const res = await axiosSecure.delete(`/bookings/${id}`);
+        const res = await baseApi.delete(`/bookings/${id}`);
         return res.data.result;
     },
 };

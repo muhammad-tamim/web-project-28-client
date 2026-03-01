@@ -33,7 +33,7 @@ const AdminStatistics = () => {
     }
 
     const totalBookings = bookings?.length
-    const totalSelling = bookings.reduce((sum, booking) => sum + booking.payment.amount, 0)
+    const totalSelling = bookings.reduce((sum, booking) => sum + Number(booking.payment.total_amount), 0)
     const totalUser = usersCount
     const totalCustomer = usersCountCustomer
     const totalSeller = usersCountSeller

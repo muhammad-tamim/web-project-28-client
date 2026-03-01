@@ -8,49 +8,49 @@ export const usersApi = {
     },
 
     getUsers: async (page, limit) => {
-        const res = await axiosSecure.get('/users', {
+        const res = await baseApi.get('/users', {
             params: { page, limit }
         })
         return res.data
     },
 
     getRecentSellers: async () => {
-        const res = await axiosSecure.get('/users/recent-sellers')
+        const res = await baseApi.get('/users/recent-sellers')
         return res.data.result
     },
 
     getRecentCustomers: async () => {
-        const res = await axiosSecure.get('/users/recent-customers')
+        const res = await baseApi.get('/users/recent-customers')
         return res.data.result
     },
 
     getCountAll: async () => {
-        const res = await axiosSecure.get('/users/count')
+        const res = await baseApi.get('/users/count')
         return res.data.result
     },
 
     getCountAllCustomer: async () => {
-        const res = await axiosSecure.get('/users/count/customer')
+        const res = await baseApi.get('/users/count/customer')
         return res.data.result
     },
 
     getCountAllSeller: async () => {
-        const res = await axiosSecure.get('/users/count/seller')
+        const res = await baseApi.get('/users/count/seller')
         return res.data.result
     },
 
     getCountAllAdmin: async () => {
-        const res = await axiosSecure.get('/users/count/admin')
+        const res = await baseApi.get('/users/count/admin')
         return res.data.result
     },
 
     getUser: async (email) => {
-        const res = await axiosSecure.get(`/users/${email}`)
+        const res = await baseApi.get(`/users/${email}`)
         return res.data.result
     },
 
     updateUser: async (id, data) => {
-        const res = await axiosSecure.patch(`/users/update/${id}`, data)
+        const res = await baseApi.patch(`/users/update/${id}`, data)
         return res.data.result
     }
 

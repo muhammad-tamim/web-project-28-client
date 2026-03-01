@@ -64,6 +64,8 @@ const SalesReport = () => {
         }
     }
 
+    console.log(sortedBookings)
+
     return (
         <div>
             <MaxWidth>

@@ -12,9 +12,9 @@ const TableRowForSalesReport = ({ booking }) => {
             <td className='p-3'>{booking.car.name}</td>
             <td className='p-3'>{booking.car.email}</td>
             <td className='p-3'>{booking.email}</td>
-            <td className='p-3'>{format(new Date(booking.payment.paidAt), 'PP, p')}</td>
-            <td className='p-3'>{booking.payment.paymentIntentId}</td>
-            <td className='p-3'>${booking.payment.amount}</td>
+            <td className='p-3'>{format(new Date(booking.payment.createdAt), 'PP, p')}</td>
+            <td className='p-3'>{booking.tran_id}</td>
+            <td className='p-3'>${booking.payment.total_amount}</td>
         </tr>
     );
 };
