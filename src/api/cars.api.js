@@ -15,6 +15,11 @@ export const carsApi = {
         return res.data;
     },
 
+    findPremium: async () => {
+        const res = await baseApi.get("/cars/premium");
+        return res.data.result;
+    },
+
     findAllByBrand: async (brand, page, limit = 9) => {
         const res = await baseApi.get(`cars/brands/${brand}`, {
             params: { page, limit }
