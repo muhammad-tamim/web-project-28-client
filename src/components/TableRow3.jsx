@@ -95,8 +95,6 @@ const TableRow3 = ({ booking }) => {
                 </td>
 
                 <td className='p-3'>{booking.car.name}</td>
-                <td className='p-3'>{booking.car.brand}</td>
-
 
                 <td className='p-3'>
                     {format(new Date(booking.startDate), "PP")}
@@ -106,7 +104,7 @@ const TableRow3 = ({ booking }) => {
                     {format(new Date(booking.endDate), "PP")}
                 </td>
 
-                {/* <td className='p-3'>{booking.car.bookingStatus ? "Booked" : 'Not Booked'}</td> */}
+                <td className='p-3'>{booking.payment.paymentStatus ? "Booked" : 'Not Booked'}</td>
 
                 <td className='p-3'>${booking.totalCost}</td>
 

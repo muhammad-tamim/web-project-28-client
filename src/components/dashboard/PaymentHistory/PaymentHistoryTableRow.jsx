@@ -10,10 +10,10 @@ const PaymentHistoryTableRow = ({ booking }) => {
                 </div>
             </td>
             <td className='p-3'>{booking.car.name}</td>
-            <td className='p-3'>{booking.payment.paymentIntentId}</td>
-            <td className='p-3'>{format(new Date(booking.payment.paidAt), "PP")}</td>
+            <td className='p-3'>{booking.payment.tran_id}</td>
+            <td className='p-3'>{format(new Date(booking.payment.createdAt), "PP")}</td>
             <td className='p-3'>{booking.payment.currency}</td>
-            <td className='p-3'>${booking.payment.amount}</td>
+            <td className='p-3'>${booking.payment.total_amount}</td>
         </tr>
     );
 };

@@ -4,7 +4,7 @@ import MaxWidth from '../components/MaxWidth';
 import useGetBookings from '../hooks/queries/bookings/useGetBookings';
 import LoadingSpinner from '../components/LoadingSpinner';
 import useAuth from '../hooks/useAuth';
-import TableRow3 from '../components/tableRow3';
+import TableRow3 from '../components/TableRow3';
 
 const MyBookings = () => {
 
@@ -80,7 +80,7 @@ const MyBookings = () => {
                                     <th className="p-3 text-left">Brand</th>
                                     <th className="p-3 text-left">Start Date</th>
                                     <th className="p-3 text-left">End Date</th>
-                                    {/* <th className="p-3 text-left">Status</th> */}
+                                    <th className="p-3 text-left">Status</th>
                                     <th className="p-3 text-left">Total Cost</th>
                                     <th className="p-3 text-left">Action</th>
                                 </tr>
