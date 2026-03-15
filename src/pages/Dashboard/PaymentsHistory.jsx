@@ -3,7 +3,7 @@ import useAuth from '../../hooks/useAuth';
 import useGetBookings from '../../hooks/queries/bookings/useGetBookings';
 import MaxWidth from '../../components/MaxWidth';
 import LoadingSpinner from '../../components/LoadingSpinner';
-import TableRow3 from '../../components/tableRow3';
+import TableRow3 from '../../components/TableRow3';
 import PaymentHistoryTableRow from '../../components/dashboard/PaymentHistory/PaymentHistoryTableRow';
 
 const PaymentsHistory = () => {

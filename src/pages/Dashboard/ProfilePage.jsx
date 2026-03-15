@@ -6,7 +6,7 @@ import { CiEdit, CiFacebook, CiInstagram, CiTwitter } from 'react-icons/ci';
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import MaxWidth from '../../components/MaxWidth';
 import toast from 'react-hot-toast';
-import useGetUser from '../../hooks/queries/users/usegetUser';
+import useGetUser from '../../hooks/queries/users/useGetUser';
 import LoadingSpinner from '../../components/LoadingSpinner';
 import Swal from 'sweetalert2';
 import useUpdateUser from '../../hooks/queries/users/useUpdateUser';

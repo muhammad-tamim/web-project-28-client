@@ -7,11 +7,11 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import BlogCard from '../components/Blog/BlogCard';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import BookingCard from '../components/CarDetails/BookingCard';
-import DetailsCard from '../components/CarDetails/detailsCard';
 import CarGallery from '../components/CarDetails/CarGallery';
 import Accordion from '../components/CarDetails/Accordion';
 import WhyBookCard from '../components/CarDetails/WhyBookCard';
 import Swal from 'sweetalert2';
+import DetailsCard from '../components/CarDetails/DetailsCard';
 
 const CarDetailsPage = () => {
     const { id } = useParams()

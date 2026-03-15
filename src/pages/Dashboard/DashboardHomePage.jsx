@@ -2,11 +2,11 @@ import React from 'react';
 import PagesBanner from '../../components/layouts/PagesBanner';
 import MaxWidth from '../../components/MaxWidth';
 import LoadingSpinner from '../../components/LoadingSpinner';
-import useGetUser from '../../hooks/queries/users/usegetUser';
 import useAuth from '../../hooks/useAuth';
 import CustomerStatistics from '../../components/dashboard/DashboardHomePage/Customer/CustomerStatistics';
 import SellerStatistics from '../../components/dashboard/DashboardHomePage/Seller/SellerStatistics';
 import AdminStatistics from '../../components/dashboard/DashboardHomePage/Admin/AdminStatistics';
+import useGetUser from '../../hooks/queries/users/useGetUser';
 
 const DashboardHomePage = () => {
     const { user, loading } = useAuth()

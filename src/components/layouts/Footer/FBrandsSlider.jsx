@@ -8,6 +8,8 @@ const FBrandsSlider = () => {
 
     const { data: brands, isLoading, isError, error } = useGetBrands()
 
+    console.log(brands)
+
     if (isLoading) {
         return <LoadingSpinner marginY={5}></LoadingSpinner>
     }
@@ -19,7 +21,7 @@ const FBrandsSlider = () => {
     return (
         <div>
             <Swiper2>
-                {brands.map(brand =>
+                {brands?.map(brand =>
                     <SwiperSlide key={brand._id}><img src={brand.photoUrl} alt={brand.name} className='h-20 md:h-24 xl:h-30 w-full object-center my-5 p-5' /></SwiperSlide>
                 )}
             </Swiper2>

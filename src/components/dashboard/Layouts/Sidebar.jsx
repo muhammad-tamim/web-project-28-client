@@ -6,7 +6,7 @@ import CustomerMenu from '../Menu/CustomerMenu';
 import SellerMenu from '../Menu/SellerMenu';
 import AdminMenu from '../Menu/AdminMenu';
 import CommonMenu from '../Menu/CommonMenu';
-import useGetUser from '../../../hooks/queries/users/usegetUser';
+import useGetUser from '../../../hooks/queries/users/useGetUser';
 import useAuth from '../../../hooks/useAuth';
 import LoadingSpinner from '../../LoadingSpinner';
 

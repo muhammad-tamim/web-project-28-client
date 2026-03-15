@@ -4,7 +4,7 @@ import MaxWidth from '../../components/MaxWidth';
 import useAuth from '../../hooks/useAuth';
 import useGetBookings from '../../hooks/queries/bookings/useGetBookings';
 import LoadingSpinner from '../../components/LoadingSpinner';
-import TableRow3 from '../../components/tableRow3';
+import TableRow3 from '../../components/TableRow3';
 
 const BookingsHistory = () => {
     const { user } = useAuth()
