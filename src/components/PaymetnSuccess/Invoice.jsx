@@ -47,7 +47,7 @@ const Invoice = ({ booking }) => {
 
                     <div>
                         <h3 className="font-semibold mb-2 text-lg">Bill To:</h3>
-                        <p className="text-secondary font-medium">{payment.cus_name}</p>
+                        <p className="text-secondary font-medium">{payment?.cus_name}</p>
                         <p className="text-secondary">{payment.cus_email}</p>
                         <p className="text-secondary">{payment.cus_add1}</p>
                         <p className="text-secondary">

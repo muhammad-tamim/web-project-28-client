@@ -12,10 +12,9 @@ import useGetBookings from '../../hooks/queries/bookings/useGetBookings';
 const Navbar = () => {
     const { user, signOutUser } = use(AuthContext)
     const [scrolled, setScrolled] = useState(false);
-    const { data: bookings } = useGetBookings(user.email)
+    const { data: bookings } = useGetBookings(user?.email)
 
-    const bookingCount = bookings.length
-    console.log(bookingCount)
+    const bookingCount = bookings?.length ?? 0;
 
     useEffect(() => {
         const handleScroll = () => {
