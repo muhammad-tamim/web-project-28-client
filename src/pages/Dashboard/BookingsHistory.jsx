@@ -13,8 +13,6 @@ const BookingsHistory = () => {
 
     const { data: bookings = [], isLoading, error, isError } = useGetBookings(user?.email);
 
-    localStorage.setItem("bookingsCount", bookings?.length)
-
     if (isLoading) {
         return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
     }

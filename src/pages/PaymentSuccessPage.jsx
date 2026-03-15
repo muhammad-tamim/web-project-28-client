@@ -3,24 +3,19 @@ import { useSearchParams, useNavigate, Link } from 'react-router';
 import toast from 'react-hot-toast';
 import { stripeApi } from '../api/stripe.api';
 import { sslcommerzApi } from '../api/sslcommerz.api';
-import LoadingSpinner from '../components/LoadingSpinner';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import useCreateBookings from '../hooks/queries/bookings/useCreateBookings';
 import PagesBanner from '../components/layouts/PagesBanner';
 import Invoice from '../components/PaymetnSuccess/Invoice';
 import MaxWidth from '../components/MaxWidth';
-import useGetBookings from '../hooks/queries/bookings/useGetBookings';
-import useAuth from '../hooks/useAuth';
 
 const PaymentSuccessPage = () => {
-    const { user } = useAuth()
     const [params] = useSearchParams();
     const tran_id = params.get('tran_id'); // unified for Stripe & SSLCommerz
     const val_id = params.get('val_id');   // Stripe session ID or SSLCommerz val_id
     const navigate = useNavigate();
     const { mutate: createCar } = useCreateBookings()
     const [booking, setBooking] = useState();
-    const { data: bookings, isLoading, isError, error } = useGetBookings(user?.email)
 
 
     useEffect(() => {
@@ -66,17 +61,6 @@ const PaymentSuccessPage = () => {
 
     }, [tran_id, val_id, navigate, params, createCar]);
 
-    if (isLoading) {
-        return <LoadingSpinner minHScreen={'min-h-screen'} />;
-    }
-
-    if (isError) {
-        return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>;
-    }
-
-    if (bookings) {
-        localStorage.setItem("bookingsCount", bookings.length)
-    }
 
     return (
         <div>
