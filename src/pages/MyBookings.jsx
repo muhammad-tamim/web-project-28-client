@@ -77,9 +77,10 @@ const MyBookings = () => {
                                 <tr>
                                     <th className="p-3 text-left">Image</th>
                                     <th className="p-3 text-left">Name</th>
+                                    <th className="p-3 text-left">Brand</th>
                                     <th className="p-3 text-left">Start Date</th>
                                     <th className="p-3 text-left">End Date</th>
-                                    <th className="p-3 text-left">Status</th>
+                                    {/* <th className="p-3 text-left">Status</th> */}
                                     <th className="p-3 text-left">Total Cost</th>
                                     <th className="p-3 text-left">Action</th>
                                 </tr>
