@@ -31,7 +31,7 @@ const CarCategories = () => {
             <Swiper1>
                 {categories.map(category => (
                     <SwiperSlide key={category._id}>
-                        <Card1 image={category.photoUrl} title={category.name} where={`/categories/category-details/${category.name}`}></Card1>
+                        <Card1 image={category.photoUrl} title={category.name} where={`/category-details/${category.name}`}></Card1>
                     </SwiperSlide>
                 ))}
             </Swiper1>

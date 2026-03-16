@@ -32,7 +32,7 @@ const CarBrands = () => {
             <Swiper1>
                 {brands.map(brand => (
                     <SwiperSlide key={brand._id}>
-                        <Card1 image={brand.photoUrl} title={brand.name} where={`/categories/brands-details/${brand.name}`} imageClass='m-20' hideOverlay bg></Card1>
+                        <Card1 image={brand.photoUrl} title={brand.name} where={`/brands-details/${brand.name}`} imageClass='m-20' hideOverlay bg></Card1>
                     </SwiperSlide>
                 ))}
             </Swiper1>
