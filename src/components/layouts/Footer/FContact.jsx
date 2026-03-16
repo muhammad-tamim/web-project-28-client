@@ -23,7 +23,7 @@ const FContact = () => {
                 </button>
                 <div>
                     <p className="font-bold">Write to us</p>
-                    <p className="text-sm text-gray-500">info@renax.com</p>
+                    <p className="text-sm text-gray-500">info@rentax.com</p>
                 </div>
             </div>
 

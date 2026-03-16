@@ -44,7 +44,7 @@ const Navbar = () => {
                 {/* for extra large devices */}
                 <div className="justify-between items-center py-5 hidden xl:flex">
                     <div>
-                        <Link to={'/'} className='text-3xl font-bold tracking-wider text-primary'><span className='text-[#f5b754]'>R</span>ENAX</Link>
+                        <Link to={'/'} className='text-3xl font-bold tracking-wider text-primary'><span className='text-[#f5b754]'>R</span>ENTAX</Link>
                     </div>
 
                     <div>
@@ -108,7 +108,7 @@ const Navbar = () => {
                 {/* for large devices */}
                 <div className='justify-between items-center py-5 hidden lg:flex xl:hidden'>
                     <div>
-                        <Link to={'/'} className='text-xl font-bold tracking-wider text-primary'><span className='text-[#f5b754]'>R</span>ENAX</Link>
+                        <Link to={'/'} className='text-xl font-bold tracking-wider text-primary'><span className='text-[#f5b754]'>R</span>ENTAX</Link>
                     </div>
 
                     <div className='flex items-center space-x-5'>
@@ -198,7 +198,7 @@ const Navbar = () => {
                 {/* for small devices */}
                 <div className='flex justify-between items-center py-5 lg:hidden'>
                     <div>
-                        <Link to={'/'} className='text-xl font-bold tracking-wider text-primary'><span className='text-[#f5b754]'>R</span>ENAX</Link>
+                        <Link to={'/'} className='text-xl font-bold tracking-wider text-primary'><span className='text-[#f5b754]'>R</span>ENTAX</Link>
                     </div>
 
                     <div className='flex items-center space-x-2'>

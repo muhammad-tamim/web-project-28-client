@@ -29,7 +29,7 @@ const CarDetailsPage = () => {
 
     return (
         <div>
-            <PagesBanner pageName={'renax'} title={'Car Details'}></PagesBanner>
+            <PagesBanner pageName={'rentax'} title={'Car Details'}></PagesBanner>
             <MaxWidth>
                 <div className='space-y-20 my-20'>
                     <div className='md:grid grid-cols-12 gap-5 lg:gap-10 space-y-10 md:space-y-0 flex flex-col-reverse'>

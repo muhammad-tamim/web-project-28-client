@@ -11,7 +11,7 @@ const ContactCard = () => {
                 <p className='text-6xl text-primary group-hover:text-neutral'><MdEmail /></p>
                 <div>
                     <h3 className='font-bold text-xl'>Email us</h3>
-                    <p className='text-secondary text-sm'>info@renax.com</p>
+                    <p className='text-secondary text-sm'>info@rentax.com</p>
                 </div>
                 <p className='text-[150px] text-secondary opacity-5 absolute -right-1 -bottom-5'><MdEmail /></p>
             </div>

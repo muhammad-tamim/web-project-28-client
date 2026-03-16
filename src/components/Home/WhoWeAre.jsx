@@ -12,14 +12,14 @@ const WhoWeAre = ({ btnHide }) => {
             </div>
 
             <div className='text-center space-y-3 mb-10'>
-                <p className='text-primary text-[11px] tracking-[5px]'>RENAX</p>
+                <p className='text-primary text-[11px] tracking-[5px]'>RENTAX</p>
                 <h1 className='font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl'><span className='text-primary'>Who</span> we are</h1>
             </div>
 
             <div className='flex flex-col gap-10 lg:flex-row justify-between'>
                 <div className='max-w-xl space-y-5'>
                     <h1 className='font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl'>We Are More Than<br /><span className='text-primary'>A Car Rental Company</span></h1>
-                    <p className='text-secondary'>RENAX is built on trust, convenience, and premium service. We provide reliable,
+                    <p className='text-secondary'>RENTAX is built on trust, convenience, and premium service. We provide reliable,
                         well-maintained vehicles that make every journey smooth, safe, and enjoyable.
                         Whether it's a short trip or a long adventure, we're here to keep you moving.</p>
 

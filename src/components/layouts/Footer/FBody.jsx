@@ -11,7 +11,7 @@ const FBody = () => {
             <section className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
                 <div className='space-y-4'>
-                    <p><Link to={'/'} className='text-3xl font-bold tracking-wider'><span className='text-primary'>R</span>ENAX</Link></p>
+                    <p><Link to={'/'} className='text-3xl font-bold tracking-wider'><span className='text-primary'>R</span>ENTAX</Link></p>
                     <p className='text-sm text-gray-500'>delivers premium car rental services designed for comfort, flexibility,
                         and trust. Whether for business or leisure, we help you move freely with style
                         and peace of mind.</p>
