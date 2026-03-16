@@ -5,14 +5,15 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './styles.css';
-import team1 from '../../assets/images/team1.jpg'
-import team2 from '../../assets/images/team2.jpg'
-import team3 from '../../assets/images/team3.jpg'
-import team4 from '../../assets/images/team4.jpg'
-import team5 from '../../assets/images/team5.jpg'
-import team6 from '../../assets/images/team6.jpg'
+
 
 const Teams = () => {
+    const team1 = 'https://i.ibb.co.com/5XzVV2fs/team1.jpg'
+    const team2 = 'https://i.ibb.co.com/R5sZZjT/team2.jpg'
+    const team3 = 'https://i.ibb.co.com/0jqSZ3bh/team3.jpg'
+    const team4 = 'https://i.ibb.co.com/1Gjz7kCQ/team4.jpg'
+    const team5 = 'https://i.ibb.co.com/hx28Q1yR/team5.jpg'
+    const team6 = 'https://i.ibb.co.com/W4jBXvZd/team6.jpg'
     return (
         <div>
             <div className='flex justify-center mb-10'>
