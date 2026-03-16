@@ -81,13 +81,13 @@ const SignUpPage = () => {
             <PagesBanner pageName={'rentax'} title={'SignUp'}></PagesBanner>
             <MaxWidth>
                 <div className='space-y-20 my-20'>
-                    <div className="py-10 lg:py-20 flex flex-col items-center justify-center px-4 lg:px-8 xl:px-0">
-                        <div className="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-6xl max-md:max-w-lg w-full p-4 [box-shadow:0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
-                            <div className="md:max-w-md w-full px-4 py-4">
+                    <div className="py-10 lg:py-20 flex flex-col items-center justify-center md:px-4 lg:px-8 xl:px-0">
+                        <div className="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-6xl max-md:max-w-lg w-full p-4 shadow-md rounded-md">
+                            <div className="md:max-w-md w-full md:px-4 md:py-4">
                                 <form onSubmit={handleSignUp}>
                                     <div className="mb-12">
-                                        <h1 className="text-slate-900 text-3xl font-bold">Sign up</h1>
-                                        <p className="text-[15px] mt-6 text-slate-600">
+                                        <h1 className="text-3xl font-bold">Sign up</h1>
+                                        <p className="text-[15px] mt-6 text-secondary">
                                             Already have an account{' '}
                                             <Link to="/sign-in" className="text-[#f89223] font-medium hover:underline ml-1 whitespace-nowrap">
                                                 Login here
@@ -95,27 +95,27 @@ const SignUpPage = () => {
                                         </p>
                                     </div>
 
-                                    <label className="text-slate-900 text-[13px] font-medium block mb-2">Name</label>
+                                    <label className=" text-[13px] font-medium block mb-2">Name</label>
                                     <div className="relative flex items-center">
-                                        <input name="name" type="text" required className="input w-full border-0 bg-gray-100 focus:outline-[#f89223]" placeholder="Enter Name" />
+                                        <input name="name" type="text" required className="input w-full border-0 shadow focus:outline-[#f89223]" placeholder="Enter Name" />
                                         <span className="size-5 absolute right-2 text-slate-400"><IoPerson /></span>
                                     </div>
 
-                                    <label className="mt-8 text-slate-900 text-[13px] font-medium block mb-2">Photo</label>
+                                    <label className="mt-8 text-[13px] font-medium block mb-2">Photo</label>
                                     <div className="relative flex items-center">
                                         <input name="url" type="file" required className='file-input w-full focus:outline-[#f89223]' placeholder="Enter URL" />
                                         <span className="size-5 absolute right-2 text-slate-400"><IoMdPhotos /></span>
                                     </div>
 
-                                    <label className="mt-8 text-slate-900 text-[13px] font-medium block mb-2">Email</label>
+                                    <label className="mt-8  text-[13px] font-medium block mb-2">Email</label>
                                     <div className="relative flex items-center">
-                                        <input name="email" type="email" required className="input w-full border-0 bg-gray-100 focus:outline-[#f89223]" placeholder="Enter email" />
+                                        <input name="email" type="email" required className="input w-full border-0 shadow focus:outline-[#f89223]" placeholder="Enter email" />
                                         <span className="size-5 absolute right-2 text-slate-400"><MdOutlineMailOutline /></span>
                                     </div>
 
-                                    <label className="mt-8 text-slate-900 text-[13px] font-medium block mb-2">Password</label>
+                                    <label className="mt-8  text-[13px] font-medium block mb-2">Password</label>
                                     <div className="relative flex items-center">
-                                        <input name="password" type="password" required className="input w-full border-0 bg-gray-100 focus:outline-[#f89223]" placeholder="Enter password" />
+                                        <input name="password" type="password" required className="input w-full border-0 shadow focus:outline-[#f89223]" placeholder="Enter password" />
                                         <span className="size-5 absolute right-2 text-slate-400"><IoEyeOutline /></span>
                                     </div>
 
