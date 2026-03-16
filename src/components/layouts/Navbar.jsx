@@ -111,7 +111,7 @@ const Navbar = () => {
                         <Link to={'/'} className='text-xl font-bold tracking-wider text-primary'><span className='text-[#f5b754]'>R</span>ENAX</Link>
                     </div>
 
-                    <div className='flex items-center gap-2 md:gap-5'>
+                    <div className='flex items-center space-x-5'>
                         <ul className="flex items-center gap-5">
                             <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>Home</NavLink></li>
                             <li><NavLink to="/about" className={({ isActive }) => isActive ? "text-[#f5b754]" : 'text-secondary'}>About</NavLink></li>
@@ -201,8 +201,8 @@ const Navbar = () => {
                         <Link to={'/'} className='text-xl font-bold tracking-wider text-primary'><span className='text-[#f5b754]'>R</span>ENAX</Link>
                     </div>
 
-                    <div className='flex items-center gap-2 md:gap-5'>
-                        <ul className="flex items-center gap-5">
+                    <div className='flex items-center space-x-2'>
+                        <ul className="flex items-center gap-2">
                             <li>
                                 <label className="toggle">
                                     <input type="checkbox" value="dark" className="theme-controller" />
