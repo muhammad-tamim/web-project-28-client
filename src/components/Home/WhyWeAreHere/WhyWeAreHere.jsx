@@ -4,7 +4,8 @@ import { Link } from 'react-router';
 import MaxWidth from '../../MaxWidth';
 import { IoIosPeople } from 'react-icons/io';
 import { SwiperSlide } from "swiper/react";
-import achievementsVideo from '../../../assets/videos/achievements.mp4'
+import achievementsVideoMp4 from '../../../assets/videos/achievements.mp4'
+import achievementsVideoWebm from '../../../assets/videos/achievements.webm'
 import Swiper1 from '../../Swiper/Swiper1';
 import LoadingSpinner from '../../LoadingSpinner';
 import Card1 from '../../Cards/Card1';
@@ -28,7 +29,11 @@ const WhyWeAreHere = () => {
         <div className='relative min-h-[calc(100vh-70px)]'>
 
             {/* Background Video */}
-            <video className="absolute inset-0 w-full h-full object-cover" src={achievementsVideo} autoPlay loop muted playsInline />
+
+            <video className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted playsInline preload="metadata">
+                <source src={achievementsVideoWebm} type="video/webm" />
+                <source src={achievementsVideoMp4} type="video/mp4" />
+            </video>
 
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/70"></div>

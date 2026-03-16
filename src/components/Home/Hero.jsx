@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
-import heroVideo from '../../assets/videos/hero-video.mp4'
+import heroVideoMp4 from '../../assets/videos/hero-video.mp4'
+import heroVideoWebm from '../../assets/videos/hero-video.webm'
+import heroImage from '../../assets/images/hero-bg.jpg'
 import useGetBrands from '../../hooks/queries/Brands/useGetBrands';
 import useGetCategories from '../../hooks/queries/Categories/useGetCategories';
 
@@ -18,7 +20,10 @@ const Hero = () => {
         <div className='hero min-h-screen relative overflow-hidden'>
 
             {/* Background Video */}
-            <video className="absolute inset-0 w-full h-full object-cover" src={heroVideo} autoPlay loop muted playsInline />
+            <video className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted playsInline preload="metadata" poster={heroImage}>
+                <source src={heroVideoWebm} type="video/webm" />
+                <source src={heroVideoMp4} type="video/mp4" />
+            </video>
 
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/70"></div>
