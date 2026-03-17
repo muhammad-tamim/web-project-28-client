@@ -1,11 +1,16 @@
 import React from 'react';
-import heroVideo from '../../assets/videos/hero-video.mp4'
+import heroVideoMp4 from '../../assets/videos/hero-video.mp4'
+import heroVideoWebm from '../../assets/videos/hero-video.webm'
+import heroImage from '../../assets/images/hero-bg.jpg'
 
 const PagesBanner = ({ title, pageName = '' }) => {
     return (
         <div className='relative min-h-[40vh] overflow-hidden' >
 
-            <video className="absolute inset-0 w-full h-full object-cover" src={heroVideo} autoPlay loop muted playsInline />
+            <video className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted playsInline preload="metadata" poster={heroImage}>
+                <source src={heroVideoWebm} type="video/webm" />
+                <source src={heroVideoMp4} type="video/mp4" />
+            </video>
 
             <div className="absolute inset-0 bg-black/60"></div>
 
