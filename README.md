@@ -2,6 +2,21 @@
 
 A full-stack **car rental management platform**  that enables customers to rent vehicles online, sellers to manage their vehicles, and admin to control the entire marketplace.
 
+- [Explanation:](#explanation)
+- [Live Links:](#live-links)
+- [Repository Links:](#repository-links)
+- [Demo Credentials:](#demo-credentials)
+- [Demo Cards:](#demo-cards)
+- [Features:](#features)
+- [Tech Stack:](#tech-stack)
+- [Project Architecture:](#project-architecture)
+- [What I Learn:](#what-i-learn)
+- [Challenges I Faced:](#challenges-i-faced)
+- [Limitations:](#limitations)
+- [Environment Variables:](#environment-variables)
+- [Installation \& Setup:](#installation--setup)
+- [Contact:](#contact)
+
 ## Explanation: 
 
 ## Live Links:
@@ -20,6 +35,22 @@ A full-stack **car rental management platform**  that enables customers to rent 
 | Admin    | admin@gmail.com    | 123456   |
 | Seller   | seller@gmail.com   | 123456   |
 | customer | customer@gmail.com | 123456   |
+
+## Demo Cards: 
+ 
+**Stripe:** 
+| Card Type  | Card Number         | CVV          | Expiry Date     |
+| ---------- | ------------------- | ------------ | --------------- |
+| Visa       | 4242 4242 4242 4242 | Any 3 digits | Any future date |
+| Mastercard | 5555 5555 5555 4444 | Any 3 digits | Any future date |
+
+**SSLCommerz:** 
+| Card Type        | Card Number         | Expiry | CVV | OTP             |
+| ---------------- | ------------------- | ------ | --- | --------------- |
+| Visa             | 4111 1111 1111 1111 | 12/26  | 111 | 111111 / 123456 |
+| Mastercard       | 5111 1111 1111 1111 | 12/26  | 111 | 111111 / 123456 |
+| American Express | 3711 1111 1111 111  | 12/26  | 111 | 111111 / 123456 |
+
 
 ## Features:
 **Customer:**
