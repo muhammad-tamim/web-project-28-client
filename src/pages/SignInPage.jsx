@@ -18,10 +18,9 @@ const SignInPage = () => {
     const { mutate: createUser } = useCreateUser()
 
 
-
-    if (loading) {
-        return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
-    }
+    // if (loading) {
+    //     return <LoadingSpinner minHScreen={'min-h-screen'}></LoadingSpinner>;
+    // }
 
     const handleSignIn = e => {
         e.preventDefault()
@@ -124,11 +123,8 @@ const SignInPage = () => {
                                         Forgot Password?
                                     </p>
 
-                                    <button
-                                        type="submit"
-                                        className={`mt-12 btn w-full btn-primary ${loading ? 'btn-disabled' : ''}`}
-                                    >
-                                        Sign In
+                                    <button type="submit" className={`mt-12 btn w-full btn-primary ${loading ? 'btn-disabled' : ''}`}>
+                                        {loading ? <span className={`loading loading-spinner loading-xs text-primary`}></span> : "Sign In"}
                                     </button>
 
                                     <div className="divider">or</div>
@@ -139,7 +135,7 @@ const SignInPage = () => {
                                         className={`w-full flex items-center justify-center gap-4 btn btn-primary btn-outline ${loading ? 'btn-disabled' : ''}`}
                                     >
                                         <FcGoogle className='size-5' />
-                                        Continue with Google
+                                        {loading ? <span className={`loading loading-spinner loading-xs text-primary`}></span> : "Continue with Google"}
                                     </button>
                                 </form>
                             </div>

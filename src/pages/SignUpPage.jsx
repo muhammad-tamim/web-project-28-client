@@ -128,7 +128,7 @@ const SignUpPage = () => {
                                         type="submit"
                                         className={`mt-12 btn w-full btn-primary ${loading ? 'btn-disabled' : ''}`}
                                     >
-                                        Sign In
+                                        {loading ? <span className={`loading loading-spinner loading-xs text-primary`}></span> : "Sign Up"}
                                     </button>
 
                                     <div className="divider">or</div>
@@ -139,7 +139,7 @@ const SignUpPage = () => {
                                         className={`w-full flex items-center justify-center gap-4 btn btn-primary btn-outline ${loading ? 'btn-disabled' : ''}`}
                                     >
                                         <FcGoogle className='size-5' />
-                                        Continue with Google
+                                        {loading ? <span className={`loading loading-spinner loading-xs text-primary`}></span> : "Continue with Google"}
                                     </button>
                                 </form>
                             </div>
