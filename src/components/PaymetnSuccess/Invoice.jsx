@@ -69,7 +69,7 @@ const Invoice = ({ booking }) => {
                         <p className="text-secondary">
                             Invoice ID: {tran_id}
                         </p>
-                        <p className="text-secondary">
+                        <p className="text-secondary max-w-md  break-all">
                             Validation ID: {payment.val_id}
                         </p>
                         <p className="text-secondary">

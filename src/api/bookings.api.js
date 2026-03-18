@@ -7,6 +7,10 @@ export const bookingsApi = {
         const res = await baseApi.post(`/bookings`, { tran_id });
         return res.data.result;
     },
+    getByTranId: async (tran_id) => {
+        const res = await baseApi.get(`/bookings/transaction/${tran_id}`);
+        return res.data.result;
+    },
 
     findAll: async (email) => {
         const res = await axiosSecure.get(`/bookings/${email}`);
