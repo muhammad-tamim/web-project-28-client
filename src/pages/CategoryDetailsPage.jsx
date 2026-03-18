@@ -49,7 +49,7 @@ const CategoryDetailsPage = () => {
     })
     return (
         <div>
-            <PagesBanner pageName={'rentax'} title={'Brands Details'}></PagesBanner>
+            <PagesBanner pageName={'rentax'} title={'Categories Details'}></PagesBanner>
             <MaxWidth>
                 <div className='space-y-20 my-20'>
                     <div className='flex flex-col lg:flex-row justify-between items-center gap-4 mb-8'>

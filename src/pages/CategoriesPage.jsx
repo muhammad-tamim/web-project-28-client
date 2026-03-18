@@ -18,7 +18,7 @@ const CategoriesPage = () => {
     }
     return (
         <div>
-            <PagesBanner pageName={'rentax'} title={'All Brands'}></PagesBanner>
+            <PagesBanner pageName={'rentax'} title={'All Categories'}></PagesBanner>
             <MaxWidth>
                 <div className='space-y-20 my-20'>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
