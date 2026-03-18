@@ -3,10 +3,11 @@ import axiosSecure from "./axiosSecure";
 
 export const bookingsApi = {
 
-    create: async (tran_id) => {
-        const res = await baseApi.post(`/bookings`, { tran_id });
+    create: async (data) => {
+        const res = await baseApi.post(`/bookings`, data);
         return res.data.result;
     },
+
     getByTranId: async (tran_id) => {
         const res = await baseApi.get(`/bookings/transaction/${tran_id}`);
         return res.data.result;

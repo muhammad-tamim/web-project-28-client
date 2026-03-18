@@ -5,9 +5,9 @@ import { bookingsApi } from '../../../api/bookings.api';
 const useCreateBookings = () => {
     const queryClient = useQueryClient()
     return useMutation({
-        mutationFn: ({ tran_id }) => bookingsApi.create(tran_id),
+        mutationFn: bookingsApi.create,
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['bookings'] });
+            queryClient.invalidateQueries(['bookings'])
         }
     })
 };

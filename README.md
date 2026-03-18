@@ -6,7 +6,6 @@ A full-stack **car rental management platform**  that enables customers to rent 
 - [Live Links:](#live-links)
 - [Repository Links:](#repository-links)
 - [Demo Credentials:](#demo-credentials)
-- [Demo Cards:](#demo-cards)
 - [Features:](#features)
 - [Tech Stack:](#tech-stack)
 - [Project Architecture:](#project-architecture)
@@ -35,22 +34,6 @@ A full-stack **car rental management platform**  that enables customers to rent 
 | Admin    | admin@gmail.com    | 123456   |
 | Seller   | seller@gmail.com   | 123456   |
 | customer | customer@gmail.com | 123456   |
-
-## Demo Cards: 
- 
-**Stripe:** 
-| Card Type  | Card Number         | CVV          | Expiry Date     |
-| ---------- | ------------------- | ------------ | --------------- |
-| Visa       | 4242 4242 4242 4242 | Any 3 digits | Any future date |
-| Mastercard | 5555 5555 5555 4444 | Any 3 digits | Any future date |
-
-**SSLCommerz:** 
-| Card Type        | Card Number         | Expiry | CVV | OTP             |
-| ---------------- | ------------------- | ------ | --- | --------------- |
-| Visa             | 4111 1111 1111 1111 | 12/26  | 111 | 111111 / 123456 |
-| Mastercard       | 5111 1111 1111 1111 | 12/26  | 111 | 111111 / 123456 |
-| American Express | 3711 1111 1111 111  | 12/26  | 111 | 111111 / 123456 |
-
 
 ## Features:
 **Customer:**
@@ -81,9 +64,6 @@ A full-stack **car rental management platform**  that enables customers to rent 
 - React, React-Router, JavaScript, TailwindCSS, DaisyUI
 **Libraries & Packages:** 
 - Tanstack Query, Axios, Firebase Authentication, Recharts, Swiper, react-pdf, date-fns, react-hot-toast, react-icons, sweetalert2 
-**Payments:** 
-- Stripe (For International Payment)
-- SSLCommerz (For Bangladesh Payment)
 
 ## Project Architecture:
 
@@ -128,6 +108,7 @@ src
 - Handling async data synchronization between frontend and backend
 
 ## Limitations:
+- No Real Payment System
 - No Refund system
 - Booking cancellation does not enforce time restrictions
 - No UI Notification system
