@@ -7,6 +7,7 @@ import useAuth from '../../hooks/useAuth';
 import useGetUser from '../../hooks/queries/users/useGetUser';
 import LoadingSpinner from '../LoadingSpinner';
 import useCreateBookings from '../../hooks/queries/bookings/useCreateBookings';
+import { bookingsApi } from '../../api/bookings.api';
 
 const BookingCard = ({ car }) => {
     const [startDate, setStartDate] = useState('');
@@ -55,37 +56,50 @@ const BookingCard = ({ car }) => {
             },
         });
 
-        if (result.isConfirmed) {
-            setLoading(true);
+        if (!result.isConfirmed) return;
+
+        setLoading(true);
+
+        const demoTranId = 'DEMO-' + Date.now();
+
+        const payload = {
+            tran_id: demoTranId,
+            carId: car._id,
+            cus_name: userInfo.name,
+            cus_email: userInfo.email,
+            cus_photoUrl: userInfo.photoUrl,
+            total_amount: totalPrice,
+            currency: 'USD',
+            startDate,
+            endDate,
+        };
+
+        try {
+            await mutateAsync(payload);
+
+            // ✅ Success path
+            navigate(`/payment-success?tran_id=${demoTranId}`, { replace: true });
+
+        } catch (err) {
+            console.error("Create booking failed:", err);
+
+            // 🔥 Fallback check (critical fix)
             try {
-                // 🔹 Demo payment object
-                const demoTranId = 'DEMO-' + Date.now();
+                const booking = await bookingsApi.getByTranId(demoTranId);
 
-                const payload = {
-                    tran_id: demoTranId,
-                    carId: car._id,
-                    cus_name: userInfo.name,
-                    cus_email: userInfo.email,
-                    cus_photoUrl: userInfo.photoUrl,
-                    total_amount: totalPrice,
-                    currency: 'USD',
-                    startDate,
-                    endDate,
-                };
-
-                try {
-                    await mutateAsync(payload); // wait for API to succeed
+                if (booking) {
+                    // ✅ Backend actually succeeded
                     navigate(`/payment-success?tran_id=${demoTranId}`, { replace: true });
-                } catch (err) {
-                    toast.error(err.message || 'Booking failed');
+                    return;
                 }
-                finally {
-                    setLoading(false);
-                }
-
-            } catch (err) {
-                toast.error(err.message || 'Booking failed');
+            } catch (verifyError) {
+                console.error("Verification failed:", verifyError);
             }
+
+            // ❌ Real failure
+            toast.error(err?.response?.data?.message || 'Booking failed');
+        } finally {
+            setLoading(false);
         }
     };
 
