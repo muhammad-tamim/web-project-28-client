@@ -49,12 +49,12 @@ const Invoice = ({ booking }) => {
                         <h3 className="font-semibold mb-2 text-lg">Bill To:</h3>
                         <p className="text-secondary font-medium">{payment?.cus_name}</p>
                         <p className="text-secondary">{payment.cus_email}</p>
-                        <p className="text-secondary">{payment.cus_add1}</p>
+                        {/* <p className="text-secondary">{payment.cus_add1}</p>
                         <p className="text-secondary">
                             {payment.cus_city}, {payment.cus_postcode}
                         </p>
                         <p className="text-secondary">{payment.cus_country}</p>
-                        <p className="text-secondary">Phone: {payment.cus_phone}</p>
+                        <p className="text-secondary">Phone: {payment.cus_phone}</p> */}
                     </div>
 
                     <div>
@@ -93,7 +93,7 @@ const Invoice = ({ booking }) => {
                                     <th>Rental Duration</th>
                                     <th>Daily Price</th>
                                     <th>Total Price</th>
-                                    <th>Payment Method</th>
+                                    {/* <th>Payment Method</th> */}
                                 </tr>
                             </thead>
                             <tbody>

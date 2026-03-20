@@ -118,12 +118,12 @@ const InvoicePDF = ({ booking }) => {
                         <Text style={styles.sectionTitle}>Bill To:</Text>
                         <Text style={styles.textSecondary}>{payment.cus_name}</Text>
                         <Text style={styles.textSecondary}>{payment.cus_email}</Text>
-                        <Text style={styles.textSecondary}>{payment.cus_add1}</Text>
+                        {/* <Text style={styles.textSecondary}>{payment.cus_add1}</Text>
                         <Text style={styles.textSecondary}>
                             {payment.cus_city}, {payment.cus_postcode}
                         </Text>
                         <Text style={styles.textSecondary}>{payment.cus_country}</Text>
-                        <Text style={styles.textSecondary}>Phone: {payment.cus_phone}</Text>
+                        <Text style={styles.textSecondary}>Phone: {payment.cus_phone}</Text> */}
                     </View>
 
                     <View style={styles.column}>
