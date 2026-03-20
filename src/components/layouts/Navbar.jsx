@@ -8,13 +8,19 @@ import { GiShoppingCart } from 'react-icons/gi';
 import { CiMenuFries } from 'react-icons/ci';
 import toast from 'react-hot-toast';
 import useGetBookings from '../../hooks/queries/bookings/useGetBookings';
+import useGetUser from '../../hooks/queries/users/useGetUser';
 
 const Navbar = () => {
     const { user, signOutUser } = use(AuthContext)
     const [scrolled, setScrolled] = useState(false);
     const { data: bookings } = useGetBookings(user?.email)
+    const { data: userData } = useGetUser(user?.email)
 
-    const bookingCount = bookings?.length ?? 0;
+    let bookingCount = 0
+    if (userData?.role === 'customer') {
+        bookingCount = bookings?.length;
+    }
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -71,7 +77,7 @@ const Navbar = () => {
                                 </label>
                             </li>
                             <li>
-                                {user &&
+                                {userData?.role === 'customer' &&
                                     <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
                                         <span className="badge bg-transparent border-none badge-xs font-bold indicator-item text-secondary">{bookingCount}</span>
@@ -133,7 +139,7 @@ const Navbar = () => {
                                 </label>
                             </li>
                             <li>
-                                {user &&
+                                {userData?.role === 'customer' &&
                                     <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
                                         <span className="badge bg-transparent border-none badge-xs font-bold indicator-item">{bookingCount}</span>
@@ -211,7 +217,7 @@ const Navbar = () => {
                                 </label>
                             </li>
                             <li>
-                                {user &&
+                                {userData?.role === 'customer' &&
                                     <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
                                         <span className="badge bg-transparent border-none badge-xs font-bold indicator-item">{bookingCount}</span>
