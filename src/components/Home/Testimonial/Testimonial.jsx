@@ -4,7 +4,55 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { TestimonialCard } from '../../Cards/TestimonialCard';
 
+const testimonialsData = [
+    {
+        id: 1,
+        name: "Rahim Uddin",
+        role: "Business Owner",
+        rating: 5,
+        comment:
+            "Rentax made car rentals incredibly easy. I booked a car within minutes, and the entire process was smooth and transparent.",
+        image: "https://i.pravatar.cc/150?img=1",
+    },
+    {
+        id: 2,
+        name: "Nusrat Jahan",
+        role: "Traveler",
+        rating: 5,
+        comment:
+            "I’ve used multiple rental platforms before, but this one stands out. Clean UI, fast booking, and no hidden charges.",
+        image: "https://i.pravatar.cc/150?img=2",
+    },
+    {
+        id: 3,
+        name: "Tanvir Hasan",
+        role: "Freelancer",
+        rating: 4,
+        comment:
+            "Great experience overall. The car quality was excellent, and customer support was responsive when I needed help.",
+        image: "https://i.pravatar.cc/150?img=3",
+    },
+    {
+        id: 4,
+        name: "Farhana Akter",
+        role: "Entrepreneur",
+        rating: 5,
+        comment:
+            "Managing my cars as a seller is super now. Dashboard is clean and everything is well organized.",
+        image: "https://i.pravatar.cc/150?img=4",
+    },
+    {
+        id: 5,
+        name: "Imran Hossain",
+        role: "Corporate User",
+        rating: 4,
+        comment:
+            "We use Rentax for business trips. Reliable cars and consistent service every time.",
+        image: "https://i.pravatar.cc/150?img=5",
+    },
+];
 
 const Testimonial = () => {
     return (
@@ -21,401 +69,24 @@ const Testimonial = () => {
 
             <div>
 
-                <div className='hidden xl:block'>
-                    <Swiper slidesPerView={3} spaceBetween={20} loop={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ dynamicBullets: true }}>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                <Swiper
+                    spaceBetween={20}
+                    loop={true}
+                    modules={[Pagination, Autoplay]}
+                    autoplay={{ delay: 2500, disableOnInteraction: false }}
+                    pagination={{ dynamicBullets: true }}
+                    breakpoints={{
+                        0: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1280: { slidesPerView: 3 },
+                    }}
+                >
+                    {testimonialsData.map((item) => (
+                        <SwiperSlide key={item.id}>
+                            <TestimonialCard item={item} />
                         </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-
-                    </Swiper>
-                </div>
-
-                <div className='hidden md:block xl:hidden'>
-                    <Swiper slidesPerView={2} spaceBetween={20} loop={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ dynamicBullets: true }}>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-
-                    </Swiper>
-                </div>
-
-                <div className='md:hidden'>
-                    <Swiper slidesPerView={1} spaceBetween={20} loop={true} modules={[Pagination, Autoplay]} autoplay={{ delay: 1500, disableOnInteraction: false }} pagination={{ dynamicBullets: true }}>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="card rounded-3xl p-10 bg-base-300 shadow-sm space-y-8">
-                                <div className='flex justify-between'>
-                                    <p className='text-primary text-5xl'><FaQuoteLeft /></p>
-                                    <p className='text-primary flex items-center gap-1'><FaStar /><FaStar /><FaStar /><FaStar /><FaStar /></p>
-                                </div>
-                                <p className='text-gray-500 text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate cupiditate quaerat modi excepturi veritatis, optio molestias, non perspiciatis doloremque corrupti voluptas cum maxime quo di Eos optio voluptas vero maiores perspiciatis!</p>
-                                <div className='flex items-center gap-3'>
-                                    <div className="avatar">
-                                        <div className="w-12 rounded-full">
-                                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className='font-medium text-sm'>Jhon Deo</p>
-                                        <p className='text-xs font-base-500 text-gray-500'>Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </SwiperSlide>
-
-                    </Swiper>
-                </div>
+                    ))}
+                </Swiper>
 
 
             </div>
