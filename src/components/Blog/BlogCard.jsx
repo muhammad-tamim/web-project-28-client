@@ -25,11 +25,11 @@ const BlogCard = ({ blog }) => {
                     <p className='text-secondary'>{description}</p>
                 </div>
 
-                <Link to={`/blog/${slug}`}>
+                <div>
                     <button className="btn btn-primary rounded-full btn-xl hover:-translate-y-1 duration-200 transition flex items-center gap-1">
                         Learn More <MdOutlineArrowOutward />
                     </button>
-                </Link>
+                </div>
             </div>
         </div>
     );
