@@ -15,7 +15,6 @@ const SearchPage = () => {
     const category = searchParams.get('category')
     const sort = searchParams.get('sort')
 
-    console.log(brand, category, sort)
 
     const [page, setPage] = useState(1)
     const [search, setSearch] = useState('');

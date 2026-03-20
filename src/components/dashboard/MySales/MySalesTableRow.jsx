@@ -2,8 +2,6 @@ import { format } from 'date-fns';
 import React from 'react';
 
 const MySalesTableRow = ({ booking }) => {
-    console.log(booking)
-    console.log("createdAt:", booking?.car?.createdAt)
     return (
         <tr className="text-secondary">
             <td className="p-3">

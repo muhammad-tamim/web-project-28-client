@@ -19,7 +19,6 @@ const SellerStatistics = () => {
         return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>
     }
 
-    console.log(bookings)
 
     const totalBookings = bookings?.length
     const totalRevenue = bookings.reduce((sum, booking) => sum + Number(booking.payment.total_amount), 0)

@@ -21,7 +21,6 @@ const PaymentsHistory = () => {
         return <h2 className="text-red-500 text-center my-20">Error: {error.message}</h2>
     }
 
-    console.log(bookings)
 
     // searching
     const filteredBookings = bookings.filter((booking) => booking.car.name.toLowerCase().includes(search.toLowerCase()))

@@ -16,7 +16,6 @@ const WhyWeAreHere = () => {
 
 
     const { data: cars, isLoading, isError, error } = useGetPremiumCars()
-    console.log(cars)
     if (isLoading) {
         return <LoadingSpinner marginY={'20'}></LoadingSpinner>;
     }

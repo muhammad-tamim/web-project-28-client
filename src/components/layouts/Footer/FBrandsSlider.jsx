@@ -8,7 +8,6 @@ const FBrandsSlider = () => {
 
     const { data: brands, isLoading, isError, error } = useGetBrands()
 
-    console.log(brands)
 
     if (isLoading) {
         return <LoadingSpinner marginY={5}></LoadingSpinner>

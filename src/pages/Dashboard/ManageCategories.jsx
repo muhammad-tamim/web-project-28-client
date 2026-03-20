@@ -58,7 +58,6 @@ const ManageCategories = () => {
         })
 
     }
-    console.log(categories)
     return (
         <div>
             <MaxWidth>

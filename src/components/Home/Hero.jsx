@@ -14,7 +14,6 @@ const Hero = () => {
     const { data: brands } = useGetBrands();
     const { data: categories } = useGetCategories();
 
-    console.log(brand, category, sort)
 
     return (
         <div className='hero min-h-screen relative overflow-hidden'>
