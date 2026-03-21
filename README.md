@@ -17,7 +17,8 @@ A full-stack **car rental management platform**  that enables customers to rent 
 - [Contact:](#contact)
 
 ## Explanation: 
-https://github.com/user-attachments/assets/2da9c366-a506-4ffb-8f27-d299a7ca6c2a
+https://github.com/user-attachments/assets/31adb363-e5e2-40aa-af3b-3463a2f7e008
+
 
 ## Live Links:
 - Client: https://web-project-28-client.vercel.app/ 
