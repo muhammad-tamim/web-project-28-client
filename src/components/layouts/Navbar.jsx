@@ -76,16 +76,16 @@ const Navbar = () => {
                                     <FaMoon />
                                 </label>
                             </li>
-                            <li>
-                                {userData?.role === 'customer' &&
+                            {userData?.role === 'customer' &&
+                                <li>
                                     <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
                                         <span className="badge bg-transparent border-none badge-xs font-bold indicator-item text-secondary">{bookingCount}</span>
                                     </NavLink>
-                                }
-                            </li>
-                            <li>
-                                {user && (
+                                </li>
+                            }
+                            {user && (
+                                <li>
                                     <div className="dropdown dropdown-end">
                                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                             <div className="w-10 rounded-full">
@@ -104,8 +104,8 @@ const Navbar = () => {
                                             <li><NavLink to={'/dashboard/profile'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
                                     </div>
-                                )}
-                            </li>
+                                </li>
+                            )}
                         </ul>
                     </div>
 
@@ -138,16 +138,16 @@ const Navbar = () => {
                                     <FaMoon />
                                 </label>
                             </li>
-                            <li>
-                                {userData?.role === 'customer' &&
+                            {userData?.role === 'customer' &&
+                                <li>
                                     <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
                                         <span className="badge bg-transparent border-none badge-xs font-bold indicator-item">{bookingCount}</span>
                                     </NavLink>
-                                }
-                            </li>
-                            <li>
-                                {user && (
+                                </li>
+                            }
+                            {user && (
+                                <li>
                                     <div className="dropdown dropdown-end">
                                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                             <div className="w-10 rounded-full">
@@ -165,8 +165,8 @@ const Navbar = () => {
                                             <li><NavLink to={'/dashboard/profile'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
                                     </div>
-                                )}
-                            </li>
+                                </li>
+                            )}
                         </ul>
 
                         <div className="drawer drawer-end">
@@ -216,16 +216,16 @@ const Navbar = () => {
                                     <FaMoon />
                                 </label>
                             </li>
-                            <li>
-                                {userData?.role === 'customer' &&
+                            {userData?.role === 'customer' &&
+                                <li>
                                     <NavLink to="/my-bookings" className={({ isActive }) => isActive ? "text-[#f5b754] indicator flex items-center" : 'indicator flex items-center text-secondary'}>
                                         <GiShoppingCart className='size-8' />
                                         <span className="badge bg-transparent border-none badge-xs font-bold indicator-item">{bookingCount}</span>
                                     </NavLink>
-                                }
-                            </li>
-                            <li>
-                                {user && (
+                                </li>
+                            }
+                            {user && (
+                                <li>
                                     <div className="dropdown dropdown-end">
                                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                             <div className="w-10 rounded-full">
@@ -243,8 +243,8 @@ const Navbar = () => {
                                             <li><NavLink to={'/dashboard/profile'} className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${isActive ? 'bg-primary text-white' : 'text-secondary hover:bg-primary hover:text-white'}`}>Profile</NavLink></li>
                                         </ul>
                                     </div>
-                                )}
-                            </li>
+                                </li>
+                            )}
                         </ul>
 
                         <div className="drawer drawer-end">
